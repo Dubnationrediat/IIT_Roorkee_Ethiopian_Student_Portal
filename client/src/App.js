@@ -64,8 +64,8 @@ function App() {
             path="/btechSectionUpload"
             element={
               <PotectRoute>
-                {" "}
-                <ToUploadForBTech />{" "}
+             
+                <ToUploadForBTech />
               </PotectRoute>
             }
           />
