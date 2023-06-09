@@ -10,6 +10,12 @@
 	min-height: 65vh;
 	align-items: center;
 }
+.sideNote1{
+	background-color: white;
+	border-radius: 20px;
+	opacity: 0.6;
+	min-height: 53vh;
+}
 .in1 {
 	width: 100%;
 	height: 50px;
@@ -106,7 +112,7 @@ p {
 h1 {
 	margin-bottom: 20px;
 }
-.showHide2 {
+.showHide1 {
 	display: flex;
 	justify-content: flex-end;
 	margin: -52px 25px 0px 360px;
@@ -146,3 +152,22 @@ input[type] {
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	color: #ff8500;
 }
+@media (max-height: 600px) {
+	.sideNote1{
+		margin-top: 10px;
+		width: 100%;
+		max-width: 100%;
+	
+	} 
+  }
+  @media (max-width: 575.98px) {
+	.sideNote1 {
+	  margin-top: 15px; 
+	}
+  }
+  @media (max-width: 490px) {
+	.showHide1 {
+	  margin-left: 60px !important; 
+	}
+  }
+  

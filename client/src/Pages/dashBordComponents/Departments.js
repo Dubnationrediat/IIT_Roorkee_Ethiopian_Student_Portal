@@ -152,9 +152,9 @@ function Departments() {
       ];
     
       return (
-        <div className="container " border="light">
+          <div className="container " border="light">
           <Card border="gray"  className='mb-2 mb-md-0 border-bottom-0 rounded-top  'style={{
-            height: 450,width: 430,  borderRadius: 30, borderWidth: 20 , 
+            height: 450,width: 380,  borderRadius: 20, borderWidth: 10 , 
           }}>
           <ImageList
             border="gray"

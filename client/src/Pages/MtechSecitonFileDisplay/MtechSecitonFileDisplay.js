@@ -64,7 +64,7 @@ const handleFilter =(e)=>{
 }
   return (
  
-      <div className="toShowStaffForward vh-100">
+    <div className="toShowStaffForward vh-100">
     {/* ------------------------------------------------------- */}
     <TableContainer className="toShowStaffForward m-2" component={Paper}>
           <h1 className="TitleFromStaff">M-Tech Resources</h1>
@@ -104,7 +104,6 @@ const handleFilter =(e)=>{
           </Table>
         </TableContainer>
         </div>
- 
   )
 }
 

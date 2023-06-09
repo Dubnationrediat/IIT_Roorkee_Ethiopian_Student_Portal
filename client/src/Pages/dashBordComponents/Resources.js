@@ -53,9 +53,9 @@ function Resources() {
               <br /><br/> <br/>
               <Card.Text  > 
                 <div className="akafiOne">
-              <Link to="/phdSectionDisplay" className='cardButton3' >Show PhD Resources</Link>
-              <Link to="/mtechSectioDisplay" className='cardButton3' >Show M-Tech Resources</Link>
-              <Link to="/btechSectionDisplay" className='cardButton3' >Show B-Tech Resources</Link>
+              <Link to="/phdSectionDisplay" className='cardButton3  ' >Show PhD Resources</Link>
+              <Link to="/mtechSectioDisplay" className='cardButton3 my-2' >Show M-Tech Resources</Link>
+              <Link to="/btechSectionDisplay" className='cardButton3 mb-2' >Show B-Tech Resources</Link>
             
                 </div>
               </Card.Text>

@@ -1,6 +1,13 @@
+body{
+    margin:0 auto;
+    padding: 0 ;
+/* max-width: 100%; */
+}
+
 .header{
-    min-width: 500px;
+   /* width: 100vh; */
     min-height: 10vh;
+
     background-color: white;
     display: flex;
     align-items:center;
@@ -10,7 +17,7 @@
     align-items:center;
 }
 .innerContainer2{
-    width: 80%;
+    width: 100%;
     align-items: center;
 }
 .header__container{
@@ -95,3 +102,10 @@
     color: black;
     font-weight: bold;
 }
+@media (min-width: 750px) and (max-width: 1800px) {
+    .header {
+        min-width: 1650px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }

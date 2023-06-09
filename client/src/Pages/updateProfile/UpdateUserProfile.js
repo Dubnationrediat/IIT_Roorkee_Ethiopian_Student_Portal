@@ -243,7 +243,7 @@ let url = `${server}/user/updateUserProfile/${user_id}`;
                 onPaste={handlePaste}
                 placeholder="Confirm Password"
               />
-              <button className="btnSign">Update</button>
+              <button className="btnSign mb-2">Update</button>
             </form>
           </div>
     );

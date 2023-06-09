@@ -150,3 +150,9 @@ select option:nth-child(even) {
   select option:nth-child(odd) {
 	background-color: #fff;
   }
+
+  @media (max-width: 1400px) {
+	.showHide {
+	  margin-left: 40px ; 
+	}
+}

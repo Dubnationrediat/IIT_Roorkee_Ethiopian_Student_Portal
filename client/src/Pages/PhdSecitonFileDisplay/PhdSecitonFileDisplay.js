@@ -65,7 +65,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
     }
 
   return (
-      <div className="toShowStaffForward vh-100">
+    <div className="toShowStaffForward vh-100">
 
     {/* ------------------------------------------------------- */}
     <TableContainer className="toShowStaffForward m-2" component={Paper}>
@@ -110,7 +110,6 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
           </Table>
         </TableContainer>
         </div>
- 
   )
 }
 

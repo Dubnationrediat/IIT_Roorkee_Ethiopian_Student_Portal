@@ -77,7 +77,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
           <div>
           <input id='searchPhd' placeholder='Search using Department Name' value={filterVal} onInput={(e)=>handleFilter(e)}></input>
         </div>
-          <Table  sx={{ minWidth: 700 }} aria-label="customized table">
+          <Table  sx={{ minWidth: 700 }} aria-label="customized table" className='tables'>
             <TableHead className="background">
               <TableRow className="background">
                 <StyledTableCell className="border" align="center">Student First Name</StyledTableCell>

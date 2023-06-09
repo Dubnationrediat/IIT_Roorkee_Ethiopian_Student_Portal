@@ -59,13 +59,13 @@ if(isLoading){
 }else{
 
   return (
-    <div>
-     <div  className='forMarquee d-flex'>
+    <div className="">
+     <div  className='forMarquee'>
       <marquee className="text-dark pt-1"  behavior="scroll"  loop="infinite"  direction="left">{organizer}</marquee>
     </div>
-    <div className="col-12 fluid d-flex text-center  ">
-      <section className='profileSection'>   
-        <h3 className='text-center headerTitle m-3 '>Your Personal Profile</h3>
+    <div className="container-fluid d-md-flex  text-center ">
+      <section className='profileSection '>   
+        <h3 className='text-center headerTitle my-3 '>Your Personal Profile</h3>
   {/* <Avatar className="avatar" color={Avatar.getRandomColor('sitebase', ['red', 'green', 'blue'])} size="100" textSizeRatio={1} round={true} /> */}
         <ul className="userProfile">
           <li className=" m-5 ">{`Name:- ${user.user_first_name} ${user.user_last_name}`}</li>
@@ -82,13 +82,13 @@ if(isLoading){
         </Link>
       </section>
     
-      <section className=' container-fluid  my-1' style={{ backgroundColor: '#e0e0e0', }} >
-      <div className='d-md-flex '  >
+      <section className='all container-fluid  my-1 col-9' style={{ backgroundColor: '#e0e0e0', }} >
+      <div className="all  d-md-flex ">
       <StudentInformation />
           <Upload />
           <ShopComponent />  
         </div>
-    <div className='d-md-flex my-sm-3  ' >  
+    <div className=' d-md-flex my-sm-3  ' >  
     <Notification />
     <Resources />
         <Departments /> 

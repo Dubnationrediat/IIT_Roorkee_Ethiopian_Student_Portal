@@ -135,7 +135,7 @@ const Login = () => {
                 autoComplete="new-password"
                 onChange={handleChange}
               />
-              <span className="showHide2">
+              <span className="showHide1">
                 <Icon icon={icon} size={20} onClick={HandleIconChange} />
               </span>
               <button className="btn1">submit</button>
@@ -148,16 +148,12 @@ const Login = () => {
               Create an account?
             </Link>
           </div>
-          {/* <div className="sideNote2 container col-12 col-md-6 ms-md-2  mt-sm-5">
-              <p className="forTitle">David Rocastle Once Said:</p>
+          <div className="sideNote1 container col-12 col-md-6 ms-md-2 mt-sm-4  mt-md-0 ">
+              <p className="forTitle">David Rocastle Once Said...</p>
               <h1>Remember Who You Are, What you Are and Who you Represent!</h1>
                <img  src={Ethiopia} alt="" />
-            </div> */}
-          <div className="SignupNote  col-12 col-md-6 ms-md-2  mt-sm-1">
-            <p className="forTitle">David Rocastle Once Said...</p>
-            <h1>Remember Who You Are, What you Are and Who you Represent! </h1>
-            <img src={Ethiopia} alt="" />
-          </div>
+            </div>
+
         </div>
       </div>
     );
