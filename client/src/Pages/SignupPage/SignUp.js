@@ -185,8 +185,8 @@ const SignUp = () => {
     }
   } else {
     return (
-      <div className="container-fluid sign_page">
-      <div className="container d-md-flex mx-auto py-5 align-items-center">
+      <div className="container me-3">
+      <div className="container d-md-flex mx-auto py-5 align-items-center sign_page">
         <div className="form_wrapper col-12 col-md-6 me-md-2 p-5 d-flex flex-column">
           <p className="p11">IITR Ethiopian Students Union</p>
           <p className="p22 lorem">
@@ -383,7 +383,7 @@ const SignUp = () => {
             Already have an account?
           </Link>
         </div>
-        <div className='notePartsell p-4 m-4 col-md-4 h-100'>
+        <div className='notePartsell p-5 m-4 col-md-5 h-100 '>
        <h1 className='animate__animated animate__rubberBand animate__repeat-3 p-2 '>Please..</h1>
           <ul className='forUl'>
             <li>Fill all Input Fields correctly</li>

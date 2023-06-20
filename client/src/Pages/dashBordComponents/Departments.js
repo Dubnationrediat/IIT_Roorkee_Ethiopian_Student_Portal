@@ -36,17 +36,17 @@ function Departments() {
     const itemData = [
         {
           img: `${img1}`,
-          title: "Earth Sciences",
+          title: "Earth Scien",
           url: "https://iitr.ac.in/Departments/Earth%20Sciences%20Department/Home.html",
         },
         {
           img: `${img2}`,
-          title: " Civil Engineering",
+          title: " Civil Engine",
           url: "https://civil.iitr.ac.in/",
         },
         {
           img: `${img3}`,
-          title: "Computer Science and Engineering",
+          title: "Computer",
           url: "https://iitr.ac.in/Departments/Computer%20Science%20and%20Engineering%20Department/index.html",
         },
         {
@@ -56,7 +56,7 @@ function Departments() {
         },
         {
           img: `${img5}`,
-          title: "Applied Mathematics and Scientific Computing",
+          title: "Applied Ma",
           url: "https://iitr.ac.in/Departments/Applied%20Mathematics%20and%20Scientific%20Computing%20Department/Home%20Page.html",
         },
         {
@@ -66,32 +66,32 @@ function Departments() {
         },
         {
           img: `${img7}`,
-          title: "Architecture and Planning",
+          title: "Architecture",
           url: "https://iitr.ac.in/Departments/Architecture%20and%20Planning%20Department/index.html",
         },
         {
           img: `${img8}`,
-          title: "Biosciences and Bioengineering",
+          title: "Biosciences ",
           url: "https://iitr.ac.in/Departments/Biosciences%20and%20Bioengineering%20Department/home.html",
         },
         {
           img: `${img9}`,
-          title: "Chemical Engineering",
+          title: "Chemical Eng",
           url: "https://iitr.ac.in/Departments/Chemical%20Engineering%20Department/Chemical%20Department.html",
         },
         {
           img: `${img10}`,
-          title: "Electrical Engineering",
+          title: "Electrical E",
           url: "https://iitr.ac.in/Departments/Electrical%20Engineering%20Department/Home.html",
         },
         {
           img: `${img11}`,
-          title: "Humanities and Social Sciences",
+          title: "Humanities ",
           url: "https://hs.iitr.ac.in/",
         },
         {
           img: `${img12}`,
-          title: "Hydro and Renewable Energy",
+          title: "Hydro & Ren",
           url: "https://iitr.ac.in/Departments/Hydro%20and%20Renewable%20Energy%20Department/Home.html",
         },
         {
@@ -101,7 +101,7 @@ function Departments() {
         },
         {
           img: `${img14}`,
-          title: "Management Studies",
+          title: "Management ",
           url: "https://iitr.ac.in/Departments/Management%20Studies%20Department/index.html",
         },
         {
@@ -111,17 +111,17 @@ function Departments() {
         },
         {
           img: `${img16}`,
-          title: "Mechanical and Industrial Engineering",
+          title: "Mechanical a",
           url: "https://iitr.ac.in/Departments/Mechanical%20and%20Industrial%20Engineering%20Department/Home.html",
         },
         {
           img: `${img17}`,
-          title: "Metallurgical and Materials Engineering",
+          title: "Metallurgical",
           url: "https://iitr.ac.in/Departments/Metallurgical%20and%20Materials%20Engineering%20Department/Home.html",
         },
         {
           img: `${img18}`,
-          title: "Paper Technology",
+          title: "Paper Techno",
           url: "https://iitr.ac.in/Departments/Paper%20Technology%20Department/Home%20Page.html",
         },
         {
@@ -131,30 +131,32 @@ function Departments() {
         },
         {
           img: `${img20}`,
-          title: "Polymer and Process Engineering",
+          title: "Polymer a",
           url: "https://iitr.ac.in/Departments/Polymer%20and%20Process%20Engineering%20Department/Home.html",
         },
         {
           img: `${img21}`,
-          title: "Water Resources Development and Management",
+          title: "Water Resour",
           url: "https://iitr.ac.in/Departments/Water%20Resources%20Development%20and%20Management%20Department/Home.html",
         },
         {
           img: `${img22}`,
-          title: "Earthquake Engineering",
+          title: "Earthquake ",
           url: "https://iitr.ac.in/Departments/Earthquake%20Department/Home.html",
         },
         {
           img: `${img23}`,
-          title: "Electronics and Communication Engineering",
+          title: "Electronics ",
           url: "http://ece.iitr.ac.in/",
         },
       ];
     
       return (
-          <div className="container " border="light">
-          <Card border="gray"  className='mb-2 mb-md-0 border-bottom-0 rounded-top  'style={{
-            height: 450,width: 380,  borderRadius: 20, borderWidth: 10 , 
+          <div className="" border="light">
+          <Card border="gray "  className='mb-2 mb-md-0 main-das  border-bottom-0 rounded-top  'style={{
+            height: 450,
+            width: 320,
+            borderRadius: 20, borderWidth: 10 , 
           }}>
           <ImageList
             border="gray"

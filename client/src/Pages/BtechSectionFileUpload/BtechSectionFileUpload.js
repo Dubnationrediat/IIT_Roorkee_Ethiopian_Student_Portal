@@ -79,7 +79,7 @@ useEffect(() => {
 
 if(Response){
   return(
-<div className="forSuccessPage">
+<div className="pageNotFound my-5">
         <h1 className="thankYou">{Response.successMessage}</h1>
         <a className="thankYouAnch" href={`${Response.redirect}`}>
           {Response.message}

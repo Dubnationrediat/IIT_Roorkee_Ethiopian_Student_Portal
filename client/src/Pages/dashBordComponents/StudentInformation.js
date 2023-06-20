@@ -1,5 +1,5 @@
 import React from "react";
-import photo from "../../Images/photoCollections/aashish-singh-Cms-91q0FZM-unsplash.jpg";
+import photo from "../../Images/photoCollections/comperssed/aashish-singh-Cms-91q0FZM-unsplash-min.jpg";
 import DshboradProps from "./DshboradProps";
 import ContactsIcon from '@mui/icons-material/Contacts';
 function StudentInformation() {

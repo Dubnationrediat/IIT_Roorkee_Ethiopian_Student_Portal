@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import OTP from "../OTP/Otp.js";
 import Cookie from "universal-cookie";
+
 export const userEmail = React.createContext();
 function ForgotPassword() {
   const [userData, setuserData] = useState({
@@ -42,7 +43,7 @@ function ForgotPassword() {
   if (response) {
     if (response.confirmation == false) {
       return (
-        <div className="forSuccessPage">
+        <div className="pageNotFound">
           <h1 className="thankYou">{response.message}</h1>
           <a className="thankYouAnch" href={`${response.redirect}`}>
             {response.redirectMessage}
@@ -63,7 +64,7 @@ function ForgotPassword() {
     return (
       <div className="container-fluid login_page">
         <div className="container py-5 d-md-flex justify-content-between login_container">
-          <div className="main col-12 col-md-6 me-md-2 p-5 d-flex flex-column justify-content-center">
+          <div className="main container  h-100   my-1 p-4 col-12 col-md-6">
             <p className="p1">IITR Ethiopian Students Union</p>
             <p className="p2 text-center">
               Don't have an account?

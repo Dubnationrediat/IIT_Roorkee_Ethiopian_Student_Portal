@@ -5,7 +5,17 @@ textarea{
     resize: none;
     border-radius: 10px;
 }
+.forSuccessPages{
+    background-color: #ABC7EC;
+	width: 50%;
+	margin: 7% auto;
+	border-radius: 20px;
+	background-color: whitesmoke;
+	height: 400px;
 
+	text-align: center;
+	/* padding: 124px; */
+}
 .notificationSumbit{
     background-color: #516cf0;
 	min-width: 30%;
@@ -21,7 +31,7 @@ textarea{
 }
 
 .forForm{
-    width: 45%;
+    width:50%;
     margin: 2%;
     border-radius: 15px;
     opacity: 0.8;
@@ -46,6 +56,25 @@ hr {
   }
 
 
+ 
+  .forSuccessPage {
+    text-align: center;
+  }
+
+  .thankYou {
+    font-size: 25px;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+  }
+
+  .thankYouAnch {
+    font-size: 22px;
+    word-wrap: break-word;
+    padding: 0 ;
+    margin: 0 ;
+
+  }
+
   @media (max-width: 768px) {
     .forForm {
      min-width: 80%;
@@ -56,8 +85,30 @@ hr {
     textarea {
       height: 200px; 
     }
-    .notif h1{
-        font-size: 22px;
+    .send_Notification {
+        font-size: 2rem;
+    }
+    .forSuccessPages {
+        width: 100%;
+      }
+      .thankYou {
+        font-size: 20px;
+        margin-bottom: 10px;
+        word-wrap: break-word;
+      }
+    
+      .thankYouAnch {
+        font-size: 18px;
+        word-wrap: break-word;
+        padding: 0 !important;
+        margin: 0 !important;
+    
+      }
+    
+    
+  }
+  @media (max-width: 768px) {
+    .container {
+      width: 100%;
     }
   }
-  

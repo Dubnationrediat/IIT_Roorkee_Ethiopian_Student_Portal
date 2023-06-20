@@ -117,7 +117,7 @@ function UploadSellGoods() {
 
 if(Response){
   return(
-<div className="forSuccessPage">
+<div className="pageNotFound ">
         <h1 className="thankYou">{Response.successMessage}</h1>
         <a className="thankYouAnch" href={`${Response.redirect}`}>
           {Response.message}

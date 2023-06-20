@@ -34,7 +34,7 @@ input[type="file"] {
     background: whitesmoke;
     box-shadow: 17px 17px 34px #d0d0d0;
     opacity: 0.9;
-    max-width: 100vh;
+    max-width: 80vh;
 }
 
 .notePart{
@@ -63,7 +63,7 @@ select option:nth-child(even) {
   @media (max-width: 600px) {
     .uploadnote{
         max-width: 100%;
-     /* margin-left: 10%; */
+     
     }
     
   }

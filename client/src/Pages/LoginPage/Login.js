@@ -105,7 +105,7 @@ const Login = () => {
     }
   } else {
     return (
-      <div className="container-fluid login_page">
+      <div className="container me-5">
         <div className="container py-5 d-md-flex justify-content-between login_container">
           <div className="main col-12 col-md-6 me-md-2 p-5 d-flex flex-column justify-content-center">
             <p className="p1">IITR Ethiopian Students Union</p>
@@ -148,9 +148,9 @@ const Login = () => {
               Create an account?
             </Link>
           </div>
-          <div className="sideNote1 container col-12 col-md-6 ms-md-2 mt-sm-4  mt-md-0 ">
+          <div className="sideNote1 container col-12 col-md-5 ms-md-2 mt-sm-4 mt-md-0 ">
               <p className="forTitle">David Rocastle Once Said...</p>
-              <h1>Remember Who You Are, What you Are and Who you Represent!</h1>
+              <h1 className="title">Remember Who You Are, What you Are and Who you Represent!</h1>
                <img  src={Ethiopia} alt="" />
             </div>
 

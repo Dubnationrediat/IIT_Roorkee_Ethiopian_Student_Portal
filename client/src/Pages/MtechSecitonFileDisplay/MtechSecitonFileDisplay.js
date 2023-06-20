@@ -64,37 +64,55 @@ const handleFilter =(e)=>{
 }
   return (
  
-    <div className="toShowStaffForward vh-100">
+    <div className="mx-md-5 mx-sm-0 my-2">
     {/* ------------------------------------------------------- */}
     <TableContainer className="toShowStaffForward m-2" component={Paper}>
-          <h1 className="TitleFromStaff">M-Tech Resources</h1>
+          <h1 className="TitleFromStaff send_Notification">M-Tech Resources</h1>
           <div>
           <input id='searchPhd' placeholder='Search using course Code' value={filterVal} onInput={(e)=>handleFilter(e)}></input>
         </div>
-          <Table  sx={{ minWidth: 700 }} aria-label="customized table">
-            <TableHead className="background">
-              <TableRow className="background">
-                <StyledTableCell className="border" align="center">Department</StyledTableCell>
-                <StyledTableCell align="center">Course Name</StyledTableCell>
+        <Table className="tables justify-content-between" aria-label="customized table">
+  <TableHead className="background">
+    <TableRow className="backgrounds d-md-flex ">
+              <div>
+              <StyledTableCell className="border" align="center">Department</StyledTableCell>
+                <StyledTableCell className="border" align="center">Course Name</StyledTableCell>
+              </div>
+              <div>
                 <StyledTableCell className="border" align="center">Course Given By</StyledTableCell>
                 <StyledTableCell className="border" align="center">Course Code</StyledTableCell>
-                <StyledTableCell className="border" align="center">Document Type</StyledTableCell>
+                
+              </div>
+              <div className=''>
+                <StyledTableCell className="border " align="center">Document Type</StyledTableCell>
                 <StyledTableCell className="border" align="center">Date Of Upload</StyledTableCell>
+                  
+                </div>
+                   <div>
                 <StyledTableCell className="border" align="left">Document(for download, click on the file)</StyledTableCell>
+              </div>
               </TableRow>
             </TableHead>
             {Mtech.map((data,j) => {
           let staffDataDisplay = (
             <TableBody className="" key={j}>
-                <StyledTableRow >
+            <StyledTableRow className="backgrounds d-md-flex d-sm-block  ">
+              <div className="table-column ">
                   <StyledTableCell className="border" align="center">{data.Department}</StyledTableCell>
                   <StyledTableCell align="center">{data.Course_name}</StyledTableCell>
-                  <StyledTableCell className="border" align="center">{data.Course_given_by}</StyledTableCell>
+                </div>
+                <div className="table-column mx-md-3">
+                <StyledTableCell className="border" align="center">{data.Course_given_by}</StyledTableCell>
                   <StyledTableCell  align="center">{data.Course_Code}</StyledTableCell>
-                  <StyledTableCell className="border"  align="center">{data.Document_type}</StyledTableCell>
-                  <StyledTableCell className="border"  align="center">{data.Date_of_file_upload}</StyledTableCell>
-                  <StyledTableCell   align="center">
-                  <a href={`http://localhost:6500/${data.Document}`}  target='_self'>{data.Document}</a>
+                </div>
+                
+                
+                <div className="table-column">
+                <StyledTableCell className="border"  align="center">{data.Document_type}</StyledTableCell>
+                <StyledTableCell className="border" align="center">{data.Date_of_file_upload}</StyledTableCell>
+                </div>
+                  <StyledTableCell className="link"   align="center"  style={{ width: "30%" }}>
+                  <a className="pdf-link" href={`http://localhost:6500/${data.Document}`}  target='_self'>{data.Document}</a>
               </StyledTableCell>
                 </StyledTableRow>
             </TableBody>

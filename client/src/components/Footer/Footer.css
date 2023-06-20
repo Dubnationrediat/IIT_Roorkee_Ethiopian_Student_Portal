@@ -1,7 +1,8 @@
 .footer-wrapper {
-    /* min-width: 100%; */
+   width: 100%;
       background-color: #3b455a;
       padding-left: 30px;
+      margin: 0;
   }
   .Useful-link {
       border: 1px solid #3b455a;
@@ -47,11 +48,4 @@
     background-color: white;
     border-radius: 50%;
     margin-left: 2rem;
-  }
-  @media (min-width: 750px) and (max-width: 1800px) {
-    .footer-wrapper {
-min-width: 1650px;
-      margin-left: auto;
-      margin-right: auto;
-    }
   }

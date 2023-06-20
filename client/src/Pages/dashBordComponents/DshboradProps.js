@@ -6,18 +6,18 @@ function DshboradProps(props) {
       
         return (
           <Container>
-            <Row>
+            {/* <Row> */}
               <Col>
                 <Card
                   border="black"
-                  className="mb-2 mb-md-0   border-bottom-0 rounded-top "
+                  className="mb-2 mb-md-0 main-dash   border-bottom-0 rounded-top "
                   style={{
                     backgroundImage: `url(${imageUrl})`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                     backgroundRepeat: "no-repeat",
                     height: 450,
-                    width: 390,
+                   width: 300,
                     borderRadius: 30,
                     borderWidth: 20,
                     alignItems: "center",
@@ -35,7 +35,7 @@ function DshboradProps(props) {
                   <a className='cardButton' href={url}>{buttonLabel}</a>
                 </Card>
               </Col>
-            </Row>
+            {/* </Row> */}
           </Container>
         );
       }

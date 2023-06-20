@@ -40,7 +40,7 @@ function YemishetuCollection() {
 
   return (
     <>
-      <h1 className="text-decoration-underline ">Buy Goods</h1>
+      <h1 className="text-decoration-underline ml-5 " >Buy Goods</h1>
       <div className="inputs">
         <input
           id="searchPhd"
@@ -50,12 +50,12 @@ function YemishetuCollection() {
         ></input>
       </div>
       {
-        <div className="row container mx-auto pt-5 mb-5  goods">
+        <div className="row container mx-auto h-100 pt-5 mb-5  goods">
           {goodsColleciton.map((singleGood, i) => {
             console.log(singleGood);
             let displayGoods = (
-              <div key={i} className="col-md-3 m-4">
-                <div className="card cardAkafi">
+              <div key={i} className="col-md-3 m-4 ">
+                <div className="card cardAkafi ">
                   <img
                     src={`http://localhost:6500/${singleGood.item_photo}`}
                     className="card-img-top passedImage"

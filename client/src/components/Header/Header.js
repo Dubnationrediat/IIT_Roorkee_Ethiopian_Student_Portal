@@ -57,7 +57,7 @@ function Header() {
           <Link to="https://acad.iitr.ac.in/Default.aspx?ReturnUrl=%2fStudent%2fDefault.aspx&AspxAutoDetectCookieSupport=1">
             IITR Portal
           </Link>
-          <Link to="https://ir.iitr.ac.in/IR_Panel/" clclassName="nav-link">IR Portal</Link>
+          {/* <Link to="https://ir.iitr.ac.in/IR_Panel/" clclassName="nav-link">IR Portal</Link> */}
           <Link to="/howitworks">How It Works</Link>
           <Link to="/contribution">Contribute</Link>
           <Link to="/newInformation">Information</Link>
@@ -70,8 +70,8 @@ function Header() {
             </Link>
           )}
           {isAuth && (
-            <Link className="mt-0">
-              <Button className=" loginHeader forText " onClick={logoutHandler}>Logout</Button>
+            <Link className="">
+              <Button className=" loginHeader forText mt-0 " onClick={logoutHandler}>Logout</Button>
             </Link>
           )}
          </Nav>
