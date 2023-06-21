@@ -1,5 +1,5 @@
 .forupdateP{
-  width: 550px !important;
+  max-width: 550px !important;
   margin: 2rem auto;
 }
 select option:nth-child(even) {

@@ -3,11 +3,12 @@
 
 
 import React from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import './PageNotFound.css'
 function PageNotFound() {
   return (
-    <div className='forSuccessPage'>
-          <h1>Ooops..... Page Not Found !!</h1>
+    <div className='pageNotFound my-4'>
+          <h1 className=''>Ooops..... Page Not Found !!</h1>
           <Link className='thankYouAnch' href='/signup'>Click To SignUp</Link>
     </div>
   )

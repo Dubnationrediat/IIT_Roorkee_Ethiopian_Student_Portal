@@ -1,3 +1,4 @@
+
 .glass-panel {
   border: 3px solid yellow;
     color: #fff;
@@ -33,13 +34,16 @@
   
 
   body {
-    background: url("../../Images/photoCollections/ayaneshu-bhardwaj-Acx3N9h-QXs-unsplash.jpg") no-repeat center center fixed;
+    background: url("../../Images/photoCollections/comperssed/ayaneshu-bhardwaj-Acx3N9h-QXs-unsplash-min.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     text-align: center;
     font-family: 'Open Sans', sans-serif;
+    margin:0;
+    padding: 0 ;
+    max-width: 100%;
   }
   
   .glass-panel {  

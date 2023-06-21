@@ -8,8 +8,7 @@ import SignUp from "./Pages/SignupPage/SignUp.js";
 import ForgotPassword from "./Pages/ForgotPasword/ForgotPassword.js";
 import PageNotFound from "./Pages/PageNotFound/PageNotFound.js";
 import ForNewPassword from "./Pages/NewPassword/NewPassword.js";
-import NewPassword from "./Pages/NewPassword/NewPassword.js";
-
+import NewPassword from "./Pages/NewPassword/NewPassword.js"
 import ToUploadForPhd from "./Pages/PhdSectionFileUpload/PhdSectionFileUpload.js";
 import ToUploadForMtech from "./Pages/MtechSecitonFileUpload/MtechSecitonFileUpload.js";
 import ToUploadForBTech from "./Pages/BtechSectionFileUpload/BtechSectionFileUpload.js";
@@ -64,8 +63,8 @@ function App() {
             path="/btechSectionUpload"
             element={
               <PotectRoute>
-                {" "}
-                <ToUploadForBTech />{" "}
+             
+                <ToUploadForBTech />
               </PotectRoute>
             }
           />

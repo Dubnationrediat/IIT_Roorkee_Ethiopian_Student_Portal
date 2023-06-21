@@ -1,11 +1,11 @@
-.login_page {
+/* .login_page {
 	background-image: url("../../Images/photoCollections/ayaneshu-bhardwaj-Acx3N9h-QXs-unsplash.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-color: whitesmoke;
 	height: 150%vh;
 
-}
+} */
 .login_container {
 	min-height: 65vh;
 	align-items: center;
@@ -155,3 +155,13 @@ input[type] {
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	color: #ff8500;
 }
+@media (max-width: 320px) {
+	/* .notePartsell{
+	font-size: 10px;
+	width: 100%;
+	padding: 4px !important;
+	margin: auto 0 !important;
+	} */
+	.in1,.in111{
+		font-size: 12px;
+	}}

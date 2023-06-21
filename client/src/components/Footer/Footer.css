@@ -1,7 +1,8 @@
 .footer-wrapper {
-    min-width: 500px;
+   width: 100%;
       background-color: #3b455a;
       padding-left: 30px;
+      margin: 0;
   }
   .Useful-link {
       border: 1px solid #3b455a;

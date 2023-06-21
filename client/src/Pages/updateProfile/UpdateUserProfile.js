@@ -152,9 +152,10 @@ let url = `${server}/user/updateUserProfile/${user_id}`;
   } else {
     return (
 
-          <div className="container forupdateP vh-100   my-1 form_wrapper col-12 col-md-6 d-flex flex-column ">
-            <p className="p11">Update your profile</p>
-            <form className='my-3 vh-75' onSubmit={formSubmitter}>
+      <div className="container forupdateP h-100   my-1 form_wrapper col-12 col-md-6 ">
+        <div>
+           <p className="p11">Update your profile</p>
+            <form className='my-3 vh-75 ' onSubmit={formSubmitter}>
               <div className="FLname d-flex">
                 <input
                 required
@@ -243,8 +244,10 @@ let url = `${server}/user/updateUserProfile/${user_id}`;
                 onPaste={handlePaste}
                 placeholder="Confirm Password"
               />
-              <button className="btnSign">Update</button>
+              <button className="btnSign mb-2">Update</button>
             </form>
+        </div>
+           
           </div>
     );
   }
