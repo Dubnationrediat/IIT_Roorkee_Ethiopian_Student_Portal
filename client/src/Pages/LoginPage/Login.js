@@ -54,10 +54,9 @@ const Login = () => {
     })
       .then((data) => {
         setresponse(data.data);
-        console.log(data.data);
         let token = data.data.token;
 
-        if (data.data.confirmation === "true") {
+        if (data.data.confirmation !== "false") {
           cookies.set("token", token, {
             path: "/",
             expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
@@ -147,14 +146,20 @@ const Login = () => {
             <Link to="/signup" className="a3 a1">
               Create an account?
             </Link>
+            <Link to="/privacy" className="a33 text-center">
+            Privacy Policy
+            </Link>
+            <Link to="/developer" className="a3 a1">
+             A Word From The Developers Team
+            </Link>
           </div>
           {/* <div className="sideNote2 container col-12 col-md-6 ms-md-2  mt-sm-5">
               <p className="forTitle">David Rocastle Once Said:</p>
               <h1>Remember Who You Are, What you Are and Who you Represent!</h1>
                <img  src={Ethiopia} alt="" />
             </div> */}
-          <div className="SignupNote  col-12 col-md-6 ms-md-2  mt-sm-1">
-            <p className="forTitle">David Rocastle Once Said...</p>
+          <div className="SignupNote text-dark  col-12 col-md-6 ms-md-2  mt-sm-1">
+            <h2 className="forTitle">David Rocastle Once Said...</h2>
             <h1>Remember Who You Are, What you Are and Who you Represent! </h1>
             <img src={Ethiopia} alt="" />
           </div>

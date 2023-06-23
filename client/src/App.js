@@ -34,6 +34,11 @@ import PotectRoute from "./components/Protect/PotectRoute";
 import { axiosInstance } from "./Utility/axios";
 import { useDispatch, useSelector } from "react-redux";
 import { getUser } from "./components/Redux/Reducers/authSlice";
+import TeamsServices from "./Pages/TeamsAndServices/Teams.js";
+import Developer from "./Pages/Developers/Developers";
+import Privacy from "./Pages/PrivacyPolicy/PrivacyPolicy"
+import Terms from "./Pages/TeamsAndServices/Teams.js"
+import Admin from "./Pages/Admin/Admin.js"
 function App() {
   const dispatch = useDispatch();
   const { isLoading } = useSelector((state) => state.auth);
@@ -48,7 +53,7 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route exact path="/" element={<SignUp />} />
+          <Route exact path="/" element={<Login />} />
           <Route exact path="/home" element={<SignUp />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/signup" element={<SignUp />} />
@@ -59,6 +64,11 @@ function App() {
           <Route exact path="/forgotPass/:email" element={<Otp />} />
           <Route exact path="/ForNewPasswordOTP" element={<ForNewPassword />} />
           <Route exact path="/setNewPassword" element={<NewPassword />} />
+          <Route exact path="/teamsAndServices" element={<TeamsServices/>} />
+          <Route exact path='/developer' element={<Developer/>} />
+          <Route exact path='/privacy' element={<Privacy/>} />
+          <Route exact path='/terms' element={<Terms/>} />
+          <Route exact path='/admin' element={<Admin/>} />
           <Route
             exact
             path="/btechSectionUpload"

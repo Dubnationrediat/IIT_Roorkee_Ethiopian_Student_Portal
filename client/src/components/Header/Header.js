@@ -56,6 +56,7 @@ function Header() {
             IITR Portal
           </Link>
           <Link to="https://ir.iitr.ac.in/IR_Panel/">IR Portal</Link>
+          <Link to="/admin">Admin</Link>
           <Link to="/howitworks">How It Works</Link>
           <Link to="/contribution">Contribute</Link>
           <Link to="/newInformation">Information</Link>

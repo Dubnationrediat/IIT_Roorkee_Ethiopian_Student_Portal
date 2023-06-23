@@ -3,9 +3,11 @@ import './PhdSectionFileUpload.css'
 import axios from 'axios'
 import {Button} from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import {useSelector,useDispatch} from 'react-redux'
 function PhdSectionFileUpload() {
  const [Response, setResponse] = useState("")
  const [dataOfPhd, setUserData] = useState({
+  user_id:"",
   Course_file:"",
   Course_given_by:"",
   Course_name:"",
@@ -14,6 +16,9 @@ function PhdSectionFileUpload() {
   user_department:"",
   Course_file:""
  })
+ let {user} = useSelector((state)=>state.auth);
+ let user_id=user.userInfo_ID
+
   let formSubmitter =  (e)=>{
     e.preventDefault()
     let formData = new FormData()
@@ -23,6 +28,7 @@ function PhdSectionFileUpload() {
     formData.append("Course_Code",dataOfPhd.Course_Code)
     formData.append("Document_type",dataOfPhd.Document_type)
     formData.append("user_department",dataOfPhd.user_department)
+    formData.append("user_id",dataOfPhd.user_id)
    
     let linkToSend = `http://localhost:6500/user/phdUpload`
       axios({
@@ -49,7 +55,10 @@ function PhdSectionFileUpload() {
         break;
       case "Course_Code":
         setUserData((pre) => {
-              return { ...pre, Course_Code: e.target.value };
+              return { ...pre, 
+                Course_Code: e.target.value,
+                user_id : user_id
+              };
         });
         break;
       case "Document_type":
@@ -84,6 +93,7 @@ if(Response){
         <a className="thankYouAnch" href={`${Response.redirect}`}>
           {Response.message}
         </a>
+        <h5 className="thankYou text-dark m-2" >{Response.error}</h5>
       </div> 
   )
 }else{

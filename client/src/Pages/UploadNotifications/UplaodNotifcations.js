@@ -74,6 +74,7 @@ function UplaodNotifcations() {
   useEffect(() => {
     usersNotificationD();
   }, []);
+  
     //* For Delete
     async function  toDelete(id) {
       let deleteURL =  `http://localhost:6500/user/deleteUserNotfication/${id}`;

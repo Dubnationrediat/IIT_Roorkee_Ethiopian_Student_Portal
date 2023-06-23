@@ -118,8 +118,8 @@ input[type] {
 }
 .sideNote2 {
 	width: 600px;
-	background-color: whitesmoke;
-	opacity: 0.6;
+	background-color: #ff8500;
+	opacity: 0.8;
 	border-radius: 20px;
 }
 .sideNote2 img{

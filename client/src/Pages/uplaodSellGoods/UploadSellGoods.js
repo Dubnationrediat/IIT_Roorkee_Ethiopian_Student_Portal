@@ -27,7 +27,6 @@ function UploadSellGoods() {
  let  user_IndianNumber = user.user_Indian_number
  let  user_whatsappNumber = user.user_whatsapp_number
 
-
   let formSubmitter =  (e)=>{
     e.preventDefault()
     let formData = new FormData()

@@ -371,14 +371,20 @@ const SignUp = () => {
             </form>
             <p className="mt-md-5 mt-sm-5 text-center texttag">
               I agree to the
-              <Link to="" className="a22">
+              <Link to="/teamsAndServices" className="a22">
                 privacy policy
               </Link>
               and
-              <Link to="" className="a22">
-                terms of serivice.
+              <Link to="/developer" className="a22">
+                word from the Developers
               </Link>
             </p>
+            <Link to="/terms" className="a33 text-center">
+              Terms And Conditions
+            </Link>
+            <Link to="/privacy" className="a33 text-center">
+            Privacy Policy
+            </Link>
             <Link to="/login" className="a33 text-center">
               Already have an account?
             </Link>
@@ -387,14 +393,17 @@ const SignUp = () => {
          <h1 className='animate__animated animate__rubberBand animate__repeat-3 p-2 '>Please..</h1>
             <ul className='forUl'>
               <li>Fill all Input Fields correctly</li>
-              <li>name should only contain characters</li>
-              <li>pass a proper Email</li>
+              <li>Name should only contain characters</li>
+              <li>Pass a proper Email</li>
               <li>Ethiopian number should be filled by starting with +251</li>
               <li>Indian number should be filled by starting with +91</li>
               <li>Password should contain at list 8 Character, 1 special character, 1 upper and lower case,</li>
               <p className="forTitle text-decoration-underline">David Rocastle Once Said...</p>
               <h3>Remember Who You Are, What you Are and Who you Represent! </h3>
+              <div className="text-center">
+
                <img className="" src={Ethiopia} alt="" />
+              </div>
             </ul>
      </div>
         </div>

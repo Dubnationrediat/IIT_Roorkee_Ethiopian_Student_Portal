@@ -27,7 +27,9 @@ import goodsShowerR from "./Routes/getAllGoodsR.js";
 import phdPdfDawnloader from "./Routes/phdPdfDawnloaderR.js";
 import userProfile from "./Routes/getProfileR.js";
 import getYourSingleGoods from "./Routes/uploadGoodsR.js";
-import deleteGoods from "./Routes/uploadGoodsR.js"
+import deleteGoods from "./Routes/uploadGoodsR.js";
+import adminRouter from "./Routes/Admin.js";
+import adminPhdDelete from "./Routes/adminDeleteR.js"
 //* initializing express
 let app = express();
 // initializing dotenv
@@ -71,6 +73,8 @@ app.use("/user", goodsShowerR);
 app.use("/user", phdPdfDawnloader);
 app.use('/user',deleteGoods)
 app.use('/user',getYourSingleGoods)
+app.use('/admin',adminRouter)
+app.use('/admin',adminPhdDelete)
 
 //* connection info for database
 let connectionInfo = mysql2.createConnection({

@@ -21,7 +21,7 @@ function YemishetuCollection() {
       // console.log({ "its error": err });
     }
   };
-  console.log(goodsColleciton)
+  
   useEffect(()=>{
     dataForGoods()
     window.scrollTo(0, 0);
