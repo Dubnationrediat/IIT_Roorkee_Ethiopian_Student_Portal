@@ -10,6 +10,8 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import {Button} from 'react-bootstrap'
+// import { Link } from '@mui/material';
+import {Link} from 'react-router-dom'
 function Admin() {
   const [userForAdmin, setUserForAdmin] = useState([])
   const [searchApiData, setSearchApiData] = useState()
@@ -178,6 +180,7 @@ async function toDeleteBTech(id) {
     phdForAdmin()
 }
 
+// console.log(userForAdmin)
   return (
     <>
         <div className="toShowStaffForward vh-300">
@@ -191,22 +194,20 @@ async function toDeleteBTech(id) {
           <Table  sx={{ minWidth: 700 }} aria-label="customized table">
             <TableHead className="background">
               <TableRow className="background">
-                <StyledTableCell className="border" align="center">userInfo Id</StyledTableCell>
-                <StyledTableCell align="center">date of registration</StyledTableCell>
-                <StyledTableCell className="border" align="center">user Department</StyledTableCell>
-                <StyledTableCell className="border" align="center">user Indian number</StyledTableCell>
-                <StyledTableCell className="border" align="center">user OTP </StyledTableCell>
-                <StyledTableCell className="border" align="center">user email forProfile </StyledTableCell>
-                <StyledTableCell className="border" align="center">user email  </StyledTableCell>
+                <StyledTableCell className="border" align="center">User ID</StyledTableCell>
                 <StyledTableCell className="border" align="center">user first name </StyledTableCell>
                 <StyledTableCell className="border" align="center">user last name </StyledTableCell>
-                <StyledTableCell className="border" align="center">user password </StyledTableCell>
+                <StyledTableCell align="center">date of registration</StyledTableCell>
                 <StyledTableCell className="border" align="center">user_role </StyledTableCell>
+                <StyledTableCell className="border" align="center">user Department</StyledTableCell>
+                <StyledTableCell className="border" align="center">user Indian number</StyledTableCell>
+                <StyledTableCell className="border" align="center">user Whatsapp number</StyledTableCell>
+                <StyledTableCell className="border" align="center">user OTP </StyledTableCell>
+                <StyledTableCell className="border" align="center">user email for Profile </StyledTableCell>
+                <StyledTableCell className="border" align="center">user email  </StyledTableCell>
+                <StyledTableCell className="border" align="center">user password </StyledTableCell>
                 <StyledTableCell className="border" align="center">user_status </StyledTableCell>
                 <StyledTableCell className="border" align="center">user study section </StyledTableCell>
-                <StyledTableCell className="border" align="center">user whatsapp number </StyledTableCell>
-
-               
               </TableRow>
             </TableHead>
             {userForAdmin.map((data,j) => {
@@ -214,28 +215,29 @@ async function toDeleteBTech(id) {
             <TableBody className="" key={j}>
                 <StyledTableRow >
                   <StyledTableCell className="border" align="center">{data.userInfo_ID}</StyledTableCell>
-                  <StyledTableCell align="center">{data.date_of_registration}</StyledTableCell>
-                  <StyledTableCell className="border" align="center">{data.user_last_name}</StyledTableCell>
-                  <StyledTableCell  align="center">{data.user_Department}</StyledTableCell>
-                  <StyledTableCell  align="center">{data.user_Indian_number}</StyledTableCell>
-                  <StyledTableCell  align="center">{data.user_OTP}</StyledTableCell>
-                  <StyledTableCell  align="center">{data.user_email}</StyledTableCell>
-                  <StyledTableCell  align="center">{data.user_email_forProfile}</StyledTableCell>
-                  <StyledTableCell  align="center">{data.user_email}</StyledTableCell>
                   <StyledTableCell  align="center">{data.user_first_name}</StyledTableCell>
                   <StyledTableCell  align="center">{data.user_last_name}</StyledTableCell>
-                  <StyledTableCell  align="center">{data.user_password}</StyledTableCell>
+                  <StyledTableCell align="center">{data.date_of_registration}</StyledTableCell>
                   <StyledTableCell  align="center">{data.user_role}</StyledTableCell>
+                  <StyledTableCell  align="center">{data.user_Department}</StyledTableCell>
+                  <StyledTableCell  align="center">{data.user_Indian_number}</StyledTableCell>
+                  <StyledTableCell  align="center">{data.user_whatsapp_number}</StyledTableCell>
+                  <StyledTableCell  align="center">{data.user_OTP}</StyledTableCell>
+                  <StyledTableCell  align="center">{data.user_email_forProfile}</StyledTableCell>
+                  <StyledTableCell  align="center">{data.user_email}</StyledTableCell>
+                  <StyledTableCell  align="center">{data.user_email}</StyledTableCell>
+                  <StyledTableCell  align="center">{data.user_password}</StyledTableCell>
                   <StyledTableCell  align="center">{data.user_status}</StyledTableCell>
                   <StyledTableCell  align="center">{data.user_study_section}</StyledTableCell>
-                  <StyledTableCell  align="center">{data.user_whatsapp_number}</StyledTableCell>
-
                 </StyledTableRow>
              
                 <div className='d-flex'>
                 <Button onClick={()=>toDeleteUserInfo(data.userInfo_ID)} className='btn-danger m-3'>Delete completely</Button>
                 <Button onClick={()=>toDeleteEmailOnly(data.userInfo_ID)} className='btn-danger m-3'>Delete Email Only</Button>
-                <Button className=' m-3'>Update</Button>
+           
+                <Link className="notificationSubmit m-3" to={`/updateUserInfoAdmin/${data.userInfo_ID}`}>Update</Link>
+            
+               
                 </div>
                
             </TableBody>
@@ -287,8 +289,10 @@ async function toDeleteBTech(id) {
                    <StyledTableCell className="border"  align="center">{data.user_whatsappNumber}</StyledTableCell>
                  </StyledTableRow>
                  <div className='d-flex'>
-                 <Button onClick={()=>toDeleteGoods(data.item_id)} className='m-3'>Delete</Button>
-                <Button className='btn-danger m-3'>Update</Button>
+                 <Button onClick={()=>toDeleteGoods(data.item_id)} className='btn-danger m-3'>Delete</Button>
+                 <Link className="notificationSubmit m-3" to={`/updateUserGoodsAdmin/${data.item_id}`}>Update</Link>
+            
+
                 </div>
              </TableBody>
            )
@@ -322,8 +326,8 @@ async function toDeleteBTech(id) {
                    <StyledTableCell className="border"  align="center">{data.user_first_name}</StyledTableCell>
                  </StyledTableRow>
                  <div className='d-flex'>
-                 <Button onClick={()=>toDeleteNotification(data.notification_id)} className='m-3'>Delete</Button>
-                <Button className='btn-danger m-3'>Update</Button>
+                 <Button onClick={()=>toDeleteNotification(data.notification_id)} className='btn-danger m-3'>Delete</Button>
+                 <Link className="notificationSubmit" to={`/updateNotification/${data.notification_id}`}>Update</Link>
                 </div>
              </TableBody>
            )
@@ -350,14 +354,14 @@ async function toDeleteBTech(id) {
                  <StyledTableCell className="border" align="center">Document path</StyledTableCell>
                  <StyledTableCell className="border" align="center">Document type</StyledTableCell>
                  <StyledTableCell className="border" align="center">Section</StyledTableCell>
-                 <StyledTableCell className="border" align="center">Document type</StyledTableCell>
+                 <StyledTableCell className="border" align="center">User info id</StyledTableCell>
                </TableRow>
              </TableHead>
              {Btech.map((data,j) => {
            let staffDataDisplay = (
              <TableBody className="" key={j}>
                  <StyledTableRow >
-                   <StyledTableCell className="border" align="center">{data.Course_name}</StyledTableCell>
+                   <StyledTableCell className="border" align="center">{data.Course_Code}</StyledTableCell>
                    <StyledTableCell align="center">{data.Course_given_by}</StyledTableCell>
                    <StyledTableCell className="border" align="center">{data.Course_name}</StyledTableCell>
                    <StyledTableCell  align="center">{data.Date_of_file_upload}</StyledTableCell>
@@ -366,11 +370,13 @@ async function toDeleteBTech(id) {
                    <StyledTableCell className="border"  align="center">{data.Document_path}</StyledTableCell>
                    <StyledTableCell className="border"  align="center">{data.Document_type}</StyledTableCell>
                    <StyledTableCell className="border"  align="center">{data.Section}</StyledTableCell>
-                   <StyledTableCell className="border"  align="center">{data.Document_type}</StyledTableCell>
+                   <StyledTableCell className="border"  align="center">{data.userInfo_ID}</StyledTableCell>
                  </StyledTableRow>
                  <div className='d-flex'>
-                 <Button onClick={()=>toDeleteBTech(data.Document_id)} className='m-3'>Delete</Button>
-                <Button className='btn-danger m-3'>Update</Button>
+                 <Button onClick={()=>toDeleteBTech(data.Document_id)} className='btn-danger m-3'>Delete</Button>
+                 
+                 <Link className="notificationSubmit" to={`/updateBtechAdmin/${data.Document_id}`}>Update</Link>
+
                 </div>
              </TableBody>
            )
@@ -397,14 +403,14 @@ async function toDeleteBTech(id) {
                  <StyledTableCell className="border" align="center">Document path</StyledTableCell>
                  <StyledTableCell className="border" align="center">Document type</StyledTableCell>
                  <StyledTableCell className="border" align="center">Section</StyledTableCell>
-                 <StyledTableCell className="border" align="center">Document type</StyledTableCell>
+                 <StyledTableCell className="border" align="center">User info id</StyledTableCell>
                </TableRow>
              </TableHead>
              {Mtech.map((data,j) => {
            let staffDataDisplay = (
              <TableBody className="" key={j}>
                  <StyledTableRow >
-                   <StyledTableCell className="border" align="center">{data.Course_name}</StyledTableCell>
+                   <StyledTableCell className="border" align="center">{data.Course_Code}</StyledTableCell>
                    <StyledTableCell align="center">{data.Course_given_by}</StyledTableCell>
                    <StyledTableCell className="border" align="center">{data.Course_name}</StyledTableCell>
                    <StyledTableCell  align="center">{data.Date_of_file_upload}</StyledTableCell>
@@ -413,11 +419,11 @@ async function toDeleteBTech(id) {
                    <StyledTableCell className="border"  align="center">{data.Document_path}</StyledTableCell>
                    <StyledTableCell className="border"  align="center">{data.Document_type}</StyledTableCell>
                    <StyledTableCell className="border"  align="center">{data.Section}</StyledTableCell>
-                   <StyledTableCell className="border"  align="center">{data.Document_type}</StyledTableCell>
+                   <StyledTableCell className="border"  align="center">{data.userInfo_ID}</StyledTableCell>
                  </StyledTableRow>
                  <div className='d-flex'>
-                 <Button onClick={()=>toDeleteMTech(data.Document_id)} className='m-3'>Delete</Button>
-                <Button className='btn-danger m-3'>Update</Button>
+                 <Button onClick={()=>toDeleteMTech(data.Document_id)} className='btn-danger m-3'>Delete</Button>
+                 <Link className="notificationSubmit" to={`/updateMtechAdmin/${data.Document_id}`}>Update</Link>
                 </div>
              </TableBody>
            )
@@ -428,7 +434,7 @@ async function toDeleteBTech(id) {
          <hr/>
          <TableContainer className="toShowStaffForward m-2" component={Paper}>
            
-           <h1 className="TitleFromStaff">phd Section</h1>
+           <h1 className="TitleFromStaff">Phd Section</h1>
            <div>
 
          </div>
@@ -444,15 +450,14 @@ async function toDeleteBTech(id) {
                  <StyledTableCell className="border" align="center">Document path</StyledTableCell>
                  <StyledTableCell className="border" align="center">Document type</StyledTableCell>
                  <StyledTableCell className="border" align="center">Section</StyledTableCell>
-                 <StyledTableCell className="border" align="center">Document type</StyledTableCell>
-                 <StyledTableCell className="border" align="center">Document ID</StyledTableCell>
+                 <StyledTableCell className="border" align="center">user info id</StyledTableCell>
                </TableRow>
              </TableHead>
              {Phd.map((data,j) => {
            let staffDataDisplay = (
              <TableBody className="" key={j}>
                  <StyledTableRow >
-                   <StyledTableCell className="border" align="center">{data.Course_name}</StyledTableCell>
+                   <StyledTableCell className="border" align="center">{data.Course_Code}</StyledTableCell>
                    <StyledTableCell align="center">{data.Course_given_by}</StyledTableCell>
                    <StyledTableCell className="border" align="center">{data.Course_name}</StyledTableCell>
                    <StyledTableCell  align="center">{data.Date_of_file_upload}</StyledTableCell>
@@ -461,12 +466,13 @@ async function toDeleteBTech(id) {
                    <StyledTableCell className="border"  align="center">{data.Document_path}</StyledTableCell>
                    <StyledTableCell className="border"  align="center">{data.Document_type}</StyledTableCell>
                    <StyledTableCell className="border"  align="center">{data.Section}</StyledTableCell>
-                   <StyledTableCell className="border"  align="center">{data.Document_type}</StyledTableCell>
-                   <StyledTableCell className="border"  align="center">{data.Document_id}</StyledTableCell>
+                   <StyledTableCell className="border"  align="center">{data.userInfo_ID}</StyledTableCell>
                  </StyledTableRow>
                  <div className='d-flex'>
-                 <Button onClick={()=>toDeletePhd(data.Document_id)} className='m-3'>Delete</Button>
-                <Button className='btn-danger m-3'>Update</Button>
+                 <Button onClick={()=>toDeletePhd(data.Document_id)} className='btn-danger m-3'>Delete</Button>
+             
+                 <Link className="notificationSubmit" to={`/updatePhdAdmin/${data.Document_id}`}>Update</Link>
+
                 </div>
              </TableBody>
            )

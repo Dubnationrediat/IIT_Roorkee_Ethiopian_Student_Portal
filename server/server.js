@@ -30,6 +30,8 @@ import getYourSingleGoods from "./Routes/uploadGoodsR.js";
 import deleteGoods from "./Routes/uploadGoodsR.js";
 import adminRouter from "./Routes/Admin.js";
 import adminPhdDelete from "./Routes/adminDeleteR.js"
+import updateNotificationA from './Routes/adminUpdate.js';
+import updateUserProfileAdmin from './Routes/updateUserInfoByAdmin.js'
 //* initializing express
 let app = express();
 // initializing dotenv
@@ -54,6 +56,8 @@ app.use("/user", setNewPassWord);
 app.use("/user", userProfile);
 app.use("/admin", tableRoute);
 app.use("/admin", emailCheck);
+app.use('/admin',adminRouter)
+app.use('/admin',adminPhdDelete)
 app.use("/user", Register);
 app.use("/user", loginRoute);
 app.use("/user", forPasswordChange);
@@ -73,8 +77,9 @@ app.use("/user", goodsShowerR);
 app.use("/user", phdPdfDawnloader);
 app.use('/user',deleteGoods)
 app.use('/user',getYourSingleGoods)
-app.use('/admin',adminRouter)
-app.use('/admin',adminPhdDelete)
+app.use('/admin',updateNotificationA)
+app.use('/admin',updateUserProfileAdmin)
+
 
 //* connection info for database
 let connectionInfo = mysql2.createConnection({

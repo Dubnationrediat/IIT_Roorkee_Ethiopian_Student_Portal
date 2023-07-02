@@ -1,0 +1,19 @@
+.notificationSubmit{
+    background-color:#007bff ;
+    border-radius: 5px;
+    margin: 0.5rem;
+    width: 9rem;
+    border: #fe8402 solid 2px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 20%;
+    color: black;
+    text-decoration: none;
+    padding-top: 10px;
+}
+.notificationSubmit:hover{
+    background-color: #fe8402;
+    border: #007bff solid 2px;
+    font-size: 20px;
+    font-weight: bold;
+}

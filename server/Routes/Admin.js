@@ -10,4 +10,4 @@ adminRouter.get('/adminPhd',forAdmin_education_phd)
 adminRouter.get('/adminMtech',forAdmin_education_Mtech)
 adminRouter.get('/adminBtech',forAdmin_education_Btech)
 
-export default adminRouter;
+export default adminRouter ;

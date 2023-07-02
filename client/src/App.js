@@ -39,6 +39,14 @@ import Developer from "./Pages/Developers/Developers";
 import Privacy from "./Pages/PrivacyPolicy/PrivacyPolicy"
 import Terms from "./Pages/TeamsAndServices/Teams.js"
 import Admin from "./Pages/Admin/Admin.js"
+
+import UpdateNotificationAdmin from './Pages/Admin/UpdateNotification/UpdateNotificationAdmin'
+import UpdateUserInfoAdmin from './Pages/Admin/UpdateUserInformation/UpdateUserInformationAdmin'
+import UpdateUserGoodsAdmin from './Pages/Admin/UpdateGoods/UpdateGoodsAdmin'
+import UpdateBtechAdmin from './Pages/Admin/UpdateEducationalnfo/UpdateBtechAdmin'
+import UpdateMtechAdmin from './Pages/Admin/UpdateEducationalnfo/UpdateMtechAdmin'
+import UpdatePhdAdmin from './Pages/Admin/UpdateEducationalnfo/UpdatePhdAdmin'
+import updateNotificationAdmin from './Pages/Admin/UpdateNotification/UpdateNotificationAdmin'
 function App() {
   const dispatch = useDispatch();
   const { isLoading } = useSelector((state) => state.auth);
@@ -69,6 +77,12 @@ function App() {
           <Route exact path='/privacy' element={<Privacy/>} />
           <Route exact path='/terms' element={<Terms/>} />
           <Route exact path='/admin' element={<Admin/>} />
+          <Route exact path='/updateNotification/:id' element={<UpdateNotificationAdmin/> }/>
+          <Route exact path='/updateUserInfoAdmin/:id' element={<UpdateUserInfoAdmin/>}/>
+          <Route exact path='/updateUserGoodsAdmin/:id' element={<UpdateUserGoodsAdmin/>}/>
+          <Route exact path='/updateBtechAdmin/:id' element={<UpdateBtechAdmin/>}/>
+          <Route exact path='/updateMtechAdmin/:id' element={<UpdateMtechAdmin/>}/>
+          <Route exact path='/updatePhdAdmin/:id' element={<UpdatePhdAdmin/>}/>
           <Route
             exact
             path="/btechSectionUpload"
