@@ -9,8 +9,9 @@ import { useDispatch, useSelector } from "react-redux";
 //* to import icons
 import { Icon } from "react-icons-kit";
 import { eyeOff } from "react-icons-kit/feather/eyeOff";
-import { eye } from "react-icons-kit/feather/eye";
 
+import { eye } from "react-icons-kit/feather/eye";
+import { lock } from 'react-icons-kit/fa/lock';
 import Ethiopia from "../../Images/countryFlags/Ethiopia_flag.png";
 // *for cookie
 const cookies = new Cookies();
@@ -27,7 +28,7 @@ const Login = () => {
   });
   const dispatch = useDispatch();
   const { isAuth } = useSelector((state) => state.auth);
-  console.log(isAuth);
+
 
   // to change the icon when clicked
   const HandleIconChange = () => {
@@ -135,7 +136,7 @@ const Login = () => {
                 onChange={handleChange}
               />
               <span className="showHide2">
-                <Icon icon={icon} size={20} onClick={HandleIconChange} />
+                <Icon icon={icon} size={20} onClick={HandleIconChange}/> 
               </span>
               <button className="btn1">submit</button>
             </form>
@@ -153,11 +154,6 @@ const Login = () => {
              A Word From The Developers Team
             </Link>
           </div>
-          {/* <div className="sideNote2 container col-12 col-md-6 ms-md-2  mt-sm-5">
-              <p className="forTitle">David Rocastle Once Said:</p>
-              <h1>Remember Who You Are, What you Are and Who you Represent!</h1>
-               <img  src={Ethiopia} alt="" />
-            </div> */}
           <div className="SignupNote text-dark  col-12 col-md-6 ms-md-2  mt-sm-1">
             <h2 className="forTitle">David Rocastle Once Said...</h2>
             <h1>Remember Who You Are, What you Are and Who you Represent! </h1>

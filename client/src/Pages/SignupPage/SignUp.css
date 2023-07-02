@@ -150,3 +150,24 @@ select option:nth-child(even) {
   select option:nth-child(odd) {
 	background-color: #fff;
   }
+
+  .in11::placeholder {
+	color: white;
+	font-style: italic;
+  }
+ 
+  .in11:focus {
+	caret-color: white;
+	color: white 
+  }
+  .in11{
+	color: white;
+  }
+
+
+
+input[type] {
+    display: block !important;
+	background-color: #13293D;
+	opacity: 0.6;
+}
