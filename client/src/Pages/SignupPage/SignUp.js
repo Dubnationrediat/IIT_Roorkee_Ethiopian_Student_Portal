@@ -97,12 +97,15 @@ const SignUp = () => {
         .then((data) => {
           setresponse(data.data);
           let token = data.data.token;
-          cookies.set("token", token, {
-            path: "/",
-            expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
-          });
-          dispatch(getUser());
-          navigate("/dashbord");
+          if(token){
+            cookies.set("token", token, {
+              path: "/",
+              expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
+            });
+            dispatch(getUser());
+            navigate("/dashbord");
+          }
+ 
         })
         .catch((err) => {
           console.log(err);
@@ -252,7 +255,7 @@ const SignUp = () => {
                 autoComplete="new-password"
                 type="tel"
               >
-                <option value="not selected">
+                <option value="not">
                   Please select Your Department
                 </option>
                 <option value="Department of Earth Sciences">

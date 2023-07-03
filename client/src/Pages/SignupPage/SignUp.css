@@ -144,11 +144,12 @@ input[type] {
 }
 
 select option:nth-child(even) {
-	background-color: #f2f2f2;
+	background-color: #13293D;
+	color: black !important;
   }
   
   select option:nth-child(odd) {
-	background-color: #fff;
+	background-color: #13293D;
   }
 
   .in11::placeholder {
@@ -163,7 +164,9 @@ select option:nth-child(even) {
   .in11{
 	color: white;
   }
-
+ select option {
+	color: black;
+ }
 
 
 input[type] {
