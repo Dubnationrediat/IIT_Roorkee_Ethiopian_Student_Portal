@@ -1,135 +1,190 @@
 body {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 900;
-    font-style: initial;
-    height: 100%;
-  }
-
-  .text {
-    color: black;
-    text-align: center;
-    /* text-shadow: 6px 2px 4px white; */
-  }
-  .textUpload {
-    color: black;
-    text-align: center;
-    /* text-shadow: 6px 2px 4px white; */
-  }
-  .text1 {
-    color: white;
-    text-align: center;
-    text-shadow: 4px 2px 4px black;
-    transform: translate(-3%, -5%);
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: initial;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-  /* .button:hover {
-    background-color: #1c82e2; 
-    color: black; 
-  } */
-  h6{
-    font-weight: 400;
-    color: black; font-style: initial; font-size: 18px;
-    text-shadow: 6px 2px 4px gray;
-  }
-  h5{
-    font-weight: 700; color: white; font-size: 16px;
-    text-shadow: 6px 2px 4px gray;
-  }
-.cardButton{
+.text {
+  color: black;
+  text-align: center;
+  text-shadow: 6px 2px 4px white;
+}
+
+.textUpload {
+  color: black;
+  text-align: center;
+}
+
+.text1 {
+  color: white;
+  text-align: center;
+  text-shadow: 4px 2px 4px black;
+  transform: translate(-3%, -5%);
+}
+
+.userProfile li {
+  margin: auto;
+  width: 40vh;
+}
+
+h6 {
+  font-weight: 400;
+  color: black;
+  font-style: initial;
+  font-size: 18px;
+  text-shadow: 6px 2px 4px gray;
+}
+
+h5 {
+  font-weight: 700;
+  color: white;
+  font-size: 16px;
+  text-shadow: 6px 2px 4px gray;
+}
+
+.cardButton {
   display: inline-block;
-  background-color: #FF8500;
+  background-color: #ff8500;
   text-align: center;
   border-radius: 15px;
- padding-bottom:2px;
- padding-top: 6px;
+  padding-bottom: 2px;
+  padding-top: 6px;
   width: 250px;
   height: 40px;
   color: black;
   text-decoration: none;
   margin-bottom: 3rem;
 }
-.cardButton2{
+
+.cardButton2 {
   display: inline-block;
-  background-color: #FF8500;
+  background-color: #ff8500;
   text-align: center;
   border-radius: 15px;
- padding-bottom:2px;
- padding-top: 6px;
+  padding-bottom: 2px;
+  padding-top: 6px;
   width: 250px;
   height: 40px;
   color: black;
   text-decoration: none;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
-.cardButton3{
+
+.cardButton3 {
   display: inline-block;
-  background-color: #FF8500;
-  text-align: center;
+  background-color: #ff8500;
   border-radius: 15px;
- padding-bottom:2px;
- padding-top: 6px;
-  width: 250px;
-  height: 40px;
+  padding-bottom: 10px;
+  font-size: 15px !important;
+  padding-top: 10px;
+  min-width: 200px !important;
+  height: 50px;
   color: black;
   text-decoration: none;
   margin-bottom: 0.5rem;
 }
 
-.akafiOne{
+.akafiOne {
   margin-top: 7rem;
 }
 
-.courseMaterial{
+.courseMaterial {
   opacity: 0.8;
 }
-.info{
+
+.info {
   text-align: start;
-  font-family: 'Delicious Handrawn', cursive;
+  font-family: "Delicious Handrawn", cursive;
 }
-.headerTitle{
-  font-family: 'Anton', sans-serif;
-font-family: 'Delicious Handrawn', cursive;
-font-family: 'Pacifico', cursive;
+
+.headerTitle {
+  font-family: "Anton", sans-serif;
+  font-family: "Delicious Handrawn", cursive;
+  font-family: "Pacifico", cursive;
 }
-.profileSection{
-  width: 100%;
+
+.profileSection {
   border-right: 2px solid black;
-  background-color:#FF8500;
+  background-color: #ff8500;
   opacity: 0.8;
   border-radius: 15px;
-  margin: 0.5rem;
+  margin: 5px;
 }
-.forUpdate{
-  background-color: #2CB5E7;
+
+.forUpdate {
+  background-color: #2cb5e7;
   border-radius: 5px;
 }
-.forUpdate:hover{
-  background-color: #BEB1CE;
-}
-.dashBoard{
-  background-image: url(../../Images/photoCollections/malothu-santhosh-9jcbVG_Dzh8-unsplash.jpg);
-  background-color:#DDD0C8 ;
-  width: 100%;
-    opacity: 0.5;
-  border-radius: 15px;
-  margin-right:2rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+
+.forUpdate:hover {
+  background-color: #beb1ce;
 }
 
-.separator{
-  color: #FF8500;
+.backgray {
+  background-color: #e0e0e0;
 }
-/* .forMarquee{
-  display: inline-block;
-  width: 100%;
-} */
 
-.userProfile{
+.separator {
+  color: #ff8500;
+}
+
+.userProfile {
   color: black;
   list-style-type: none;
   text-align: start;
 }
-.headerTitle{
+
+.headerTitle {
   text-decoration: underline;
+}
+
+@media (min-width: 767px) and (max-width: 1180px) {
+  .main-dash {
+    display: block !important;
+    font-size: 10px;
+    width: 280px;
+    margin-left: 0;
+  
+  }
+  .main-das{
+
+    width: 260px !important;
+  }
+  .profileSection{
+    min-width: 700px !important;
+  }
+  .userProfile {
+    font-size: 15px;
+    margin: 50px;
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 24px !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .profileSection {
+    width: 400px !important;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 720px) {
+
+  .main-dash,.main-das
+  {
+    min-width: 400px;
+  }
+  .profileSection {
+    width: 400px !important;
+  }
+
+  .cardButton3,
+  .cardButton2 {
+    font-size: 12px;
+  }
 }

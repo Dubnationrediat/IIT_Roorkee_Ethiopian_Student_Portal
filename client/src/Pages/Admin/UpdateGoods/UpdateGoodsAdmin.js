@@ -41,10 +41,10 @@ function UpdateGoodsAdmin() {
   }).then((res)=>{
     setResponse(res.data)
   })
-  console.log(goodsToSend)
+  // console.log(goodsToSend)
   }
 
-console.log(updateGods.params_id)
+// console.log(updateGods.params_id)
   let handleChange = (e) => {
     switch (e.target.name) {
 
@@ -72,7 +72,7 @@ console.log(updateGods.params_id)
 
 if(Response){
     return(
-        <div className="forSuccessPage">
+        <div className="forSuccessPa">
         <h1 className="thankYou">{Response.successMessage}</h1>
         <a className="thankYouAnch" href={`${Response.redirect}`}>
           {Response.message}
@@ -81,10 +81,10 @@ if(Response){
       )
 }else{
   return (
-    <>
-  <h1>Update User Goods</h1>
-      <form onSubmit={formSubmitter} className=" m-5 d-flex vh-100 ">
-        <div className="m-2 d-flex">
+    <div div className="main-form-container my-3">
+<h1 className="h1">Update User Goods</h1>
+      <form onSubmit={formSubmitter} className=" formContainer ">
+        <div className="m-2 ">
           <div className='m-2'>
             <label htmlFor="user_item_name text-center">Iteam Name</label>
             <input type="text" name="user_item_name" id="user_item_name"    onChange={handleChange} />
@@ -96,11 +96,11 @@ if(Response){
           <div>
             <label htmlFor="user_item_description">user description</label>
             <textarea type="text" name="user_item_description" id="user_item_description"    onChange={handleChange} />
-            <Button type="submit" className="m-3">Update</Button>
+            <Button type="submit" className="">Update</Button>
           </div>
         </div>
       </form>
-    </>
+    </div>
   )
 }
 }

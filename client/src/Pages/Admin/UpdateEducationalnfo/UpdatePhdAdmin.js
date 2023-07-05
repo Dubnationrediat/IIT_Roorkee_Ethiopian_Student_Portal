@@ -100,7 +100,7 @@ function UpdatePhdAdmin() {
 
   if(Response){
     return(
-      <div className="forSuccessPage">
+      <div className="forSuccessPa">
       <h1 className="thankYou">{Response.successMessage}</h1>
       <a className="thankYouAnch" href={`${Response.redirect}`}>
         {Response.message}
@@ -110,9 +110,9 @@ function UpdatePhdAdmin() {
   }else{
 
   return (
-    <>  
-<h1>PhD Section Update</h1>
-<form onSubmit={formSubmitter} className=" m-5 d-flex vh-100">
+    <div div className="main-form-container my-3">
+<h1 className="h1">PhD Section Update</h1>
+<form onSubmit={formSubmitter} className="formContainer">
         <div className="m-2">
           <div className="">
             <label htmlFor="course_code">Course Code</label>
@@ -146,12 +146,12 @@ function UpdatePhdAdmin() {
             <input type="text" name="document_type" id="document_type"    onChange={handleChange} />
           </div>
           <div>
-            <Button type="submit" className="m-3">Update</Button>
+            <Button type="submit" className="">Update</Button>
           </div>
         </div>
       </form>
     
-    </>
+    </div>
 
    
 

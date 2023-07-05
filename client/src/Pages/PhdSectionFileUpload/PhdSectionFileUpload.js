@@ -3,11 +3,9 @@ import './PhdSectionFileUpload.css'
 import axios from 'axios'
 import {Button} from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import {useSelector,useDispatch} from 'react-redux'
 function PhdSectionFileUpload() {
  const [Response, setResponse] = useState("")
  const [dataOfPhd, setUserData] = useState({
-  user_id:"",
   Course_file:"",
   Course_given_by:"",
   Course_name:"",
@@ -16,9 +14,6 @@ function PhdSectionFileUpload() {
   user_department:"",
   Course_file:""
  })
- let {user} = useSelector((state)=>state.auth);
- let user_id=user.userInfo_ID
-
   let formSubmitter =  (e)=>{
     e.preventDefault()
     let formData = new FormData()
@@ -28,7 +23,6 @@ function PhdSectionFileUpload() {
     formData.append("Course_Code",dataOfPhd.Course_Code)
     formData.append("Document_type",dataOfPhd.Document_type)
     formData.append("user_department",dataOfPhd.user_department)
-    formData.append("user_id",dataOfPhd.user_id)
    
     let linkToSend = `http://localhost:6500/user/phdUpload`
       axios({
@@ -55,10 +49,7 @@ function PhdSectionFileUpload() {
         break;
       case "Course_Code":
         setUserData((pre) => {
-              return { ...pre, 
-                Course_Code: e.target.value,
-                user_id : user_id
-              };
+              return { ...pre, Course_Code: e.target.value };
         });
         break;
       case "Document_type":
@@ -88,21 +79,42 @@ useEffect(() => {
 
 if(Response){
   return(
-<div className="forSuccessPage">
+<div className="pageNotFound my-5">
         <h1 className="thankYou">{Response.successMessage}</h1>
         <a className="thankYouAnch" href={`${Response.redirect}`}>
           {Response.message}
         </a>
-        <h5 className="thankYou text-dark m-2" >{Response.error}</h5>
       </div> 
   )
 }else{
   return (
     <>
-    <div className='d-flex'>
-    <div className="col-md-6">
-    <div className="py-5 align-items-center">
-      <div className="form_wrapperB mx-auto col-12 col-md-6 p-5 d-flex flex-column">
+    <div className='d-md-flex  flex-sm-row-reverse justify-content-center uploadnote'>
+      <div className='notePart h-100 col-md-4 col-sm-12  '>
+         <h1 className='animate__animated animate__rubberBand animate__repeat-3 p-2 '>Please..</h1>
+            <ul className='forUl'>
+              <li>Fill all Input Fields </li>
+              <li>File uploading is mandatory </li>
+              <li>Check course Name Before Upload</li>
+              <li>Check course Code Before Upload</li>
+              <li>Check  Professor's Name Before Upload</li>
+              <li>Make sure your File Is In PDF Format</li>
+              <ul>
+                     <h5> Your Can Click On The Following Buttons For File Conversion</h5>
+                     <Link to="https://www.ilovepdf.com/word_to_pdf">
+
+                  <Button className='m-3'>Convert Word File To Pdf</Button>
+                     </Link>
+                     <Link to="https://tools.pdf24.org/en/images-to-pdf">
+
+                  <Button className='m-3'>Convert Image File to Pdf</Button>
+                     </Link>
+                 </ul>
+            </ul>
+        </div>
+        <div className="col-md-6 ">
+    <div className="py-5 align-items-center ">
+      <div className="form_wrapperB mx-auto col-sm-12 col-md-8 p-3 d-flex flex-column  h-100">
         <p className="p11 ">PhD Section File Uploading Portal</p>
         <form onSubmit={formSubmitter} encType="multipart/form-data">
           <div className="FLname d-flex">
@@ -197,31 +209,7 @@ if(Response){
       </div>
     </div>
   </div>
-
-     <div className='notePart p-4 m-5 col-md-4'>
-         <h1 className='animate__animated animate__rubberBand animate__repeat-3 p-2 '>Please..</h1>
-            <ul className='forUl'>
-              <li>Fill all Input Fields </li>
-              <li>File uploading is mandatory </li>
-              <li>Check course Name Before Upload</li>
-              <li>Check course Code Before Upload</li>
-              <li>Check  Professor's Name Before Upload</li>
-              <li>Make sure your File Is In PDF Format</li>
-              <ul>
-                     <h5> Your Can Click On The Following Buttons For File Conversion</h5>
-                     <Link to="https://www.ilovepdf.com/word_to_pdf">
-
-                  <Button className='m-3'>Convert Word File To Pdf</Button>
-                     </Link>
-                     <Link to="https://tools.pdf24.org/en/images-to-pdf">
-
-                  <Button className='m-3'>Convert Image File to Pdf</Button>
-                     </Link>
-                 </ul>
-            </ul>
-     </div>
     </div>
- 
     
     </>
   )
@@ -230,3 +218,4 @@ if(Response){
 }
 
 export default PhdSectionFileUpload
+

@@ -101,11 +101,11 @@ let updateEducationFile = {
     }
   };
 
- console.log(Response)
+//  console.log(Response)
 
 if(Response){
   return(
-    <div className="forSuccessPage">
+    <div className="forSuccessPa">
     <h1 className="thankYou">{Response.successMessage}</h1>
     <a className="thankYouAnch" href={`${Response.redirect}`}>
       {Response.message}
@@ -118,47 +118,42 @@ if(Response){
 
 
   return (
-    <>
-<h1>Btech Section Update</h1>
-<form onSubmit={formSubmitter} className=" m-5 d-flex vh-100">
-        <div className="m-2">
-          <div className="">
-            <label htmlFor="course_code">Course Code</label>
-            <input
-              type="text"
-              name="course_code"
-              id="code"
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            <label htmlFor="course_name">course name</label>
-            <input type="text" name="course_name" id="course_name"    onChange={handleChange}/>
-          </div>
-        </div>
-        <div className="m-2">
-          <div className="">
-            <label htmlFor="course_given_by">course given by</label>
-            <input type="text" name="course_given_by" id="course_given_by"    onChange={handleChange} />
-          </div>
-          <div>
-            <label htmlFor="Department">Department</label>
-            <input type="text" name="Department" id="Department"    onChange={handleChange} />
-          </div>
-          <div>
-            <label htmlFor="document_path">document path</label>
-            <input type="text" name="document_path" id="document_path"    onChange={handleChange} />
-          </div>
-          <div>
-            <label htmlFor="document_type">document type</label>
-            <input type="text" name="document_type" id="document_type"    onChange={handleChange} />
-          </div>
-          <div>
-            <Button type="submit" className="m-3">Update</Button>
-          </div>
-        </div>
-      </form>
-    </>
+    <div className="main-form-container my-3">
+<h1 className="h1">Btech Section Update</h1>
+<form onSubmit={formSubmitter} className="formContainer">
+  <div>
+    <div>
+      <label htmlFor="course_code">Course Code</label>
+      <input type="text" name="course_code" id="code" onChange={handleChange} />
+    </div>
+    <div>
+      <label htmlFor="course_name">Course Name</label>
+      <input type="text" name="course_name" id="course_name" onChange={handleChange} />
+    </div>
+  </div>
+  <div>
+    <div>
+      <label htmlFor="course_given_by">Course Given By</label>
+      <input type="text" name="course_given_by" id="course_given_by" onChange={handleChange} />
+    </div>
+    <div>
+      <label htmlFor="Department">Department</label>
+      <input type="text" name="Department" id="Department" onChange={handleChange} />
+    </div>
+    <div>
+      <label htmlFor="document_path">Document Path</label>
+      <input type="text" name="document_path" id="document_path" onChange={handleChange} />
+    </div>
+    <div>
+      <label htmlFor="document_type">Document Type</label>
+      <input type="text" name="document_type" id="document_type" onChange={handleChange} />
+    </div>
+    <div>
+      <button type="submit" class="">Update</button>
+    </div>
+  </div>
+</form>
+    </div>
   )
 }
 }

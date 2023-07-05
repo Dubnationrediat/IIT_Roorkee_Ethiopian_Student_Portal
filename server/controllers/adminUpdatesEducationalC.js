@@ -8,7 +8,7 @@ let updateEducationAll = (req,res)=>{
     let updatedBtech = `UPDATE educationaldocument SET Department='${Department}',Section='Btech',Document_type='${document_type}',Course_Code='${course_code}',Course_name='${course_name}',Course_given_by='${course_given_by}',Document_path='${document_path}' WHERE Document_id='${params_id}' `;
     connectionInfo.query(updatedBtech,(err)=>{
         if(err){
-            console.log(err)
+            // console.log(err)
         }else{
             res.send({
                 successMessage: "Btech Section updated successfully",
@@ -22,7 +22,7 @@ let updateEducationAll = (req,res)=>{
     let updatedMtech = `UPDATE educationaldocument SET Department='${Department}',Section='Mtech',Document_type='${document_type}',Course_Code='${course_code}',Course_name='${course_name}',Course_given_by='${course_given_by}',Document_path='${document_path}' WHERE Document_id='${params_id}' `;
     connectionInfo.query(updatedMtech,(err)=>{
         if(err){
-            console.log(err)
+            // console.log(err)
         }else{
             res.send({
                 successMessage: "Mtech Section updated successfully",

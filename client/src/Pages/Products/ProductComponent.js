@@ -4,11 +4,11 @@ import ProductProps from '../Products/ProductProps';
 const ProductsComponent = () => {
 
   const handleUpdate = () => {
-    console.log('Update button clicked');
+    // console.log('Update button clicked');
   };
 
   const handleDelete = () => {
-    console.log('Delete button clicked');
+    // console.log('Delete button clicked');
   };
 
   return (

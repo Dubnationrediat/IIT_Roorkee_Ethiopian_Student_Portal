@@ -74,7 +74,6 @@ function UplaodNotifcations() {
   useEffect(() => {
     usersNotificationD();
   }, []);
-  
     //* For Delete
     async function  toDelete(id) {
       let deleteURL =  `http://localhost:6500/user/deleteUserNotfication/${id}`;
@@ -88,17 +87,19 @@ function UplaodNotifcations() {
 
   if (Response) {
     return (
-      <div className="forSuccessPage">
-        <h1 className="thankYou">{Response.successMessage}</h1>
-        <a className="thankYouAnch" href={`${Response.redirect}`}>
-          {Response.message}
-        </a>
-      </div>
+      <div className="forSuccessPages  w-80 ">
+      <h1 className="thankYou">{Response.successMessage}</h1>
+      <a className="thankYouAnch" href={`${Response.redirect}`}>
+        {Response.message}
+      </a>
+  
+    </div>
+    
     );
   } else {
     return (
       <>
-        <h1 className="text-decoration-underline">Send Notification</h1>
+        <h1 className="text-decoration-underline send_Notification">Send Notification</h1>
         <form onSubmit={submitHandler} className="forForm mx-auto bg-warning">
           <textarea
             name="user_notification_message"
@@ -117,20 +118,24 @@ function UplaodNotifcations() {
           {userNotification.map((data, i) => {
             let yourNotification = (
               <div
-                key={i}
-                className=" m-5 rounded border border-warning d-flex justify-content-around container mx-auto bg-white"
+              key={i}
+              className="m-5 rounded border border-warning d-flex flex-column justify-content-center align-items-center container mx-auto bg-white"
+            >
+              <h2 className="p-2 text-center">
+                <b>Your Notification</b> : {data.user_notification_message} |{" "}
+                <b>Notification Date</b> : {data.date_of_notification}{" "}
+              </h2>
+              <Button
+                onClick={() => toDelete(data.notification_id)}
+                variant="danger"
+                className="mt-3"
               >
-                <h2 className="p-2">
-                  <b>Your Notification</b> : {data.user_notification_message} |{" "}
-                  <b>Notification Date</b> : {data.date_of_notification}{" "}
-                </h2>
-                <Button
-                  onClick={() => toDelete(data.notification_id)}
-                  variant="danger"
-                >
-                  Delete Notification
-                </Button>
-              </div>
+                Delete Notification
+              </Button>
+            
+          
+            </div>
+            
             );
             return yourNotification;
           })}

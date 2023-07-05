@@ -9,9 +9,8 @@ import { useDispatch, useSelector } from "react-redux";
 //* to import icons
 import { Icon } from "react-icons-kit";
 import { eyeOff } from "react-icons-kit/feather/eyeOff";
-
 import { eye } from "react-icons-kit/feather/eye";
-import { lock } from 'react-icons-kit/fa/lock';
+
 import Ethiopia from "../../Images/countryFlags/Ethiopia_flag.png";
 // *for cookie
 const cookies = new Cookies();
@@ -28,7 +27,7 @@ const Login = () => {
   });
   const dispatch = useDispatch();
   const { isAuth } = useSelector((state) => state.auth);
-
+  // console.log(isAuth);
 
   // to change the icon when clicked
   const HandleIconChange = () => {
@@ -55,9 +54,10 @@ const Login = () => {
     })
       .then((data) => {
         setresponse(data.data);
+        // console.log(data.data);
         let token = data.data.token;
 
-        if (data.data.confirmation !== "false") {
+        if (data.data.confirmation === "true") {
           cookies.set("token", token, {
             path: "/",
             expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
@@ -95,8 +95,9 @@ const Login = () => {
       // return navigate("/dashboard");
       // } else {
       return (
-        <div className="forSuccessPage">
+        <div className="forSuccessPa">
           <h1 className="thankYou">{response.message}</h1>
+        
           <a className="thankYouAnch" href={response.redirect}>
             {response.redirectMessage}
           </a>
@@ -105,12 +106,12 @@ const Login = () => {
     }
   } else {
     return (
-      <div className="container-fluid login_page">
+      <div className="container me-5">
         <div className="container py-5 d-md-flex justify-content-between login_container">
           <div className="main col-12 col-md-6 me-md-2 p-5 d-flex flex-column justify-content-center">
             <p className="p1">IITR Ethiopian Students Union</p>
             <p className="p2 text-center">
-              Don't have an account?
+              Don't have an account? <br />
               <Link to="/signup" className="a3">
                 {" "}
                 Create a new account
@@ -135,30 +136,25 @@ const Login = () => {
                 autoComplete="new-password"
                 onChange={handleChange}
               />
-              <span className="showHide2">
-                <Icon icon={icon} size={20} onClick={HandleIconChange}/> 
+              <span className="showHide1">
+                <Icon icon={icon} size={20} onClick={HandleIconChange} className="iconss"/>
               </span>
               <button className="btn1">submit</button>
             </form>
 
             <Link to="/forgotPass" className="a3 a1">
-              Forgot password ? click here
-            </Link>
+              Forgot password ?
+            </Link> <br />
             <Link to="/signup" className="a3 a1">
-              Create an account?
-            </Link>
-            <Link to="/privacy" className="a33 text-center">
-            Privacy Policy
-            </Link>
-            <Link to="/developer" className="a3 a1">
-             A Word From The Developers Team
+            Click Here To Create an Account?
             </Link>
           </div>
-          <div className="SignupNote text-dark  col-12 col-md-6 ms-md-2  mt-sm-1">
-            <h2 className="forTitle">David Rocastle Once Said...</h2>
-            <h1>Remember Who You Are, What you Are and Who you Represent! </h1>
-            <img src={Ethiopia} alt="" />
-          </div>
+          <div className="sideNote1 container col-12 col-md-5 ms-md-2 mt-sm-4 mt-md-0 ">
+              <p className="forTitle">David Rocastle Once Said...</p>
+              <h1 className="title">Remember Who You Are, What you Are and Who you Represent!</h1>
+               <img  src={Ethiopia} alt="" />
+            </div>
+
         </div>
       </div>
     );

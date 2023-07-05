@@ -147,7 +147,7 @@ function UpdateUserInformationAdmin() {
 // console.log(updateInfo)
 if(Response){
   return(
-    <div className="forSuccessPage">
+    <div className="forSuccessPa">
     <h1 className="thankYou">{Response.successMessage}</h1>
     <a className="thankYouAnch" href={`${Response.redirect}`}>
       {Response.message}
@@ -156,9 +156,9 @@ if(Response){
   )
 }else{
   return (
-    <>
-    <h1>Update User Information</h1>
-      <form onSubmit={formSubmitter} className=" m-5 d-flex vh-100">
+    <div className="main-form-container my-3">
+    <h1 className="h1">Update User Information</h1>
+      <form onSubmit={formSubmitter} className="formContainer">
         <div className=" m-2">
           <div>
             <label htmlFor="user_first_name">user First Name</label>
@@ -235,11 +235,11 @@ if(Response){
           <div>
             <label htmlFor="user_status">user status</label>
             <input type="text" name="user_status" id="user_status"    onChange={handleChange} />
-            <Button type="submit" className="m-3">Update</Button>
+            <Button type="submit" className="">Update</Button>
           </div>
         </div>
       </form>
-    </>
+    </div>
   );
 }
 }

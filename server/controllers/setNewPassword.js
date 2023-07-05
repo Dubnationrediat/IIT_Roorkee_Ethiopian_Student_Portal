@@ -8,10 +8,10 @@ let setNewPassWord = (req, res) => {
   // console.log("from password rest !");
   // const { OTP, EncrypedEmail } = req.body;
 
-  console.log(req.body);
+  // console.log(req.body);
 
   let emailDecoded = JWT.verify(EncrypedEmail, "IITPasswordEncrypted");
-  console.log(new_password_two, new_password_one, emailDecoded);
+  // console.log(new_password_two, new_password_one, emailDecoded);
 
   let passwordValidator =
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;

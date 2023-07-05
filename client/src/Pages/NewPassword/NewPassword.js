@@ -33,12 +33,12 @@ function NewPassword() {
         data: newEmail,
       })
         .then((data) => {
-          console.log(data);
-          console.log(newEmail);
+          // console.log(data);
+          // console.log(newEmail);
           setemailResponse(data.data);
         })
         .catch((err) => {
-          console.log(err);
+          // console.log(err);
         });
     } else {
       return setemailResponse({
@@ -84,18 +84,19 @@ function NewPassword() {
 
   if (emailResponse) {
     return (
-      <div className="forSuccessPage">
+      <div className="pageNotFound my-5">
         <h1 className="thankYou">{emailResponse.successMessage}</h1>
         <a className="thankYouAnch" href={`${emailResponse.redirect}`}>
           {emailResponse.message}
         </a>
       </div>
+
     );
   } else {
     return (
       <div className="container-fluid login_page">
         <div className="container py-5 d-md-flex justify-content-between login_container">
-          <div className="main col-12 col-md-6 me-md-2 p-5 d-flex flex-column justify-content-center">
+          <div className="main container  h-100   my-1 p-4 col-12 col-md-6 justify-content-center">
             <p className="p1">Update Password</p>
             <p className="p2 text-center">
               You Want To LogIn?
@@ -116,7 +117,7 @@ function NewPassword() {
                 onChange={handle_change}
               />
               <span className="showHide ">
-                <Icon icon={icon} size={20} onClick={HandleIconChange} />
+                <Icon icon={icon} size={22} onClick={HandleIconChange} className="iconss"/>
               </span>
               <input
                 className="in111"

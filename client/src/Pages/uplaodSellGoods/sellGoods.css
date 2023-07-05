@@ -13,4 +13,10 @@
     border-radius: 15px;
 }
 
-
+@media (max-width: 600px) {
+    .forUl{
+        max-width: 95%;
+     /* margin-left: 10%; */
+    }
+    
+  }

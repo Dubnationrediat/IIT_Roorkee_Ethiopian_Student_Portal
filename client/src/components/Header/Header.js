@@ -3,11 +3,10 @@ import "./Header.css";
 import logo from "../../Images/logoIcon/IITR175.png";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { Button } from "react-bootstrap";
 import { logout } from "../Redux/Reducers/authSlice";
 import {useNavigate } from "react-router-dom";
 import Cookies from "universal-cookie";
-
+import { Button, Container, Nav, Navbar } from "react-bootstrap"
 function Header() {
   const [display, setDisplay] = useState("Sign Up");
   const [route, setRoute] = useState("signup");
@@ -49,31 +48,38 @@ function Header() {
         <div className="header__image">
           <img src={logo} alt="IIT ROORKEE logo" />
         </div>
-        <button className="ic d-sm-block d-md-none">☰</button>
-        <div className="d-flex   innerContainer2 justify-content-between d-none d-md-block">
-          {/* <Link to="/">Home</Link> */}
+        <div className="d-flex   innerContainer2 justify-content-between d-md-block">
+           <Navbar bg="light" expand="lg">
+          <Container fluid>
+            <Navbar.Toggle aria-controls="navbarScroll" />
+            <Navbar.Collapse id="navbarScroll">
+              <Nav className="ms-auto mt-4 hnav" navbarScroll>
           <Link to="https://acad.iitr.ac.in/Default.aspx?ReturnUrl=%2fStudent%2fDefault.aspx&AspxAutoDetectCookieSupport=1">
             IITR Portal
           </Link>
-          <Link to="https://ir.iitr.ac.in/IR_Panel/">IR Portal</Link>
-          <Link to="/admin">Admin</Link>
+          {/* <Link to="https://ir.iitr.ac.in/IR_Panel/" clclassName="nav-link">IR Portal</Link> */}
           <Link to="/howitworks">How It Works</Link>
           <Link to="/contribution">Contribute</Link>
+          <Link to="/admin">Admin</Link>
           <Link to="/newInformation">Information</Link>
-          <Link to={isAuth ? "/dashbord" : "/login"} className="loginHeader">
+          <Link to={isAuth ? "/dashbord" : "/login"} className="loginHeader mt-0">
             {isAuth ? "Dashboard" : "Login"}
           </Link>
           {!isAuth && (
-            <Link  to={"/signup"}>
-              <Button className="loginHeader forText">SignUp</Button>
+                    <Link to={"/signup"} className="mt-0" >
+              <Button className="loginHeader forText m-0">SignUp</Button>
             </Link>
           )}
           {isAuth && (
-            <Link>
-              <Button className=" loginHeader forText" onClick={logoutHandler}>Logout</Button>
+            <Link className="">
+              <Button className=" loginHeader forText mt-0 " onClick={logoutHandler}>Logout</Button>
             </Link>
           )}
-       
+         </Nav>
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>
+        
         </div>
       </div>
     </div>

@@ -49,7 +49,7 @@ function UpdateNotificationAdmin() {
 
 if(Response){
   return(
-    <div className="forSuccessPage">
+    <div className="forSuccessPa">
     <h1 className="thankYou">{Response.successMessage}</h1>
     <a className="thankYouAnch" href={`${Response.redirect}`}>
       {Response.message}
@@ -58,17 +58,17 @@ if(Response){
   )
 }else{
   return (
-    <>
-    <h1>Update User Information</h1>
-      <form onSubmit={formSubmitter} className=" m-5 d-flex vh-100">  
+    <div div className="main-form-container my-3">
+    <h1 className="h1">Update User Information</h1>
+      <form onSubmit={formSubmitter} className="formContainer">  
       <div>    
             <label htmlFor="user_notification">updated Message</label>
             <textarea type="text" name="user_notification" id="user_notification" onChange={handleChange} />
-            <Button type="submit" className="m-3">Update</Button>
+            <Button type="submit" className="">Update</Button>
       </div>
          
       </form>
-    </>
+    </div>
   )
 }
 }

@@ -183,59 +183,84 @@ async function toDeleteBTech(id) {
 // console.log(userForAdmin)
   return (
     <>
-        <div className="toShowStaffForward vh-300">
+        <div className="mx-sm-0 my-2">
     {/* ------------------------------------------------------- */}
-        <TableContainer className="toShowStaffForward m-2" component={Paper}>
+        <TableContainer className="toShowStaffForward" component={Paper}>
            
-          <h1 className="TitleFromStaff">USERS INFORMATION</h1>
+          <h1  className="h1 TitleFromStaff">USERS INFORMATION</h1>
           <div>
         
         </div>
-          <Table  sx={{ minWidth: 700 }} aria-label="customized table">
+          <Table  aria-label="customized table"  className="tables " >
             <TableHead className="background">
-              <TableRow className="background">
+              <TableRow className="background d-md-flex ">
+                <div >
                 <StyledTableCell className="border" align="center">User ID</StyledTableCell>
-                <StyledTableCell className="border" align="center">user first name </StyledTableCell>
-                <StyledTableCell className="border" align="center">user last name </StyledTableCell>
-                <StyledTableCell align="center">date of registration</StyledTableCell>
-                <StyledTableCell className="border" align="center">user_role </StyledTableCell>
-                <StyledTableCell className="border" align="center">user Department</StyledTableCell>
+                  <StyledTableCell className="border" align="center">user first name </StyledTableCell>
+                  <StyledTableCell className="border" align="center">user last name </StyledTableCell>
+               
+                </div>
+              <div>
+              <StyledTableCell align="center">date of registration</StyledTableCell>
+                  <StyledTableCell className="border" align="center">user_role </StyledTableCell>
+                  <StyledTableCell className="border" align="center">user Department</StyledTableCell>
+              </div>
+             <div>
+          
                 <StyledTableCell className="border" align="center">user Indian number</StyledTableCell>
-                <StyledTableCell className="border" align="center">user Whatsapp number</StyledTableCell>
-                <StyledTableCell className="border" align="center">user OTP </StyledTableCell>
+                  <StyledTableCell className="border" align="center">user Whatsapp number</StyledTableCell>
+                  <StyledTableCell className="border" align="center">user OTP </StyledTableCell>
+             </div>
+
+                <div>
+               
                 <StyledTableCell className="border" align="center">user email for Profile </StyledTableCell>
                 <StyledTableCell className="border" align="center">user email  </StyledTableCell>
-                <StyledTableCell className="border" align="center">user password </StyledTableCell>
-                <StyledTableCell className="border" align="center">user_status </StyledTableCell>
+                  <StyledTableCell className="border" align="center">user password </StyledTableCell>
+                  <StyledTableCell className="border" align="center">user_status </StyledTableCell>
                 <StyledTableCell className="border" align="center">user study section </StyledTableCell>
+                </div>
+            
               </TableRow>
             </TableHead>
             {userForAdmin.map((data,j) => {
           let staffDataDisplay = (
             <TableBody className="" key={j}>
-                <StyledTableRow >
-                  <StyledTableCell className="border" align="center">{data.userInfo_ID}</StyledTableCell>
-                  <StyledTableCell  align="center">{data.user_first_name}</StyledTableCell>
+              <StyledTableRow className="backgrounds d-md-flex d-sm-block  ">
+                <div className="table-column ">
+                  {/* <div > */}
+                    <StyledTableCell className="border" align="center">{data.userInfo_ID}</StyledTableCell>
+                  <StyledTableCell align="center">{data.user_first_name}</StyledTableCell>
                   <StyledTableCell  align="center">{data.user_last_name}</StyledTableCell>
                   <StyledTableCell align="center">{data.date_of_registration}</StyledTableCell>
-                  <StyledTableCell  align="center">{data.user_role}</StyledTableCell>
+                {/* </div> */}
+                </div>
+           
+              <div>
+                  {/* <div className="table-column "> */}
+                    <StyledTableCell align="center">{data.user_role}</StyledTableCell>
                   <StyledTableCell  align="center">{data.user_Department}</StyledTableCell>
-                  <StyledTableCell  align="center">{data.user_Indian_number}</StyledTableCell>
-                  <StyledTableCell  align="center">{data.user_whatsapp_number}</StyledTableCell>
+                    <StyledTableCell align="center">{data.user_Indian_number}</StyledTableCell>
+                     <StyledTableCell  align="center">{data.user_whatsapp_number}</StyledTableCell>
                   <StyledTableCell  align="center">{data.user_OTP}</StyledTableCell>
-                  <StyledTableCell  align="center">{data.user_email_forProfile}</StyledTableCell>
+                
+                    <StyledTableCell align="center">{data.user_email_forProfile}</StyledTableCell>
                   <StyledTableCell  align="center">{data.user_email}</StyledTableCell>
                   <StyledTableCell  align="center">{data.user_email}</StyledTableCell>
-                  <StyledTableCell  align="center">{data.user_password}</StyledTableCell>
+                  <StyledTableCell align="center">{data.user_password}</StyledTableCell>
                   <StyledTableCell  align="center">{data.user_status}</StyledTableCell>
-                  <StyledTableCell  align="center">{data.user_study_section}</StyledTableCell>
+                    <StyledTableCell align="center">{data.user_study_section}</StyledTableCell>
+                 
+              </div>
+             
+             
                 </StyledTableRow>
              
-                <div className='d-flex'>
-                <Button onClick={()=>toDeleteUserInfo(data.userInfo_ID)} className='btn-danger m-3'>Delete completely</Button>
-                <Button onClick={()=>toDeleteEmailOnly(data.userInfo_ID)} className='btn-danger m-3'>Delete Email Only</Button>
+                <div className='d-flex mx-0'>
+                <Button onClick={()=>toDeleteUserInfo(data.userInfo_ID)} className='btn-danger m-md-3 m-1'>Delete completely</Button>
+                <Button onClick={()=>toDeleteEmailOnly(data.userInfo_ID)} className='btn-danger m-md-3 m-1'>Delete Email Only</Button>
            
-                <Link className="notificationSubmit m-3" to={`/updateUserInfoAdmin/${data.userInfo_ID}`}>Update</Link>
+                <Link className="notificationSubmit m-md-3 m-1 " to={`/updateUserInfoAdmin/${data.userInfo_ID}`}>Update</Link>
             
                
                 </div>
@@ -249,47 +274,74 @@ async function toDeleteBTech(id) {
         <hr/>
         <TableContainer className="toShowStaffForward m-2" component={Paper}>
            
-           <h1 className="TitleFromStaff">USERS UPLOADED GOODS</h1>
+           <h1 className="TitleFromStaff h1">USERS UPLOADED GOODS</h1>
            <div>
          
          </div>
-           <Table  sx={{ minWidth: 700 }} aria-label="customized table">
+           <Table className="tables justify-content-between" aria-label="customized table">
              <TableHead className="background">
-               <TableRow className="background">
-                 <StyledTableCell className="border" align="center">Date of notification</StyledTableCell>
-                 <StyledTableCell align="center">Item description</StyledTableCell>
-                 <StyledTableCell className="border" align="center">Item id</StyledTableCell>
-                 <StyledTableCell className="border" align="center">Item name</StyledTableCell>
-                 <StyledTableCell className="border" align="center">Item photo name</StyledTableCell>
-                 <StyledTableCell className="border" align="center">item price</StyledTableCell>
-                 <StyledTableCell className="border" align="center">status check</StyledTableCell>
-                 <StyledTableCell className="border" align="center">userInfo ID</StyledTableCell>
-                 <StyledTableCell className="border" align="center">user Indian Number</StyledTableCell>
-                 <StyledTableCell className="border" align="center">user Last name</StyledTableCell>
-                 <StyledTableCell className="border" align="center">user first name</StyledTableCell>
-                 <StyledTableCell className="border" align="center">user whatsapp Number</StyledTableCell>
+              <TableRow className="background d-md-flex">
+                <div className=''>
+                <StyledTableCell className="border px-md-5 py-md-4" align="center">Date of notification</StyledTableCell>
+                 <StyledTableCell align="center ">Item description</StyledTableCell>
+                 <StyledTableCell className="border px-md-5 " align="center">Item id</StyledTableCell>
+                </div>
+                <div>
+                <StyledTableCell className="border px-md-5 " align="center">Item name</StyledTableCell>
+                 <StyledTableCell className="border px-md-5 " align="center">Item photo name</StyledTableCell>
+                 <StyledTableCell className="border px-md-5" align="center">item price</StyledTableCell>
+                {/* </div>
+                <div> */}
+                <StyledTableCell className="border px-md-5" align="center">status check</StyledTableCell>
+                 <StyledTableCell className="border px-md-3" align="center">userInfo ID</StyledTableCell>
+                </div>
+                <div>
+                <StyledTableCell className="border px-md-4" align="center">user Indian Number</StyledTableCell>
+                 <StyledTableCell className="border px-md-4" align="center">user Last name</StyledTableCell>
+                 <StyledTableCell className="border px-md-3" align="center">user first name</StyledTableCell>
+                 <StyledTableCell className="border px-md-3" align="center">user whatsapp Number</StyledTableCell>
                 
+                </div>
+               
+                 
+                
+               
                </TableRow>
              </TableHead>
              {goods.map((data,j) => {
            let staffDataDisplay = (
              <TableBody className="" key={j}>
-                 <StyledTableRow >
+               <StyledTableRow className="backgrounds d-md-flex d-sm-block  ">
+               <div className="table-column ">
                    <StyledTableCell className="border" align="center">{data.date_of_notification}</StyledTableCell>
+                   
                    <StyledTableCell align="center">{data.item_description}</StyledTableCell>
                    <StyledTableCell className="border" align="center">{data.item_id}</StyledTableCell>
-                   <StyledTableCell  align="center">{data.item_name}</StyledTableCell>
-                   <StyledTableCell className="border"  align="center">{data.item_photo}</StyledTableCell>
+                 </div>
+                 <div className="table-column mx-md-3">
+                 <StyledTableCell  align="center">{data.item_name}</StyledTableCell>
+                   <StyledTableCell className="border" align="center">{data.item_photo}</StyledTableCell>
                    <StyledTableCell className="border"  align="center">{data.item_price}</StyledTableCell>
-                   <StyledTableCell className="border"  align="center">{data.status_check}</StyledTableCell>
+                 </div>
+                 <div className="table-column">
+                 <StyledTableCell className="border"  align="center">{data.status_check}</StyledTableCell>
                    <StyledTableCell className="border"  align="center">{data.userInfo_ID}</StyledTableCell>
                    <StyledTableCell className="border"  align="center">{data.user_IndianNumber}</StyledTableCell>
-                   <StyledTableCell className="border"  align="center">{data.user_firstLast}</StyledTableCell>
+                 </div>
+                 <div className="table-column">
+                    
+                 <StyledTableCell className="border"  align="center">{data.user_firstLast}</StyledTableCell>
                    <StyledTableCell className="border"  align="center">{data.user_firstName}</StyledTableCell>
                    <StyledTableCell className="border"  align="center">{data.user_whatsappNumber}</StyledTableCell>
+                 </div>
+                
+                   
+                 
+                  
+                
                  </StyledTableRow>
                  <div className='d-flex'>
-                 <Button onClick={()=>toDeleteGoods(data.item_id)} className='btn-danger m-3'>Delete</Button>
+                 <Button onClick={()=>toDeleteGoods(data.item_id)} className='btn-danger m-3 px-5'>Delete</Button>
                  <Link className="notificationSubmit m-3" to={`/updateUserGoodsAdmin/${data.item_id}`}>Update</Link>
             
 
@@ -302,32 +354,42 @@ async function toDeleteBTech(id) {
          </TableContainer>
         <hr/>
           <TableContainer className="toShowStaffForward m-2" component={Paper}>
-           <h1 className="TitleFromStaff">USERS Notifications</h1>
+           <h1 className="TitleFromStaff h1">USERS Notifications</h1>
            <div>
          </div>
-           <Table  sx={{ minWidth: 700 }} aria-label="customized table">
-             <TableHead className="background">
-               <TableRow className="background">
-                 <StyledTableCell className="border" align="center">notification ID</StyledTableCell>
+         <Table className="tables tabel2  "  aria-label="customized table  mx-md-5">
+             <TableHead className="background  mx-md-5">
+              <TableRow className="background d-md-flex">
+                <div>
+                <StyledTableCell className="border px-md-5" align="center">notification ID</StyledTableCell>
                  <StyledTableCell align="center">userInfo ID</StyledTableCell>
-                 <StyledTableCell className="border" align="center">user notification message</StyledTableCell>
-                 <StyledTableCell className="border" align="center">Date of notification</StyledTableCell>
-                 <StyledTableCell className="border" align="center">Notification By</StyledTableCell>
+                 <StyledTableCell className="border  px-md-5" align="center">user notification message</StyledTableCell>
+                </div>
+                <div>
+                <StyledTableCell className="border px-md-5" align="center">Date of notification</StyledTableCell>
+                 <StyledTableCell className="border  px-md-5" align="center">Notification By</StyledTableCell>
+                </div>
+             
                </TableRow>
              </TableHead>
              {notifications.map((data,j) => {
            let staffDataDisplay = (
              <TableBody className="" key={j}>
-                 <StyledTableRow >
-                   <StyledTableCell className="border" align="center">{data.notification_id}</StyledTableCell>
-                   <StyledTableCell align="center">{data.userInfo_ID}</StyledTableCell>
-                   <StyledTableCell className="border" align="center">{data.user_notification_message}</StyledTableCell>
-                   <StyledTableCell  align="center">{data.date_of_notification}</StyledTableCell>
-                   <StyledTableCell className="border"  align="center">{data.user_first_name}</StyledTableCell>
+               <StyledTableRow className="backgrounds  d-sm-block  ">
+               <div className="mx-md-5">
+               <StyledTableCell className="border px-md-5" align="center">{data.notification_id}</StyledTableCell>
+                   <StyledTableCell align="center" className='px-md-5'>{data.userInfo_ID}</StyledTableCell>
+                   <StyledTableCell className="border px-md-5 " align="center">{data.user_notification_message}</StyledTableCell>
+                   <StyledTableCell  align="center" className='px-md-5'>{data.date_of_notification}</StyledTableCell>
+                   <StyledTableCell className="border px-md-5"  align="center">{data.user_first_name}</StyledTableCell>
+                 </div>
+                  
                  </StyledTableRow>
                  <div className='d-flex'>
-                 <Button onClick={()=>toDeleteNotification(data.notification_id)} className='btn-danger m-3'>Delete</Button>
-                 <Link className="notificationSubmit" to={`/updateNotification/${data.notification_id}`}>Update</Link>
+                 <Button onClick={() => toDeleteNotification(data.notification_id)} className='btn-danger btn-danger1 m-md-2'>Delete</Button>
+                 
+                 <Link className="notificationSubmit " to={`/updateNotification/${data.notification_id}`}>Update</Link>
+                
                 </div>
              </TableBody>
            )
@@ -336,44 +398,58 @@ async function toDeleteBTech(id) {
            </Table>
          </TableContainer>
          <hr/>
-        <TableContainer className="toShowStaffForward m-2" component={Paper}>
+         <TableContainer className="toShowStaffForward m-2" component={Paper}>
            
-           <h1 className="TitleFromStaff">B-Tech Section</h1>
+           <h1 className="TitleFromStaff h1">B-Tech Section</h1>
            <div>
 
          </div>
-           <Table  sx={{ minWidth: 700 }} aria-label="customized table">
+           <Table className="tables justify-content-between"aria-label="customized table">
              <TableHead className="background">
-               <TableRow className="background">
-                 <StyledTableCell className="border" align="center">Course Code</StyledTableCell>
-                 <StyledTableCell align="center">Course given by</StyledTableCell>
-                 <StyledTableCell className="border" align="center">Course name</StyledTableCell>
-                 <StyledTableCell className="border" align="center">Date of file upload</StyledTableCell>
-                 <StyledTableCell className="border" align="center">Department</StyledTableCell>
-                 <StyledTableCell className="border" align="center">Document id</StyledTableCell>
-                 <StyledTableCell className="border" align="center">Document path</StyledTableCell>
-                 <StyledTableCell className="border" align="center">Document type</StyledTableCell>
+              <TableRow className="background  d-md-flex " >
+                <div className=''>
+                <StyledTableCell className="border px-md-5 " align="center">Course Code</StyledTableCell>
+                 <StyledTableCell align="center" className='border px-md-5'>Course given by</StyledTableCell>
+                 <StyledTableCell className="border px-md-5" align="center">Course name</StyledTableCell>
+                  <StyledTableCell className="border px-md-5 " align="center">Date of file upload</StyledTableCell>
+                  <StyledTableCell className="border py-4" align="center">Department</StyledTableCell>
+                 <StyledTableCell className="border px-md-5" align="center">Document id</StyledTableCell>
+                </div>
+              
+                <div>
+                <StyledTableCell className="border px-md-5" align="center">Document path</StyledTableCell>
+                <StyledTableCell className="border" align="center">Document type</StyledTableCell>
                  <StyledTableCell className="border" align="center">Section</StyledTableCell>
-                 <StyledTableCell className="border" align="center">User info id</StyledTableCell>
+                 <StyledTableCell className="border px-md-5" align="center">User info id</StyledTableCell>
+                </div>
+               
+                
+                
                </TableRow>
              </TableHead>
              {Btech.map((data,j) => {
            let staffDataDisplay = (
              <TableBody className="" key={j}>
-                 <StyledTableRow >
-                   <StyledTableCell className="border" align="center">{data.Course_Code}</StyledTableCell>
+               <StyledTableRow className="backgrounds d-md-flex d-sm-block  ">
+                 <div className="table-column ">
+                 <StyledTableCell className="border" align="center">{data.Course_Code}</StyledTableCell>
                    <StyledTableCell align="center">{data.Course_given_by}</StyledTableCell>
                    <StyledTableCell className="border" align="center">{data.Course_name}</StyledTableCell>
-                   <StyledTableCell  align="center">{data.Date_of_file_upload}</StyledTableCell>
+              </div>
+                 <div className="table-column ">
+                 <StyledTableCell  align="center">{data.Date_of_file_upload}</StyledTableCell>
                    <StyledTableCell className="border"  align="center">{data.Department}</StyledTableCell>
                    <StyledTableCell className="border"  align="center">{data.Document_id}</StyledTableCell>
                    <StyledTableCell className="border"  align="center">{data.Document_path}</StyledTableCell>
                    <StyledTableCell className="border"  align="center">{data.Document_type}</StyledTableCell>
                    <StyledTableCell className="border"  align="center">{data.Section}</StyledTableCell>
                    <StyledTableCell className="border"  align="center">{data.userInfo_ID}</StyledTableCell>
+              </div>
+                  
+                  
                  </StyledTableRow>
                  <div className='d-flex'>
-                 <Button onClick={()=>toDeleteBTech(data.Document_id)} className='btn-danger m-3'>Delete</Button>
+                 <Button onClick={()=>toDeleteBTech(data.Document_id)} className='btn-danger btn-danger1 m-3'>Delete</Button>
                  
                  <Link className="notificationSubmit" to={`/updateBtechAdmin/${data.Document_id}`}>Update</Link>
 
@@ -387,42 +463,55 @@ async function toDeleteBTech(id) {
          <hr/>
          <TableContainer className="toShowStaffForward m-2" component={Paper}>
            
-           <h1 className="TitleFromStaff">M-Tech Section</h1>
+           <h1 className="TitleFromStaff h1">M-Tech Section</h1>
            <div>
 
          </div>
-           <Table  sx={{ minWidth: 700 }} aria-label="customized table">
+           <Table  aria-label="customized table" className="tables justify-content-between" >
              <TableHead className="background">
-               <TableRow className="background">
-                 <StyledTableCell className="border" align="center">Course Code</StyledTableCell>
-                 <StyledTableCell align="center">Course given by</StyledTableCell>
-                 <StyledTableCell className="border" align="center">Course name</StyledTableCell>
-                 <StyledTableCell className="border" align="center">Date of file upload</StyledTableCell>
-                 <StyledTableCell className="border" align="center">Department</StyledTableCell>
-                 <StyledTableCell className="border" align="center">Document id</StyledTableCell>
+              <TableRow className="background d-md-flex ">
+                <div>
+                <StyledTableCell className="border" align="center">Course Code</StyledTableCell>
+                 <StyledTableCell align="center px-md-5">Course given by</StyledTableCell>
+                 <StyledTableCell className="border px-md-5" align="center">Course name</StyledTableCell>
+                 <StyledTableCell className="border px-md-3" align="center">Date of file upload</StyledTableCell>
+                <StyledTableCell className="border px-md-5" align="center">Department</StyledTableCell>
+                </div>
+                <div>
+                 <StyledTableCell className="border px-md-5" align="center">Document id</StyledTableCell>
                  <StyledTableCell className="border" align="center">Document path</StyledTableCell>
-                 <StyledTableCell className="border" align="center">Document type</StyledTableCell>
-                 <StyledTableCell className="border" align="center">Section</StyledTableCell>
-                 <StyledTableCell className="border" align="center">User info id</StyledTableCell>
+                 <StyledTableCell className="border px-md-5" align="center">Document type</StyledTableCell>
+               <StyledTableCell className="border px-md-5" align="center">Section</StyledTableCell>
+                 <StyledTableCell className="border px-md-5" align="center">User info id</StyledTableCell>
+               </div>
+               
                </TableRow>
              </TableHead>
              {Mtech.map((data,j) => {
            let staffDataDisplay = (
              <TableBody className="" key={j}>
-                 <StyledTableRow >
-                   <StyledTableCell className="border" align="center">{data.Course_Code}</StyledTableCell>
+               <StyledTableRow className="backgrounds d-md-flex d-sm-block  ">
+               <div className="table-column ">
+               <StyledTableCell className="border" align="center">{data.Course_Code}</StyledTableCell>
                    <StyledTableCell align="center">{data.Course_given_by}</StyledTableCell>
                    <StyledTableCell className="border" align="center">{data.Course_name}</StyledTableCell>
-                   <StyledTableCell  align="center">{data.Date_of_file_upload}</StyledTableCell>
+                 </div>
+                 <div className="table-column ">
+                 <StyledTableCell  align="center">{data.Date_of_file_upload}</StyledTableCell>
                    <StyledTableCell className="border"  align="center">{data.Department}</StyledTableCell>
                    <StyledTableCell className="border"  align="center">{data.Document_id}</StyledTableCell>
                    <StyledTableCell className="border"  align="center">{data.Document_path}</StyledTableCell>
                    <StyledTableCell className="border"  align="center">{data.Document_type}</StyledTableCell>
+                   
                    <StyledTableCell className="border"  align="center">{data.Section}</StyledTableCell>
                    <StyledTableCell className="border"  align="center">{data.userInfo_ID}</StyledTableCell>
+                 </div>
+                
+                 
+                 
                  </StyledTableRow>
                  <div className='d-flex'>
-                 <Button onClick={()=>toDeleteMTech(data.Document_id)} className='btn-danger m-3'>Delete</Button>
+                 <Button onClick={()=>toDeleteMTech(data.Document_id)} className='btn-danger btn-danger1 m-3 '>Delete</Button>
                  <Link className="notificationSubmit" to={`/updateMtechAdmin/${data.Document_id}`}>Update</Link>
                 </div>
              </TableBody>
@@ -434,42 +523,53 @@ async function toDeleteBTech(id) {
          <hr/>
          <TableContainer className="toShowStaffForward m-2" component={Paper}>
            
-           <h1 className="TitleFromStaff">Phd Section</h1>
+           <h1 className="TitleFromStaff h1">Phd Section</h1>
            <div>
 
          </div>
-           <Table  sx={{ minWidth: 700 }} aria-label="customized table">
+         <Table className="tables  mx-md-3 justify-content-between" aria-label="customized table">
              <TableHead className="background">
-               <TableRow className="background">
-                 <StyledTableCell className="border" align="center">Course Code</StyledTableCell>
-                 <StyledTableCell align="center">Course given by</StyledTableCell>
+              <TableRow className="background d-md-flex ">
+                <div>
+                <StyledTableCell className="border" align="center">Course Code</StyledTableCell>
+                 <StyledTableCell align="center" className='px-md-5'>Course given by</StyledTableCell>
                  <StyledTableCell className="border" align="center">Course name</StyledTableCell>
                  <StyledTableCell className="border" align="center">Date of file upload</StyledTableCell>
-                 <StyledTableCell className="border" align="center">Department</StyledTableCell>
-                 <StyledTableCell className="border" align="center">Document id</StyledTableCell>
+                 <StyledTableCell className="border px-md-5" align="center">Department</StyledTableCell>
+                </div>
+                <div>
+                <StyledTableCell className="border px-md-5" align="center">Document id</StyledTableCell>
                  <StyledTableCell className="border" align="center">Document path</StyledTableCell>
                  <StyledTableCell className="border" align="center">Document type</StyledTableCell>
                  <StyledTableCell className="border" align="center">Section</StyledTableCell>
                  <StyledTableCell className="border" align="center">user info id</StyledTableCell>
+                </div>
+
                </TableRow>
              </TableHead>
              {Phd.map((data,j) => {
            let staffDataDisplay = (
              <TableBody className="" key={j}>
-                 <StyledTableRow >
-                   <StyledTableCell className="border" align="center">{data.Course_Code}</StyledTableCell>
+              <StyledTableRow className="backgrounds d-md-flex d-sm-block  ">
+              <div className="table-column ">
+              <StyledTableCell className="border" align="center">{data.Course_Code}</StyledTableCell>
                    <StyledTableCell align="center">{data.Course_given_by}</StyledTableCell>
                    <StyledTableCell className="border" align="center">{data.Course_name}</StyledTableCell>
                    <StyledTableCell  align="center">{data.Date_of_file_upload}</StyledTableCell>
                    <StyledTableCell className="border"  align="center">{data.Department}</StyledTableCell>
-                   <StyledTableCell className="border"  align="center">{data.Document_id}</StyledTableCell>
+                 </div>
+                 <div className="table-column ">
+                    <StyledTableCell className="border"  align="center">{data.Document_id}</StyledTableCell>
                    <StyledTableCell className="border"  align="center">{data.Document_path}</StyledTableCell>
                    <StyledTableCell className="border"  align="center">{data.Document_type}</StyledTableCell>
                    <StyledTableCell className="border"  align="center">{data.Section}</StyledTableCell>
                    <StyledTableCell className="border"  align="center">{data.userInfo_ID}</StyledTableCell>
+                 </div>
+                   
+                 
                  </StyledTableRow>
                  <div className='d-flex'>
-                 <Button onClick={()=>toDeletePhd(data.Document_id)} className='btn-danger m-3'>Delete</Button>
+                 <Button onClick={()=>toDeletePhd(data.Document_id)} className='btn-danger btn-danger1 m-3'>Delete</Button>
              
                  <Link className="notificationSubmit" to={`/updatePhdAdmin/${data.Document_id}`}>Update</Link>
 

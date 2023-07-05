@@ -13,7 +13,7 @@ let correctPassword = (req, res) => {
 
   connectionInfo.query(emailChecker, (err, result, fields) => {
     if (err) {
-      console.log(err);
+      // console.log(err);
     } else {
       if (result) {
         let emailFinder = result.find(
@@ -44,9 +44,9 @@ let correctPassword = (req, res) => {
               }
               connectionInfo.query(forOTP, [OTP], (err, result, fields) => {
                 if (err) {
-                  console.log(err);
+                  // console.log(err);
                 } else {
-                  console.log("OTP sent to DB");
+                  // console.log("OTP sent to DB");
                 }
               });
               return OTP;

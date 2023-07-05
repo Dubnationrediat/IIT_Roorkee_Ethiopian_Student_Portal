@@ -39,7 +39,7 @@ let uploadGoods = (req,res)=>{
             }else{
                 let goodsToSell = `INSERT INTO market(userInfo_ID,user_firstName,user_firstLast,user_IndianNumber,user_whatsappNumber,item_name,item_price,item_description,item_photo,status_check,date_of_notification) VALUES (?)`
                 let value =[user_id,user_firstName,user_lastName,user_IndianNumber,user_whatsappNumber,item_name,item_price,item_description,picutreFileName,"true",dateString]
-                console.log(value)
+                // console.log(value)
                 connectionInfo.query(goodsToSell,[value],(err,result,field)=>{
                   if(err){
                       console.log(err)

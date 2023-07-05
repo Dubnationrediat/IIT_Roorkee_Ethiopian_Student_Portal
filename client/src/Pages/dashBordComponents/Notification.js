@@ -1,5 +1,5 @@
 import React from "react";
-import image from "../../Images/photoCollections/jonson_white.png";
+import image from "../../Images/photoCollections/comperssed/jonson_white-min.jpg"
 import NotificationsActiveOutlinedIcon from "@mui/icons-material/NotificationsActiveOutlined";
 
 import "react-awesome-button/dist/styles.css";
