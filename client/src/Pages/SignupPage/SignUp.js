@@ -95,7 +95,6 @@ const SignUp = () => {
         data: userFile,
       })
         .then((data) => {
-         
             setresponse(data.data);
             let token = data.data.token;
             cookies.set("token", token, {
