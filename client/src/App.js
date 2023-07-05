@@ -47,6 +47,7 @@ import UpdateBtechAdmin from './Pages/Admin/UpdateEducationalnfo/UpdateBtechAdmi
 import UpdateMtechAdmin from './Pages/Admin/UpdateEducationalnfo/UpdateMtechAdmin'
 import UpdatePhdAdmin from './Pages/Admin/UpdateEducationalnfo/UpdatePhdAdmin'
 import updateNotificationAdmin from './Pages/Admin/UpdateNotification/UpdateNotificationAdmin'
+import PDFdisplay from "./Pages/pdfDisplay/PDFdisplay";
 function App() {
   const dispatch = useDispatch();
   const { isLoading } = useSelector((state) => state.auth);
@@ -65,7 +66,7 @@ function App() {
           <Route exact path="/home" element={<SignUp />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/signup" element={<SignUp />} />
-
+          <Route exact path="info" element={<PDFdisplay/>}/>
           <Route exact path="/contribution" element={<Contribution />} />
           <Route exact path="/howitworks" element={<HowItWorks />} />
           <Route exact path="/forgotPass" element={<ForgotPassword />} />

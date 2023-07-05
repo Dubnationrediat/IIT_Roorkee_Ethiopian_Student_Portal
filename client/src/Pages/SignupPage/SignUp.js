@@ -95,14 +95,16 @@ const SignUp = () => {
         data: userFile,
       })
         .then((data) => {
-          setresponse(data.data);
-          let token = data.data.token;
-          cookies.set("token", token, {
-            path: "/",
-            expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
-          });
-          dispatch(getUser());
-          navigate("/dashbord");
+         
+            setresponse(data.data);
+            let token = data.data.token;
+            cookies.set("token", token, {
+              path: "/",
+              expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
+            });
+            dispatch(getUser());
+            navigate("/dashbord");
+      
         })
         .catch((err) => {
           // console.log(err);

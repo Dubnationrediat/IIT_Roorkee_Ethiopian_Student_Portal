@@ -61,7 +61,7 @@ function Header() {
           <Link to="/howitworks">How It Works</Link>
           <Link to="/contribution">Contribute</Link>
           <Link to="/admin">Admin</Link>
-          <Link to="/newInformation">Information</Link>
+          <Link to="/info">Information</Link>
           <Link to={isAuth ? "/dashbord" : "/login"} className="loginHeader mt-0">
             {isAuth ? "Dashboard" : "Login"}
           </Link>
