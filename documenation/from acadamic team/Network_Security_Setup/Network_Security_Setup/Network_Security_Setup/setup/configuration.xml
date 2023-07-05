@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><configuration development_version="8" major_version="5" minor_version="2">
+ <serviceDisable>false</serviceDisable>
+ <fipsMode>false</fipsMode>
+ <networkPolicy>
+  <allowedAssociationModes>
+   <openNoEncryption/>
+   <wpa2PersonalAes/>
+   <wpa2EnterpriseTkip/>
+   <wpaPersonalTkip/>
+   <openStaticWep/>
+   <wpa2PersonalTkip/>
+   <cckmEnterpriseTkip/>
+   <cckmEnterpriseAes/>
+   <open1xDynamicWep/>
+   <wpaEnterpriseTkip/>
+   <wpa2EnterpriseAes/>
+   <sharedStaticWep/>
+   <wpaEnterpriseAes/>
+   <wpaPersonalAes/>
+  </allowedAssociationModes>
+  <allowedWiredSecurityModes>
+   <openNoEncryption/>
+   <dot1xOnly/>
+   <dot1xMacSec>
+    <macsecCipher>
+     <aesGcm128/>
+     <aesGcm256/>
+    </macsecCipher>
+   </dot1xMacSec>
+  </allowedWiredSecurityModes>
+  <allowedEapMethods>
+   <leap/>
+   <eapFast>
+    <allowedTunneledMethods>
+     <eapTls/>
+     <eapMschapv2/>
+     <eapGtc/>
+    </allowedTunneledMethods>
+   </eapFast>
+   <eapPeap>
+    <allowedTunneledMethods>
+     <eapTls/>
+     <eapMschapv2/>
+     <eapGtc/>
+    </allowedTunneledMethods>
+   </eapPeap>
+   <eapTls/>
+   <eapTtls>
+    <allowedTunneledMethods>
+     <eapMschapv2/>
+     <pap/>
+    </allowedTunneledMethods>
+   </eapTtls>
+  </allowedEapMethods>
+ </networkPolicy>
+ <networks>
+  <globalNetworks>
+   <wiredNetwork>
+    <displayName>LAN</displayName>
+    <connectionTimeout>40</connectionTimeout>
+    <authenticationNetwork>
+     <machineUserAuthentication>
+      <machine>
+       <eapFast>
+        <doNotValidateServerCertificate/>
+        <unprotectedIdentityPattern encryptContent="true"><EncryptedData xmlns="http://www.w3.org/2001/04/xmlenc#" Type="http://www.w3.org/2001/04/xmlenc#Content">
+<CipherData>
+<CipherValue>hERAtVzgX5so3AuDP5XgQBMMDoOtYs75M+mgloC0tAU=</CipherValue>
+</CipherData>
+</EncryptedData></unprotectedIdentityPattern>
+        <enableFastReconnect/>
+        <usePac>
+         <allowUnauthPacProvisioning>false</allowUnauthPacProvisioning>
+         <validateWithSpecificPacs/>
+        </usePac>
+        <authMethods>
+         <builtinMethods>
+          <authenticateWithPassword>
+           <protectedIdentityPattern encryptContent="true"><EncryptedData xmlns="http://www.w3.org/2001/04/xmlenc#" Type="http://www.w3.org/2001/04/xmlenc#Content">
+<CipherData>
+<CipherValue>o7/9nMef+mdcx+HA3HDT/DL4tNaeS/njcvxp6ZPXQuc=</CipherValue>
+</CipherData>
+</EncryptedData></protectedIdentityPattern>
+           <passwordSource>
+            <passwordFromMachine/>
+           </passwordSource>
+           <methods>
+            <eapMschapv2/>
+           </methods>
+          </authenticateWithPassword>
+         </builtinMethods>
+        </authMethods>
+       </eapFast>
+      </machine>
+      <user>
+       <authenticationMethod>
+        <eapFast>
+         <doNotValidateServerCertificate/>
+         <unprotectedIdentityPattern encryptContent="true"><EncryptedData xmlns="http://www.w3.org/2001/04/xmlenc#" Type="http://www.w3.org/2001/04/xmlenc#Content">
+<CipherData>
+<CipherValue>+ew9eGqueOW6ljs1AdMeK159KnIaIWk/xgg/eVR5qKw=</CipherValue>
+</CipherData>
+</EncryptedData></unprotectedIdentityPattern>
+         <enableFastReconnect>
+          <alwaysAttempt/>
+         </enableFastReconnect>
+         <usePac>
+          <allowUnauthPacProvisioning>false</allowUnauthPacProvisioning>
+          <validateWithSpecificPacs/>
+         </usePac>
+         <authMethods>
+          <builtinMethods>
+           <authenticateWithPassword>
+            <protectedIdentityPattern encryptContent="true"><EncryptedData xmlns="http://www.w3.org/2001/04/xmlenc#" Type="http://www.w3.org/2001/04/xmlenc#Content">
+<CipherData>
+<CipherValue>UBH2qmuiEvfZkqHggip98hCyCApX+EDzPwTZlUZbChY=</CipherValue>
+</CipherData>
+</EncryptedData></protectedIdentityPattern>
+            <passwordSource>
+             <passwordFromLogon/>
+            </passwordSource>
+            <methods>
+             <eapMschapv2/>
+            </methods>
+           </authenticateWithPassword>
+          </builtinMethods>
+         </authMethods>
+        </eapFast>
+       </authenticationMethod>
+       <collectionBehavior/>
+      </user>
+     </machineUserAuthentication>
+     <setting802.1x>
+      <authPeriod>30</authPeriod>
+      <heldPeriod>60</heldPeriod>
+      <startPeriod>3</startPeriod>
+      <maxStart>2</maxStart>
+     </setting802.1x>
+    </authenticationNetwork>
+   </wiredNetwork>
+   <wifiNetwork>
+    <displayName>WLAN</displayName>
+    <connectionTimeout>40</connectionTimeout>
+    <ssid>
+     <name>intec</name>
+     <hidden>false</hidden>
+    </ssid>
+    <associationTimeout>5</associationTimeout>
+    <corporate>false</corporate>
+    <authenticationNetwork>
+     <machineUserAuthentication>
+      <machine>
+       <eapFast>
+        <doNotValidateServerCertificate/>
+        <unprotectedIdentityPattern encryptContent="true"><EncryptedData xmlns="http://www.w3.org/2001/04/xmlenc#" Type="http://www.w3.org/2001/04/xmlenc#Content">
+<CipherData>
+<CipherValue>gly4QOiSMw5xm8i36YIv+i14hF/L0xkp60ElNc2ZouA=</CipherValue>
+</CipherData>
+</EncryptedData></unprotectedIdentityPattern>
+        <enableFastReconnect/>
+        <usePac>
+         <allowUnauthPacProvisioning>false</allowUnauthPacProvisioning>
+         <validateWithSpecificPacs/>
+        </usePac>
+        <authMethods>
+         <builtinMethods>
+          <authenticateWithPassword>
+           <protectedIdentityPattern encryptContent="true"><EncryptedData xmlns="http://www.w3.org/2001/04/xmlenc#" Type="http://www.w3.org/2001/04/xmlenc#Content">
+<CipherData>
+<CipherValue>zfH8XdIIA7J6BMhq21l8uMfXxyRYRV3wyZRyAeUTA9s=</CipherValue>
+</CipherData>
+</EncryptedData></protectedIdentityPattern>
+           <passwordSource>
+            <passwordFromMachine/>
+           </passwordSource>
+           <methods>
+            <eapMschapv2/>
+           </methods>
+          </authenticateWithPassword>
+         </builtinMethods>
+        </authMethods>
+       </eapFast>
+      </machine>
+      <user>
+       <authenticationMethod>
+        <eapFast>
+         <doNotValidateServerCertificate/>
+         <unprotectedIdentityPattern encryptContent="true"><EncryptedData xmlns="http://www.w3.org/2001/04/xmlenc#" Type="http://www.w3.org/2001/04/xmlenc#Content">
+<CipherData>
+<CipherValue>p0VIXWfVtFvOE00DEO5gK0fpO+npd9/bLNcDS9hh/oo=</CipherValue>
+</CipherData>
+</EncryptedData></unprotectedIdentityPattern>
+         <enableFastReconnect>
+          <alwaysAttempt/>
+         </enableFastReconnect>
+         <usePac>
+          <allowUnauthPacProvisioning>false</allowUnauthPacProvisioning>
+          <validateWithSpecificPacs/>
+         </usePac>
+         <authMethods>
+          <builtinMethods>
+           <authenticateWithPassword>
+            <protectedIdentityPattern encryptContent="true"><EncryptedData xmlns="http://www.w3.org/2001/04/xmlenc#" Type="http://www.w3.org/2001/04/xmlenc#Content">
+<CipherData>
+<CipherValue>QeN49QIdxmrN1buoXRmXypJNq/tmHf/jjE0qxTn3ryk=</CipherValue>
+</CipherData>
+</EncryptedData></protectedIdentityPattern>
+            <passwordSource>
+             <passwordFromLogon/>
+            </passwordSource>
+            <methods>
+             <eapMschapv2/>
+            </methods>
+           </authenticateWithPassword>
+          </builtinMethods>
+         </authMethods>
+        </eapFast>
+       </authenticationMethod>
+       <collectionBehavior/>
+      </user>
+     </machineUserAuthentication>
+     <setting802.1x>
+      <authPeriod>30</authPeriod>
+      <heldPeriod>60</heldPeriod>
+      <startPeriod>30</startPeriod>
+      <maxStart>3</maxStart>
+     </setting802.1x>
+     <associationMode>
+      <wpa2>
+       <encryption>AES</encryption>
+      </wpa2>
+     </associationMode>
+    </authenticationNetwork>
+   </wifiNetwork>
+  </globalNetworks>
+  <group>
+   <groupName>Local networks</groupName>
+   <allowUserToSeeScanlist>true</allowUserToSeeScanlist>
+   <allowUserToCreateNetworks>true</allowUserToCreateNetworks>
+  </group>
+ </networks>
+ <connectionSettings>
+  <connectionBehaviorAtLogon>
+   <attemptConnectionAfterUserLogon/>
+  </connectionBehaviorAtLogon>
+  <validateWpaHandshake>true</validateWpaHandshake>
+  <defaultConnectionTimeout>40</defaultConnectionTimeout>
+  <defaultAssociationTimeout>5</defaultAssociationTimeout>
+ </connectionSettings>
+ <userControlPolicy>
+  <allowedMedia>
+   <wired/>
+   <wifi/>
+  </allowedMedia>
+  <allowRunScriptAfterConnect>false</allowRunScriptAfterConnect>
+  <allowUserToCreateGroups>true</allowUserToCreateGroups>
+  <enforceManualConnection>false</enforceManualConnection>
+  <allowUserToDisableClient>true</allowUserToDisableClient>
+ </userControlPolicy>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>N2KzhK7gQ+tor6EVCln0+xmfg+A=</DigestValue></Reference></SignedInfo><SignatureValue>YrJz3qNFVN2EhTW0sNZjsdQc783HFozDucWtPYW+mru/PzOoi553HVR7dJrGtKRy7pVyz9wrsLL6
+x4uRG2Gy3HTe1xhF06ga1YOA/6HkYEfprqI2K4lgXShqmwNDBxAHS/RcAquvI+8hmi93Wkq4Fxo+
+anF9T3HzsJtP0NgYmrI=</SignatureValue></Signature></configuration>
