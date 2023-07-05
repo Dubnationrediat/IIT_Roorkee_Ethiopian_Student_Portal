@@ -48,7 +48,7 @@ function UploadSellGoods() {
       }).then((res)=>{
           setResponse(res.data)
       }).catch((err)=>{
-        console.log(err)
+        // console.log(err)
       })
   }
 

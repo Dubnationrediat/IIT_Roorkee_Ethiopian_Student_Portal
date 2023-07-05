@@ -8,7 +8,8 @@ import SignUp from "./Pages/SignupPage/SignUp.js";
 import ForgotPassword from "./Pages/ForgotPasword/ForgotPassword.js";
 import PageNotFound from "./Pages/PageNotFound/PageNotFound.js";
 import ForNewPassword from "./Pages/NewPassword/NewPassword.js";
-import NewPassword from "./Pages/NewPassword/NewPassword.js"
+import NewPassword from "./Pages/NewPassword/NewPassword.js";
+
 import ToUploadForPhd from "./Pages/PhdSectionFileUpload/PhdSectionFileUpload.js";
 import ToUploadForMtech from "./Pages/MtechSecitonFileUpload/MtechSecitonFileUpload.js";
 import ToUploadForBTech from "./Pages/BtechSectionFileUpload/BtechSectionFileUpload.js";
@@ -33,6 +34,19 @@ import PotectRoute from "./components/Protect/PotectRoute";
 import { axiosInstance } from "./Utility/axios";
 import { useDispatch, useSelector } from "react-redux";
 import { getUser } from "./components/Redux/Reducers/authSlice";
+import TeamsServices from "./Pages/TeamsAndServices/Teams.js";
+import Developer from "./Pages/Developers/Developers";
+import Privacy from "./Pages/PrivacyPolicy/PrivacyPolicy"
+import Terms from "./Pages/TeamsAndServices/Teams.js"
+import Admin from "./Pages/Admin/Admin.js"
+
+import UpdateNotificationAdmin from './Pages/Admin/UpdateNotification/UpdateNotificationAdmin'
+import UpdateUserInfoAdmin from './Pages/Admin/UpdateUserInformation/UpdateUserInformationAdmin'
+import UpdateUserGoodsAdmin from './Pages/Admin/UpdateGoods/UpdateGoodsAdmin'
+import UpdateBtechAdmin from './Pages/Admin/UpdateEducationalnfo/UpdateBtechAdmin'
+import UpdateMtechAdmin from './Pages/Admin/UpdateEducationalnfo/UpdateMtechAdmin'
+import UpdatePhdAdmin from './Pages/Admin/UpdateEducationalnfo/UpdatePhdAdmin'
+import updateNotificationAdmin from './Pages/Admin/UpdateNotification/UpdateNotificationAdmin'
 function App() {
   const dispatch = useDispatch();
   const { isLoading } = useSelector((state) => state.auth);
@@ -47,7 +61,7 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route exact path="/" element={<SignUp />} />
+          <Route exact path="/" element={<Login />} />
           <Route exact path="/home" element={<SignUp />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/signup" element={<SignUp />} />
@@ -58,13 +72,24 @@ function App() {
           <Route exact path="/forgotPass/:email" element={<Otp />} />
           <Route exact path="/ForNewPasswordOTP" element={<ForNewPassword />} />
           <Route exact path="/setNewPassword" element={<NewPassword />} />
+          <Route exact path="/teamsAndServices" element={<TeamsServices/>} />
+          <Route exact path='/developer' element={<Developer/>} />
+          <Route exact path='/privacy' element={<Privacy/>} />
+          <Route exact path='/terms' element={<Terms/>} />
+          <Route exact path='/admin' element={<Admin/>} />
+          <Route exact path='/updateNotification/:id' element={<UpdateNotificationAdmin/> }/>
+          <Route exact path='/updateUserInfoAdmin/:id' element={<UpdateUserInfoAdmin/>}/>
+          <Route exact path='/updateUserGoodsAdmin/:id' element={<UpdateUserGoodsAdmin/>}/>
+          <Route exact path='/updateBtechAdmin/:id' element={<UpdateBtechAdmin/>}/>
+          <Route exact path='/updateMtechAdmin/:id' element={<UpdateMtechAdmin/>}/>
+          <Route exact path='/updatePhdAdmin/:id' element={<UpdatePhdAdmin/>}/>
           <Route
             exact
             path="/btechSectionUpload"
             element={
               <PotectRoute>
-             
-                <ToUploadForBTech />
+                {" "}
+                <ToUploadForBTech />{" "}
               </PotectRoute>
             }
           />

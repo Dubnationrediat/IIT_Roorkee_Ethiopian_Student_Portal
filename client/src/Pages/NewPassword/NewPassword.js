@@ -33,12 +33,12 @@ function NewPassword() {
         data: newEmail,
       })
         .then((data) => {
-          console.log(data);
-          console.log(newEmail);
+          // console.log(data);
+          // console.log(newEmail);
           setemailResponse(data.data);
         })
         .catch((err) => {
-          console.log(err);
+          // console.log(err);
         });
     } else {
       return setemailResponse({
@@ -84,12 +84,13 @@ function NewPassword() {
 
   if (emailResponse) {
     return (
-      <div className="pageNotFound">
+      <div className="pageNotFound my-5">
         <h1 className="thankYou">{emailResponse.successMessage}</h1>
         <a className="thankYouAnch" href={`${emailResponse.redirect}`}>
           {emailResponse.message}
         </a>
       </div>
+
     );
   } else {
     return (
@@ -116,7 +117,7 @@ function NewPassword() {
                 onChange={handle_change}
               />
               <span className="showHide ">
-                <Icon icon={icon} size={20} onClick={HandleIconChange} />
+                <Icon icon={icon} size={22} onClick={HandleIconChange} className="iconss"/>
               </span>
               <input
                 className="in111"

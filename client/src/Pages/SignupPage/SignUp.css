@@ -10,11 +10,48 @@
 	font-family: "Lato", sans-serif;
 	color: #2d385e;
 }
-
 .texttag {
 	margin-top: 15px;
 }
+.forSuccessPa {
+    text-align: center;
+    padding: 20px;
+	background-color: #ABC7EC;
+	width: 70%;
+	margin: 7% auto;
+	border-radius: 20px;
+	background-color: whitesmoke;
+	height: 400px;
+	font-size: 30px;
+	text-align: center;
+	
+  }
 
+  .thankYou {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .thankYouAnch {
+    font-size: 18px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .thankYou {
+      font-size: 20px;
+    }
+
+    .thankYouAnch {
+      font-size: 16px;
+      padding: 8px 16px;
+    }
+  }
 .p22 {
 	font-size: 15px;
 	font-family: "Lato", sans-serif;

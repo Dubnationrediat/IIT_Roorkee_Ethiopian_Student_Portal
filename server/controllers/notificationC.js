@@ -38,7 +38,7 @@ let notificationC = (req,res)=>{
 // * get user previously uploaded notification 
 let getYourNotfication = (req,res)=>{
     const {userInfo_ID} =req.params
-    console.log(req.params)
+    // console.log(req.params)
     let userNotification = `SELECT * FROM notifications WHERE userInfo_ID=${userInfo_ID}`
     connectionInfo.query(userNotification,(err,data,field)=>{
        if(err){

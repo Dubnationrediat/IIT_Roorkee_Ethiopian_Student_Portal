@@ -60,6 +60,7 @@ function Header() {
           {/* <Link to="https://ir.iitr.ac.in/IR_Panel/" clclassName="nav-link">IR Portal</Link> */}
           <Link to="/howitworks">How It Works</Link>
           <Link to="/contribution">Contribute</Link>
+          <Link to="/admin">Admin</Link>
           <Link to="/newInformation">Information</Link>
           <Link to={isAuth ? "/dashbord" : "/login"} className="loginHeader mt-0">
             {isAuth ? "Dashboard" : "Login"}

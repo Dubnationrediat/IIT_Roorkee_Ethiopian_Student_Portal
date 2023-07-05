@@ -105,7 +105,7 @@ const SignUp = () => {
           navigate("/dashbord");
         })
         .catch((err) => {
-          console.log(err);
+          // console.log(err);
         });
     } else {
       return setresponse({
@@ -175,7 +175,7 @@ const SignUp = () => {
       navigate("/dashbord");
     } else {
       return (
-        <div className="forSuccessPage">
+        <div className="forSuccessPa">
           <h1 className="thankYou">{response.successMessage}</h1>
           <a className="thankYouAnch" href={response.redirect}>
             {response.message}
@@ -351,7 +351,7 @@ const SignUp = () => {
             />
             
             <span className="showHide ">
-              <Icon icon={icon} size={20} onClick={HandleIconChange} />
+              <Icon icon={icon} size={22} onClick={HandleIconChange} className="iconss"/>
             </span>
             <input
               required
@@ -364,24 +364,39 @@ const SignUp = () => {
               placeholder="Confirm Password"
             />
             <span className="showHide ">
-              <Icon icon={icon1} size={20} onClick={HandleIconChangee} />
+              <Icon icon={icon1} size={22} onClick={HandleIconChangee}className="iconss" />
             </span>
 
             <button className="btnSign">Agree and Join</button>
           </form>
           <p className="mt-md-5 mt-sm-5 text-center texttag">
             I agree to the
-            <Link to="" className="a22">
+            <Link to="/privacy" className="a22">
               privacy policy
             </Link>
             and
-            <Link to="" className="a22">
+            <Link to="/terms" className="a22">
               terms of serivice.
             </Link>
-          </p>
+            </p>
+         
+            <p className="mt-md-2 mt-sm-2 text-center texttag">
+             
+              <Link to="/developer" className="a22">
+                Word From The Developers
+              </Link>
+            </p>
+            {/* <Link to="/terms" className="a33 text-center">
+              Terms And Conditions
+            </Link>
+            <Link to="/privacy" className="a33 text-center">
+            Privacy Policy
+            </Link> */}
+               
           <Link to="/login" className="a33 text-center">
             Already have an account?
-          </Link>
+            </Link>
+            
         </div>
         <div className='notePartsell p-5 m-4 col-md-5 h-100 '>
        <h1 className='animate__animated animate__rubberBand animate__repeat-3 p-2 '>Please..</h1>

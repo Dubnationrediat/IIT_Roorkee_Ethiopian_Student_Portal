@@ -83,6 +83,7 @@ let tableCreator = (req, res) => {
       console.log(err);
     }
   });
+
   connectionInfo.query(educationalDocument, (err) => {
     if (err) {
       console.log(err);

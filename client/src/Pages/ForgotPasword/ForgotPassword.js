@@ -25,7 +25,7 @@ function ForgotPassword() {
     }).then((response) => {
       setResponse(response.data);
       setEncypted(response.data.Encrypt);
-      console.log(response.data);
+      // console.log(response.data);
       // cookie.set("email", response.data.email);
     });
   };
@@ -43,7 +43,7 @@ function ForgotPassword() {
   if (response) {
     if (response.confirmation == false) {
       return (
-        <div className="pageNotFound">
+        <div className="forSuccessPa ">
           <h1 className="thankYou">{response.message}</h1>
           <a className="thankYouAnch" href={`${response.redirect}`}>
             {response.redirectMessage}

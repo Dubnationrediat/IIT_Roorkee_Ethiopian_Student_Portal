@@ -20,7 +20,7 @@ function YemishetuCollection() {
       // console.log({ "its error": err });
     }
   };
-  console.log(goodsColleciton);
+  // console.log(goodsColleciton);
   useEffect(() => {
     dataForGoods();
     window.scrollTo(0, 0);
@@ -52,7 +52,7 @@ function YemishetuCollection() {
       {
         <div className="row container mx-auto h-100 pt-5 mb-5  goods">
           {goodsColleciton.map((singleGood, i) => {
-            console.log(singleGood);
+            // console.log(singleGood);
             let displayGoods = (
               <div key={i} className="col-md-3 m-4 ">
                 <div className="card cardAkafi ">

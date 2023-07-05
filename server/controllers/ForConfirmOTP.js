@@ -6,14 +6,14 @@ let OTP_confirming = (req, res) => {
 
   let emailDecoded = JWT.verify(EncrypedEmail, "IITPasswordEncrypted");
 
-  console.log(emailDecoded);
+  // console.log(emailDecoded);
   // console.log("email from front end"+ email_OTP)
   let emailChecker = "SELECT user_email FROM userinfo";
   let otpChecker = `SELECT user_OTP FROM userinfo WHERE user_email = '${emailDecoded}'`;
 
   connectionInfo.query(emailChecker, (err, result, fields) => {
     if (err) {
-      console.log(err);
+      // console.log(err);
     } else {
       if (result) {
         let EmailChecker = result.find((emails) => {

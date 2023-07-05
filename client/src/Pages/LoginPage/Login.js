@@ -27,7 +27,7 @@ const Login = () => {
   });
   const dispatch = useDispatch();
   const { isAuth } = useSelector((state) => state.auth);
-  console.log(isAuth);
+  // console.log(isAuth);
 
   // to change the icon when clicked
   const HandleIconChange = () => {
@@ -54,7 +54,7 @@ const Login = () => {
     })
       .then((data) => {
         setresponse(data.data);
-        console.log(data.data);
+        // console.log(data.data);
         let token = data.data.token;
 
         if (data.data.confirmation === "true") {
@@ -95,8 +95,9 @@ const Login = () => {
       // return navigate("/dashboard");
       // } else {
       return (
-        <div className="forSuccessPage">
+        <div className="forSuccessPa">
           <h1 className="thankYou">{response.message}</h1>
+        
           <a className="thankYouAnch" href={response.redirect}>
             {response.redirectMessage}
           </a>
@@ -110,7 +111,7 @@ const Login = () => {
           <div className="main col-12 col-md-6 me-md-2 p-5 d-flex flex-column justify-content-center">
             <p className="p1">IITR Ethiopian Students Union</p>
             <p className="p2 text-center">
-              Don't have an account?
+              Don't have an account? <br />
               <Link to="/signup" className="a3">
                 {" "}
                 Create a new account
@@ -136,16 +137,16 @@ const Login = () => {
                 onChange={handleChange}
               />
               <span className="showHide1">
-                <Icon icon={icon} size={20} onClick={HandleIconChange} />
+                <Icon icon={icon} size={20} onClick={HandleIconChange} className="iconss"/>
               </span>
               <button className="btn1">submit</button>
             </form>
 
             <Link to="/forgotPass" className="a3 a1">
-              Forgot password ? click here
-            </Link>
+              Forgot password ?
+            </Link> <br />
             <Link to="/signup" className="a3 a1">
-              Create an account?
+            Click Here To Create an Account?
             </Link>
           </div>
           <div className="sideNote1 container col-12 col-md-5 ms-md-2 mt-sm-4 mt-md-0 ">
