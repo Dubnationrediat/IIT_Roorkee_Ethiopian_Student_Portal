@@ -9,7 +9,7 @@ let loginC = (req, res) => {
   //    let passWordChecker = `SELECT user_password FROM userinfo`
   connectionInfo.query(userChecker, (err, result, fields) => {
     if (err) {
-      console.log(err);
+      // console.log(err);
     } else {
       if (result[0]) {
         let resultFilter = result.find(
@@ -25,7 +25,7 @@ let loginC = (req, res) => {
         } else {
           connectionInfo.query(passWordChecker, (err, result, fields) => {
             if (err) {
-              console.log(err);
+              // console.log(err);
             } else {
               if (result) {
                 let pass = bcrypt.compareSync(

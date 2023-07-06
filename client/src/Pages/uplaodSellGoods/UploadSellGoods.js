@@ -97,7 +97,7 @@ function UploadSellGoods() {
      }
   }
 
-  console.log(userGoods)
+  // console.log(userGoods)
 
   useEffect(() => {
     usersGoodsD();
@@ -117,7 +117,7 @@ function UploadSellGoods() {
 
 if(Response){
   return(
-<div className="pageNotFound ">
+<div className="pageNotFound my-5 ">
         <h1 className="thankYou">{Response.successMessage}</h1>
         <a className="thankYouAnch" href={`${Response.redirect}`}>
           {Response.message}

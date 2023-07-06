@@ -12,7 +12,7 @@ let deletePhdDocument = (req,res)=>{
 
     connectionInfo.query(deletePhdData,(err,result,field)=>{
         if(err){
-            console.log(err)
+            // console.log(err)
         }else{
             res.send({
                 successMessage: `phd document  Deleted successfully`,
@@ -29,7 +29,7 @@ let deleteMtchDocument = (req,res)=>{
 
     connectionInfo.query(deleteMtechData,(err,result,field)=>{
         if(err){
-            console.log(err)
+            // console.log(err)
         }else{
             res.send({
                 successMessage: `Mtech document Deleted successfully`,
@@ -46,7 +46,7 @@ let deleteBtchDocument = (req,res)=>{
 
     connectionInfo.query(deleteBtechData,(err,result,field)=>{
         if(err){
-            console.log(err)
+            // console.log(err)
         }else{
             res.send({
                 successMessage: `Btech Document Deleted successfully`,
@@ -63,7 +63,7 @@ let deleteUserNotification = (req,res)=>{
 
     connectionInfo.query(deleteNotification,(err,result,field)=>{
         if(err){
-            console.log(err)
+            // console.log(err)
         }else{
             res.send({
                 successMessage: `Notification  Deleted successfully`,
@@ -80,7 +80,7 @@ let deleteUserGoods = (req,res)=>{
 
     connectionInfo.query(deleteGoods,(err,result,field)=>{
         if(err){
-            console.log(err)
+            // console.log(err)
         }else{
             res.send({
                 successMessage: `goods Document Deleted successfully`,
@@ -97,7 +97,7 @@ let deleteUserData = (req,res)=>{
 
     connectionInfo.query(deleteUser,(err,result,field)=>{
         if(err){
-            console.log(err)
+            // console.log(err)
         }else{
             res.send({
                 successMessage: `user  Deleted successfully`,
@@ -115,7 +115,7 @@ let deleteUserEmail = (req,res)=>{
 
     connectionInfo.query(deleteUser,(err,result,field)=>{
         if(err){
-            console.log(err)
+            // console.log(err)
         }else{
             res.send({
                 successMessage: `user  Deleted successfully`,

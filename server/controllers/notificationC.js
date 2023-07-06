@@ -14,7 +14,7 @@ let notificationC = (req,res)=>{
         let value =[user_notification_message,userInfo_ID,date_of_notification,user_Name]
         connectionInfo.query(notificatinData,[value],(err,result,field)=>{
          if(err){
-            console.log(err)
+            // console.log(err)
            return  res.send({
                  successMessage:
                  "Notification was not successfully uploaded",
@@ -42,7 +42,7 @@ let getYourNotfication = (req,res)=>{
     let userNotification = `SELECT * FROM notifications WHERE userInfo_ID=${userInfo_ID}`
     connectionInfo.query(userNotification,(err,data,field)=>{
        if(err){
-  console.log(err)
+//   console.log(err)
        }else{
           return   res.send({
                    singleData:data
@@ -57,7 +57,7 @@ let getAllNotfication = (req,res)=>{
     let allNotifications = `SELECT * FROM notifications`
     connectionInfo.query(allNotifications,(err,data,field)=>{
        if(err){
-        console.log(err)
+        // console.log(err)
        }else{
            return  res.send({
                 data:data
@@ -73,7 +73,7 @@ let deleteNotification = (req,res)=>{
           let deleteNotification = `DELETE FROM notifications Where notification_id = ${id}`
           connectionInfo.query(deleteNotification,(err)=>{
               if(err){
-                  console.log(err)
+                //   console.log(err)
               }else{
                   return res.send({successMessage:'notification deleted successfully',message:"Click Here To Go Back To Notification",redirect:"/uploadNotification"})
               }

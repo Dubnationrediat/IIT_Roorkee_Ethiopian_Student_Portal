@@ -8,7 +8,7 @@ let getUserProfile = (req, res) => {
     let userProfile = `SELECT userInfo_ID,user_last_name,user_first_name,user_email_forProfile,user_Department,user_whatsapp_number,user_Indian_number,user_study_section,date_of_registration FROM userinfo WHERE userInfo_ID='${user_id}'`;
     connectionInfo.query(userProfile, (err, data, field) => {
       if (err) {
-        console.log(err);
+        // console.log(err);
       } else {
         res.json({
           data: data,

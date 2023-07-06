@@ -42,7 +42,7 @@ let uploadGoods = (req,res)=>{
                 // console.log(value)
                 connectionInfo.query(goodsToSell,[value],(err,result,field)=>{
                   if(err){
-                      console.log(err)
+                    //   console.log(err)
                   }else{
                       res.send({
                           successMessage: "File Successfully Uploaded",

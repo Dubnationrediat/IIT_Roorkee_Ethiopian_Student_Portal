@@ -183,7 +183,7 @@ async function toDeleteBTech(id) {
 // console.log(userForAdmin)
   return (
     <>
-        <div className="mx-sm-0 my-2">
+        <div className="my-2 ">
     {/* ------------------------------------------------------- */}
         <TableContainer className="toShowStaffForward" component={Paper}>
            

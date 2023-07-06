@@ -28,7 +28,7 @@ let getAllEducationalDocMetch= (req,res)=>{
     let metchQuery = `SELECT * FROM educationaldocument WHERE Section='Mtech'`
     connectionInfo.query(metchQuery,(err,data,field)=>{
         if(err){
-            console.log(err)
+            // console.log(err)
         }else{
             res.send({
                 data: data

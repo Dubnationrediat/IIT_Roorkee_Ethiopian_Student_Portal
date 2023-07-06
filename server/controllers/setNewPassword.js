@@ -29,7 +29,7 @@ let setNewPassWord = (req, res) => {
       let updatePasswordQuery = `UPDATE userInfo SET user_password='${hash_password}' WHERE user_email='${emailDecoded}'`;
       connectionInfo.query(updatePasswordQuery, (err, data, field) => {
         if (err) {
-          console.log(err);
+          // console.log(err);
         } else {
           return res.send({
             successMessage: `Password Updated Successfully!`,

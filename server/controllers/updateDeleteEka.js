@@ -5,7 +5,7 @@ let getYourSingleGoods= (req,res)=>{
     let userGoods= `SELECT * FROM market WHERE userInfo_ID=${userInfo_ID}`
     connectionInfo.query(userGoods,(err,data,field)=>{
        if(err){
-  console.log(err)
+//   console.log(err)
        }else{
           return   res.send({
                    singleData:data

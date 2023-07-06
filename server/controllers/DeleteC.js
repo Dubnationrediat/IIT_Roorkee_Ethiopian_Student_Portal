@@ -5,7 +5,7 @@ let deleteProfieC = (req,res)=>{
 
     connectionInfo.query(deleteEmail,(err,result,field)=>{
         if(err){
-            console.log(err)
+            // console.log(err)
         }else{
             res.send({
                 successMessage: `Profile Deleted successfully`,

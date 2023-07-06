@@ -29,7 +29,7 @@ let OTP_confirming = (req, res) => {
         } else {
           connectionInfo.query(otpChecker, (err, otp_result, fields) => {
             if (err) {
-              console.log(err);
+              // console.log(err);
             } else {
               if (otp_result[0].user_OTP === OTP) {
                 return res.send({

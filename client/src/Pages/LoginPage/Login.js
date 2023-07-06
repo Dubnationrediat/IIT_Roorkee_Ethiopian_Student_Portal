@@ -144,10 +144,13 @@ const Login = () => {
 
             <Link to="/forgotPass" className="a3 a1">
               Forgot password ?
-            </Link> <br />
-            <Link to="/signup" className="a3 a1">
+            </Link> 
+            <Link to="/signup" className="a3 a1 my-3">
             Click Here To Create an Account?
             </Link>
+            <Link to="/developer" className="a22">
+                Word From The Developers
+              </Link>
           </div>
           <div className="sideNote1 container col-12 col-md-5 ms-md-2 mt-sm-4 mt-md-0 ">
               <p className="forTitle">David Rocastle Once Said...</p>

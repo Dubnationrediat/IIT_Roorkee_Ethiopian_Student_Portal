@@ -9,7 +9,7 @@ let pTech =`SELECT * FROM educationaldocument WHERE section = "Phd"`
 let forAdmin_allUsers = (req,res)=>{
     connectionInfo.query(allUsers,(err,result,field)=>{
         if(err){
-            console.log(err)
+            // console.log(err)
         }else{
            return res.send(
             result

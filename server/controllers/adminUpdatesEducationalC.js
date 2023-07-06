@@ -35,7 +35,7 @@ let updateEducationAll = (req,res)=>{
     let updatedPhd = `UPDATE educationaldocument SET Department='${Department}',Section='Phd',Document_type='${document_type}',Course_Code='${course_code}',Course_name='${course_name}',Course_given_by='${course_given_by}',Document_path='${document_path}' WHERE Document_id='${params_id}' `;
     connectionInfo.query(updatedPhd,(err)=>{
         if(err){
-            console.log(err)
+            // console.log(err)
         }else{
             res.send({
                 successMessage: "PhD Section updated successfully",

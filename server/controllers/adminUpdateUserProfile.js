@@ -6,7 +6,7 @@ let update_information = `UPDATE userinfo SET user_first_name='${user_first_name
 
 connectionInfo.query(update_information,(err)=>{
     if(err){
-        console.log(err)
+        // console.log(err)
     }else{
         res.send({
             successMessage: "Profile updated successfully",

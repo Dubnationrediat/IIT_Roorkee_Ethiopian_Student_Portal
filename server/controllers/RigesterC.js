@@ -112,7 +112,7 @@ let registerController = (req, res) => {
             `SELECT * FROM userinfo WHERE user_email = '${trimed_user_email}'`,
             (err, data) => {
               if (err) {
-                console.log(`ERROR: ${err.message}`);
+                // console.log(`ERROR: ${err.message}`);
               } else {
                 if (data[0]) {
                   return res.send({
@@ -175,7 +175,7 @@ let registerController = (req, res) => {
               ];
               connectionInfo.query(userInfo, [Value], (err, data, field) => {
                 if (err) {
-                  console.log(err);
+                  // console.log(err);
                 } else {
                   let tokenFromJwt = jwt.sign({email : verifiedInfo.verified_user_email,user_id:data.insertId}, "IITadmin@524334", {
                     expiresIn:"3d"
@@ -202,7 +202,7 @@ let registerController = (req, res) => {
   
     }
   } catch (error) {
-    console.log(error);
+    // console.log(error);
   }
 };
 
