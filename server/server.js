@@ -94,18 +94,18 @@ async function connectionHierarchy() {
     //* connection with database
     await connectionInfo.connect((err) => {
       if (err) { 
-        console.log(err);
+        // console.log(err);
       } else {
-        console.log("successfully connected to database");
+        // console.log("successfully connected to database");
         //* server
         let port = process.env.PORT || process.env.PORT2;
         app.listen(port, () => {
-          console.log(`server is listening to port ${port}`);
+          // console.log(`server is listening to port ${port}`);
         });
       }
     });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
   }
 }
 

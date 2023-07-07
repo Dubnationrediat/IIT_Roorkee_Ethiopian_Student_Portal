@@ -70,28 +70,28 @@ let educationalDocument = `CREATE TABLE if not exists educationalDocument(
 let tableCreator = (req, res) => {
   connectionInfo.query(userInfo, (err) => {
     if (err) {
-      console.log(err);
+      // console.log(err);
     }
   });
   connectionInfo.query(notificationTable, (err) => {
     if (err) {
-      console.log(err);
+      // console.log(err);
     }
   });
   connectionInfo.query(buyOrSellTable, (err) => {
     if (err) {
-      console.log(err);
+      // console.log(err);
     }
   });
 
   connectionInfo.query(educationalDocument, (err) => {
     if (err) {
-      console.log(err);
+      // console.log(err);
     }
   });
   connectionInfo.query(userProfile, (err) => {
     if (err) {
-      console.log(err);
+      // console.log(err);
     }
   });
   res.send("all tables created");

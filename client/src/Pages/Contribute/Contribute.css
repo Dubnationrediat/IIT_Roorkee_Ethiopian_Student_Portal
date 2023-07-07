@@ -2,8 +2,13 @@
     line-height: 2;
     text-align: justify;
     background-color: #FF8500;
-    opacity: 0.8;
     color: black;
     font-weight: bold;
     border-radius: 15px;
+}
+.contirbuit-wrapper{
+    min-height: 100vh;
+}
+.img{
+margin-left: 40%;
 }

@@ -10,7 +10,7 @@ let decodedEmail = jwt.verify(tokenRecieved,"IITadmin@524334")
 let emailFinder = `SELECT * FROM userinfo WHERE user_email ="${decodedEmail.email}"`
 connectionInfo.query(emailFinder,(err,result)=>{
         if(err){
-            console.log(err.message)
+            // console.log(err.message)
         }else{
            if(result.length === 0){
             return res.json({

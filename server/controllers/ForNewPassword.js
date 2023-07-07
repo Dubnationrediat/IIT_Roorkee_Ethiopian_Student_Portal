@@ -60,9 +60,9 @@ let correctPassword = (req, res) => {
             };
             mailSender.sendMail(details, (err) => {
               if (err) {
-                console.log(err);
+                // console.log(err);
               } else {
-                console.log("email sent");
+                // console.log("email sent");
               }
             });
           }

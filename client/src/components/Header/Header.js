@@ -30,7 +30,7 @@ function Header() {
     (e) => {
       if (e && e.preventDefault()) {
         clickHandler(e);
-        console.log("its running again");
+        // console.log("its running again");
       }
     },
     [route, display]

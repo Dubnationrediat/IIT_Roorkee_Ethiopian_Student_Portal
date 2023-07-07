@@ -6,7 +6,7 @@ function PotectRoute({ children }) {
   let navigate = useNavigate();
   let { isAuth } = useSelector((state) => state.auth);
 
-  console.log(isAuth);
+  // console.log(isAuth);
 
   if (isAuth) {
     return children;

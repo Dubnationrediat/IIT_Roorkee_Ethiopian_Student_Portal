@@ -387,12 +387,12 @@ const SignUp = () => {
                 Word From The Developers
               </Link>
             </p>
-            {/* <Link to="/terms" className="a33 text-center">
+            <Link to="/terms" className="a33 text-center">
               Terms And Conditions
             </Link>
-            <Link to="/privacy" className="a33 text-center">
+            <Link to="/privacy" className="a33 text-center mb-2">
             Privacy Policy
-            </Link> */}
+            </Link>
                
           <Link to="/login" className="a33 text-center">
             Already have an account?

@@ -4,7 +4,7 @@ let updateNotificatioByAdmin = (req,res)=>{
    let updatedNotification = `UPDATE notifications SET user_notification_message='${user_notification}'WHERE notification_id='${params_id}'`;
    connectionInfo.query(updatedNotification,(err)=>{
     if(err){
-        console.log(err)
+        // console.log(err)
     }else{
         res.send({
             successMessage: "Notification updated successfully",
