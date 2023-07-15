@@ -29,9 +29,9 @@ import userProfile from "./Routes/getProfileR.js";
 import getYourSingleGoods from "./Routes/uploadGoodsR.js";
 import deleteGoods from "./Routes/uploadGoodsR.js";
 import adminRouter from "./Routes/Admin.js";
-import adminPhdDelete from "./Routes/adminDeleteR.js"
-import updateNotificationA from './Routes/adminUpdate.js';
-import updateUserProfileAdmin from './Routes/updateUserInfoByAdmin.js'
+import adminPhdDelete from "./Routes/adminDeleteR.js";
+import updateNotificationA from "./Routes/adminUpdate.js";
+import updateUserProfileAdmin from "./Routes/updateUserInfoByAdmin.js";
 //* initializing express
 let app = express();
 // initializing dotenv
@@ -51,13 +51,12 @@ app.use(express.static("Resources/fileFromMtech/"));
 app.use(express.static("Resources/fileFromPhd/"));
 app.use(express.static("Resources/goodsPicture/"));
 
-
 app.use("/user", setNewPassWord);
 app.use("/user", userProfile);
 app.use("/admin", tableRoute);
 app.use("/admin", emailCheck);
-app.use('/admin',adminRouter)
-app.use('/admin',adminPhdDelete)
+app.use("/admin", adminRouter);
+app.use("/admin", adminPhdDelete);
 app.use("/user", Register);
 app.use("/user", loginRoute);
 app.use("/user", forPasswordChange);
@@ -75,11 +74,10 @@ app.use("/user", getAllEduDocR);
 app.use("/user", goodsFileUploadR);
 app.use("/user", goodsShowerR);
 app.use("/user", phdPdfDawnloader);
-app.use('/user',deleteGoods)
-app.use('/user',getYourSingleGoods)
-app.use('/admin',updateNotificationA)
-app.use('/admin',updateUserProfileAdmin)
-
+app.use("/user", deleteGoods);
+app.use("/user", getYourSingleGoods);
+app.use("/admin", updateNotificationA);
+app.use("/admin", updateUserProfileAdmin);
 
 //* connection info for database
 let connectionInfo = mysql2.createConnection({
@@ -89,23 +87,23 @@ let connectionInfo = mysql2.createConnection({
   database: process.env.DATABASE,
 });
 
+let port = process.env.PORT || process.env.PORT2;
 async function connectionHierarchy() {
   try {
     //* connection with database
     await connectionInfo.connect((err) => {
-      if (err) { 
+      if (err) {
         console.log(err);
       } else {
         console.log("successfully connected to database");
         //* server
-        let port = process.env.PORT || process.env.PORT2;
         app.listen(port, () => {
           console.log(`server is listening to port ${port}`);
         });
       }
     });
   } catch (error) {
-    // console.log(error);
+    console.log(error);
   }
 }
 
