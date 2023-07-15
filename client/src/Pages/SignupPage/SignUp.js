@@ -404,6 +404,7 @@ const SignUp = () => {
               Please..
             </h1>
             <ul className="forUl">
+              <li>please see the "how it works" video first <a href="/howitworks">click here to view</a> </li>
               <li>Fill all Input Fields correctly</li>
               <li>name should only contain characters</li>
               <li>pass a proper Email</li>

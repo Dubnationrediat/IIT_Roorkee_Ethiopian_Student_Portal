@@ -151,6 +151,9 @@ const Login = () => {
             <Link to="/developer" className="a22">
                 Word From The Developers
               </Link>
+            {/* <Link to="/howitworks" className="a22"> */}
+            please see the "how it works" video first <a href="/howitworks">click here to view</a>
+              {/* </Link> */}
           </div>
           <div className="sideNote1 container col-12 col-md-5 ms-md-2 mt-sm-4 mt-md-0 ">
               <p className="forTitle">David Rocastle Once Said...</p>
