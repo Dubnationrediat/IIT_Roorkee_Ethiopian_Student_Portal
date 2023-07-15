@@ -106,7 +106,7 @@ const Login = () => {
     }
   } else {
     return (
-      <div className="container me-5">
+      <div className="container me-5 vh-100">
         <div className="container py-5 d-md-flex justify-content-between login_container">
           <div className="main col-12 col-md-6 me-md-2 p-5 d-flex flex-column justify-content-center">
             <p className="p1">IITR Ethiopian Students Union</p>
