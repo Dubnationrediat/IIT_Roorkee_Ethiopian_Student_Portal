@@ -373,11 +373,11 @@ const SignUp = () => {
           <p className="mt-md-5 mt-sm-5 text-center texttag">
             I agree to the
             <Link to="/privacy" className="a22">
-              privacy policy
+              Privacy policy
             </Link>
             and
             <Link to="/terms" className="a22">
-              terms of serivice.
+              Terms of service.
             </Link>
             </p>
          
@@ -387,12 +387,7 @@ const SignUp = () => {
                 Word From The Developers
               </Link>
             </p>
-            <Link to="/terms" className="a33 text-center">
-              Terms And Conditions
-            </Link>
-            <Link to="/privacy" className="a33 text-center mb-2">
-            Privacy Policy
-            </Link>
+
                
           <Link to="/login" className="a33 text-center">
             Already have an account?
