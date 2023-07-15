@@ -1,5 +1,5 @@
 import connectionInfo from "../server.js";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 let loginC = (req, res) => {
   const { user_email, user_password } = req.body;
@@ -75,7 +75,3 @@ export default loginC;
 //     result : "true"
 
 // })
-
-
-
-

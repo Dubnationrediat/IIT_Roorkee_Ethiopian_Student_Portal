@@ -95,15 +95,18 @@ const SignUp = () => {
         data: userFile,
       })
         .then((data) => {
-            setresponse(data.data);
-            let token = data.data.token;
+          // console.log(data);
+          setresponse(data.data);
+          let token = data?.data?.token;
+          // console.log(token);
+          if (token) {
             cookies.set("token", token, {
               path: "/",
               expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
             });
             dispatch(getUser());
             navigate("/dashbord");
-      
+          }
         })
         .catch((err) => {
           // console.log(err);
@@ -187,202 +190,211 @@ const SignUp = () => {
   } else {
     return (
       <div className="container me-3">
-      <div className="container d-md-flex mx-auto py-5 align-items-center sign_page">
-        <div className="form_wrapper col-12 col-md-6 me-md-2 p-5 d-flex flex-column">
-          <p className="p11">IITR Ethiopian Students Union</p>
-          <p className="p22 lorem">
-            Already have an account?
-            <Link to="/login" className="a11">
-              Sign in
-            </Link>
-          </p>
-          <form onSubmit={formSubmitter}>
-            <div className="FLname d-flex">
-              <input
-                required
-                className="in11 me-1"
-                autoComplete="new-password"
-                name="user_first_name"
-                onChange={handleChange}
-                type="text"
-                placeholder="First Name"
-              />
-              <input
-                required
-                className="in11 ms-1"
-                name="user_last_name"
-                onChange={handleChange}
-                type="text"
-                autoComplete="new-password"
-                placeholder="Last Name"
-              />
-            </div>
-            <input
-              required
-              className="in11 mr-1"
-              name="user_email"
-              autoComplete="new-password"
-              onChange={handleChange}
-              type="email"
-              placeholder="Email"
-            />
-            <input
-              required
-              className="in11"
-              onChange={handleChange}
-              name="user_whatsapp_number"
-              autoComplete="new-password"
-              type="tel"
-              placeholder="Insert Whatsapp Number start by +251...."
-            />
-            <input
-              required
-              className="in11"
-              onChange={handleChange}
-              name="user_Indian_number"
-              autoComplete="new-password"
-              type="tel"
-              placeholder="Insert Indian Number start by +91..."
-            />
-
-            <select
-              required
-              className="in11"
-              onChange={handleChange}
-              name="user_department"
-              autoComplete="new-password"
-              type="tel"
-            >
-              <option value="not selected">
-                Please select Your Department
-              </option>
-              <option value="Department of Earth Sciences">
-                Department of Earth Sciences
-              </option>
-              <option value="Department of Civil Engineering">
-                Department of Civil Engineering
-              </option>
-              <option value="Department of Computer Science and Engineering">
-                Department of Computer Science and Engineering
-              </option>
-              <option value="Department of Design">
-                Department of Design
-              </option>
-              <option value="Department of Applied Mathematics and Scientific Computing">
-                Department of Applied Mathematics and Scientific Computing
-              </option>
-              <option value="Department of Chemistry">
-                Department of Chemistry
-              </option>
-              <option value="Department of Architecture and Planning">
-                Department of Architecture and Planning
-              </option>
-              <option value="Department of Biosciences and Bioengineering">
-                Department of Biosciences and Bioengineering
-              </option>
-              <option value="Department of Chemical Engineering">
-                Department of Chemical Engineering
-              </option>
-              <option value="Department of Electrical Engineering">
-                Department of Electrical Engineering
-              </option>
-              <option value="Department of Humanities and Social Sciences">
-                Department of Humanities and Social Sciences
-              </option>
-              <option value="Department of Hydro and Renewable Energy">
-                Department of Hydro and Renewable Energy
-              </option>
-              <option value="Department of Hydrology">
-                Department of Hydrology
-              </option>
-              <option value="Department of Management Studies">
-                Department of Management Studies
-              </option>
-              <option value="Department of Mathematics">
-                Department of Mathematics
-              </option>
-              <option value="Department of Mechanical and Industrial Engineering">
-                Department of Mechanical and Industrial Engineering
-              </option>
-              <option value="Department of Metallurgical and Materials Engineering">
-                Department of Metallurgical and Materials Engineering
-              </option>
-              <option value="Department of Paper Technology">
-                Department of Paper Technology
-              </option>
-              <option value="Department of Physics">
-                Department of Physics
-              </option>
-              <option value="Department of Polymer and Process Engineering">
-                Department of Polymer and Process Engineering
-              </option>
-              <option value="Department of Water Resources Development and Management">
-                Department of Water Resources Development and Management
-              </option>
-              <option value="Department of Earthquake Engineering">
-                Department of Earthquake Engineering
-              </option>
-              <option value="Department of Electronics and Communication Engineering">
-                Department of Electronics and Communication Engineering
-              </option>
-            </select>
-            <select
-              required
-              className="in11"
-              onChange={handleChange}
-              name="user_study_section"
-              autoComplete="new-password"
-              type="tel"
-            >
-              <option value="not selected">
-                Please select study section
-              </option>
-              <option value="Phd">Phd</option>
-              <option value="MTech">M-Tech</option>
-              <option value="BTech">B-Tech</option>
-            </select>
-            <input
-              required
-              className="in11"
-              onChange={handleChange}
-              name="user_password"
-              autoComplete="new-password"
-              type={type}
-              placeholder="Password with"
-            />
-            
-            <span className="showHide ">
-              <Icon icon={icon} size={22} onClick={HandleIconChange} className="iconss"/>
-            </span>
-            <input
-              required
-              className="in11 mt-4"
-              onChange={handleChange}
-              name="Confirm_Password"
-              autoComplete="new-password"
-              type={type1}
-              onPaste={handlePaste}
-              placeholder="Confirm Password"
-            />
-            <span className="showHide ">
-              <Icon icon={icon1} size={22} onClick={HandleIconChangee}className="iconss" />
-            </span>
-
-            <button className="btnSign">Agree and Join</button>
-          </form>
-          <p className="mt-md-5 mt-sm-5 text-center texttag">
-            I agree to the
-            <Link to="/privacy" className="a22">
-              privacy policy
-            </Link>
-            and
-            <Link to="/terms" className="a22">
-              terms of serivice.
-            </Link>
+        <div className="container d-md-flex mx-auto py-5 align-items-center sign_page">
+          <div className="form_wrapper col-12 col-md-6 me-md-2 p-5 d-flex flex-column">
+            <p className="p11">IITR Ethiopian Students Union</p>
+            <p className="p22 lorem">
+              Already have an account?
+              <Link to="/login" className="a11">
+                Sign in
+              </Link>
             </p>
-         
+            <form onSubmit={formSubmitter}>
+              <div className="FLname d-flex">
+                <input
+                  required
+                  className="in11 me-1"
+                  autoComplete="new-password"
+                  name="user_first_name"
+                  onChange={handleChange}
+                  type="text"
+                  placeholder="First Name"
+                />
+                <input
+                  required
+                  className="in11 ms-1"
+                  name="user_last_name"
+                  onChange={handleChange}
+                  type="text"
+                  autoComplete="new-password"
+                  placeholder="Last Name"
+                />
+              </div>
+              <input
+                required
+                className="in11 mr-1"
+                name="user_email"
+                autoComplete="new-password"
+                onChange={handleChange}
+                type="email"
+                placeholder="Email"
+              />
+              <input
+                required
+                className="in11"
+                onChange={handleChange}
+                name="user_whatsapp_number"
+                autoComplete="new-password"
+                type="tel"
+                placeholder="Insert Whatsapp Number start by +251...."
+              />
+              <input
+                required
+                className="in11"
+                onChange={handleChange}
+                name="user_Indian_number"
+                autoComplete="new-password"
+                type="tel"
+                placeholder="Insert Indian Number start by +91..."
+              />
+
+              <select
+                required
+                className="in11"
+                onChange={handleChange}
+                name="user_department"
+                autoComplete="new-password"
+                type="tel"
+              >
+                <option value="not selected">
+                  Please select Your Department
+                </option>
+                <option value="Department of Earth Sciences">
+                  Department of Earth Sciences
+                </option>
+                <option value="Department of Civil Engineering">
+                  Department of Civil Engineering
+                </option>
+                <option value="Department of Computer Science and Engineering">
+                  Department of Computer Science and Engineering
+                </option>
+                <option value="Department of Design">
+                  Department of Design
+                </option>
+                <option value="Department of Applied Mathematics and Scientific Computing">
+                  Department of Applied Mathematics and Scientific Computing
+                </option>
+                <option value="Department of Chemistry">
+                  Department of Chemistry
+                </option>
+                <option value="Department of Architecture and Planning">
+                  Department of Architecture and Planning
+                </option>
+                <option value="Department of Biosciences and Bioengineering">
+                  Department of Biosciences and Bioengineering
+                </option>
+                <option value="Department of Chemical Engineering">
+                  Department of Chemical Engineering
+                </option>
+                <option value="Department of Electrical Engineering">
+                  Department of Electrical Engineering
+                </option>
+                <option value="Department of Humanities and Social Sciences">
+                  Department of Humanities and Social Sciences
+                </option>
+                <option value="Department of Hydro and Renewable Energy">
+                  Department of Hydro and Renewable Energy
+                </option>
+                <option value="Department of Hydrology">
+                  Department of Hydrology
+                </option>
+                <option value="Department of Management Studies">
+                  Department of Management Studies
+                </option>
+                <option value="Department of Mathematics">
+                  Department of Mathematics
+                </option>
+                <option value="Department of Mechanical and Industrial Engineering">
+                  Department of Mechanical and Industrial Engineering
+                </option>
+                <option value="Department of Metallurgical and Materials Engineering">
+                  Department of Metallurgical and Materials Engineering
+                </option>
+                <option value="Department of Paper Technology">
+                  Department of Paper Technology
+                </option>
+                <option value="Department of Physics">
+                  Department of Physics
+                </option>
+                <option value="Department of Polymer and Process Engineering">
+                  Department of Polymer and Process Engineering
+                </option>
+                <option value="Department of Water Resources Development and Management">
+                  Department of Water Resources Development and Management
+                </option>
+                <option value="Department of Earthquake Engineering">
+                  Department of Earthquake Engineering
+                </option>
+                <option value="Department of Electronics and Communication Engineering">
+                  Department of Electronics and Communication Engineering
+                </option>
+              </select>
+              <select
+                required
+                className="in11"
+                onChange={handleChange}
+                name="user_study_section"
+                autoComplete="new-password"
+                type="tel"
+              >
+                <option value="not selected">
+                  Please select study section
+                </option>
+                <option value="Phd">Phd</option>
+                <option value="MTech">M-Tech</option>
+                <option value="BTech">B-Tech</option>
+              </select>
+              <input
+                required
+                className="in11"
+                onChange={handleChange}
+                name="user_password"
+                autoComplete="new-password"
+                type={type}
+                placeholder="Password with"
+              />
+
+              <span className="showHide ">
+                <Icon
+                  icon={icon}
+                  size={22}
+                  onClick={HandleIconChange}
+                  className="iconss"
+                />
+              </span>
+              <input
+                required
+                className="in11 mt-4"
+                onChange={handleChange}
+                name="Confirm_Password"
+                autoComplete="new-password"
+                type={type1}
+                onPaste={handlePaste}
+                placeholder="Confirm Password"
+              />
+              <span className="showHide ">
+                <Icon
+                  icon={icon1}
+                  size={22}
+                  onClick={HandleIconChangee}
+                  className="iconss"
+                />
+              </span>
+
+              <button className="btnSign">Agree and Join</button>
+            </form>
+            <p className="mt-md-5 mt-sm-5 text-center texttag">
+              I agree to the
+              <Link to="/privacy" className="a22">
+                privacy policy
+              </Link>
+              and
+              <Link to="/terms" className="a22">
+                terms of serivice.
+              </Link>
+            </p>
+
             <p className="mt-md-2 mt-sm-2 text-center texttag">
-             
               <Link to="/developer" className="a22">
                 Word From The Developers
               </Link>
@@ -391,30 +403,38 @@ const SignUp = () => {
               Terms And Conditions
             </Link>
             <Link to="/privacy" className="a33 text-center mb-2">
-            Privacy Policy
+              Privacy Policy
             </Link>
-               
-          <Link to="/login" className="a33 text-center">
-            Already have an account?
+
+            <Link to="/login" className="a33 text-center">
+              Already have an account?
             </Link>
-            
+          </div>
+          <div className="notePartsell p-5 m-4 col-md-5 h-100 ">
+            <h1 className="animate__animated animate__rubberBand animate__repeat-3 p-2 ">
+              Please..
+            </h1>
+            <ul className="forUl">
+              <li>Fill all Input Fields correctly</li>
+              <li>name should only contain characters</li>
+              <li>pass a proper Email</li>
+              <li>Ethiopian number should be filled by starting with +251</li>
+              <li>Indian number should be filled by starting with +91</li>
+              <li>
+                Password should contain at list 8 Character, 1 special
+                character, 1 upper and lower case,
+              </li>
+              <p className="forTitle text-decoration-underline">
+                David Rocastle Once Said...
+              </p>
+              <h3>
+                Remember Who You Are, What you Are and Who you Represent!{" "}
+              </h3>
+              <img className="" src={Ethiopia} alt="" />
+            </ul>
+          </div>
         </div>
-        <div className='notePartsell p-5 m-4 col-md-5 h-100 '>
-       <h1 className='animate__animated animate__rubberBand animate__repeat-3 p-2 '>Please..</h1>
-          <ul className='forUl'>
-            <li>Fill all Input Fields correctly</li>
-            <li>name should only contain characters</li>
-            <li>pass a proper Email</li>
-            <li>Ethiopian number should be filled by starting with +251</li>
-            <li>Indian number should be filled by starting with +91</li>
-            <li>Password should contain at list 8 Character, 1 special character, 1 upper and lower case,</li>
-            <p className="forTitle text-decoration-underline">David Rocastle Once Said...</p>
-            <h3>Remember Who You Are, What you Are and Who you Represent! </h3>
-             <img className="" src={Ethiopia} alt="" />
-          </ul>
-   </div>
       </div>
-    </div>
     );
   }
 };
