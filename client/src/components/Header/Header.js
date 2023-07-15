@@ -46,7 +46,9 @@ function Header() {
     <div className="header container-fluid">
       <div className="innerContainer container d-flex justify-content-around ">
         <div className="header__image">
+          {/* <Link to='/dashbord' > */}
           <img src={logo} alt="IIT ROORKEE logo" />
+          {/* </Link> */}
         </div>
         <div className="d-flex   innerContainer2 justify-content-between d-md-block">
            <Navbar bg="light" expand="lg">
@@ -60,7 +62,6 @@ function Header() {
           <Link to="https://ir.iitr.ac.in/IR_Panel/">
             IR Portal
           </Link>
-          {/* <Link to="https://ir.iitr.ac.in/IR_Panel/" clclassName="nav-link">IR Portal</Link> */}
           <Link to="/howitworks">How It Works</Link>
           <Link to="/contribution">Contribute</Link>
           <Link to="/admin">Admin</Link>

@@ -129,7 +129,9 @@ function NewPassword() {
                 autoComplete="new-password"
                 onChange={handle_change}
               />
-              <span className="showHide "></span>
+              <span className="showHide ">
+                
+              </span>
               <button className="btn1">Update Password</button>
             </form>
           </div>
