@@ -46,7 +46,7 @@ if(response){
           <Button onClick={deleteProfileHandler} className="bg-danger">Yes, Delete Account</Button>
         </div>
         <div className="m-4">
-          <Link to="/dashboard">
+          <Link to="/dashbord">
             <Button>No, Please Take me Back</Button>
           </Link>
         </div>

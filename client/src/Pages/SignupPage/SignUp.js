@@ -95,10 +95,8 @@ const SignUp = () => {
         data: userFile,
       })
         .then((data) => {
-          // console.log(data);
           setresponse(data.data);
           let token = data?.data?.token;
-          // console.log(token);
           if (token) {
             cookies.set("token", token, {
               path: "/",
@@ -392,6 +390,7 @@ const SignUp = () => {
               <Link to="/terms" className="a22">
                 terms of serivice.
               </Link>
+
             </p>
 
             <p className="mt-md-2 mt-sm-2 text-center texttag">
@@ -399,22 +398,13 @@ const SignUp = () => {
                 Word From The Developers
               </Link>
             </p>
-            <Link to="/terms" className="a33 text-center">
-              Terms And Conditions
-            </Link>
-            <Link to="/privacy" className="a33 text-center mb-2">
-              Privacy Policy
-            </Link>
-
-            <Link to="/login" className="a33 text-center">
-              Already have an account?
-            </Link>
           </div>
           <div className="notePartsell p-5 m-4 col-md-5 h-100 ">
             <h1 className="animate__animated animate__rubberBand animate__repeat-3 p-2 ">
               Please..
             </h1>
             <ul className="forUl">
+              <li>please see the "how it works" video first <a href="/howitworks">click here to view</a> </li>
               <li>Fill all Input Fields correctly</li>
               <li>name should only contain characters</li>
               <li>pass a proper Email</li>

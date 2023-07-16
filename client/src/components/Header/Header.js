@@ -47,7 +47,9 @@ function Header() {
     <div className="header container-fluid">
       <div className="innerContainer container d-flex justify-content-around ">
         <div className="header__image">
+          {/* <Link to='/dashbord' > */}
           <img src={logo} alt="IIT ROORKEE logo" />
+          {/* </Link> */}
         </div>
         <div className="d-flex   innerContainer2 justify-content-between d-md-block">
           <Navbar bg="light" expand="lg">
@@ -94,6 +96,8 @@ function Header() {
               </Navbar.Collapse>
             </Container>
           </Navbar>
+
+
         </div>
       </div>
     </div>
