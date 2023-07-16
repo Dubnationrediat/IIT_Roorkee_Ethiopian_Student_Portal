@@ -36,21 +36,21 @@ import { useDispatch, useSelector } from "react-redux";
 import { getUser } from "./components/Redux/Reducers/authSlice";
 import TeamsServices from "./Pages/TeamsAndServices/Teams.js";
 import Developer from "./Pages/Developers/Developers";
-import Privacy from "./Pages/PrivacyPolicy/PrivacyPolicy"
-import Terms from "./Pages/TeamsAndServices/Teams.js"
-import Admin from "./Pages/Admin/Admin.js"
+import Privacy from "./Pages/PrivacyPolicy/PrivacyPolicy";
+import Terms from "./Pages/TeamsAndServices/Teams.js";
+import Admin from "./Pages/Admin/Admin.js";
 
-import UpdateNotificationAdmin from './Pages/Admin/UpdateNotification/UpdateNotificationAdmin'
-import UpdateUserInfoAdmin from './Pages/Admin/UpdateUserInformation/UpdateUserInformationAdmin'
-import UpdateUserGoodsAdmin from './Pages/Admin/UpdateGoods/UpdateGoodsAdmin'
-import UpdateBtechAdmin from './Pages/Admin/UpdateEducationalnfo/UpdateBtechAdmin'
-import UpdateMtechAdmin from './Pages/Admin/UpdateEducationalnfo/UpdateMtechAdmin'
-import UpdatePhdAdmin from './Pages/Admin/UpdateEducationalnfo/UpdatePhdAdmin'
-import updateNotificationAdmin from './Pages/Admin/UpdateNotification/UpdateNotificationAdmin'
+import UpdateNotificationAdmin from "./Pages/Admin/UpdateNotification/UpdateNotificationAdmin";
+import UpdateUserInfoAdmin from "./Pages/Admin/UpdateUserInformation/UpdateUserInformationAdmin";
+import UpdateUserGoodsAdmin from "./Pages/Admin/UpdateGoods/UpdateGoodsAdmin";
+import UpdateBtechAdmin from "./Pages/Admin/UpdateEducationalnfo/UpdateBtechAdmin";
+import UpdateMtechAdmin from "./Pages/Admin/UpdateEducationalnfo/UpdateMtechAdmin";
+import UpdatePhdAdmin from "./Pages/Admin/UpdateEducationalnfo/UpdatePhdAdmin";
+import updateNotificationAdmin from "./Pages/Admin/UpdateNotification/UpdateNotificationAdmin";
 import PDFdisplay from "./Pages/pdfDisplay/PDFdisplay";
 function App() {
   const dispatch = useDispatch();
-  const { isLoading } = useSelector((state) => state.auth);
+  const { isLoading, isAuth, user } = useSelector((state) => state.auth);
   useEffect(() => {
     dispatch(getUser());
   }, []);
@@ -66,24 +66,54 @@ function App() {
           <Route exact path="/home" element={<SignUp />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/signup" element={<SignUp />} />
-          <Route exact path="info" element={<PDFdisplay/>}/>
+          <Route exact path="info" element={<PDFdisplay />} />
           <Route exact path="/contribution" element={<Contribution />} />
           <Route exact path="/howitworks" element={<HowItWorks />} />
           <Route exact path="/forgotPass" element={<ForgotPassword />} />
           <Route exact path="/forgotPass/:email" element={<Otp />} />
           <Route exact path="/ForNewPasswordOTP" element={<ForNewPassword />} />
           <Route exact path="/setNewPassword" element={<NewPassword />} />
-          <Route exact path="/teamsAndServices" element={<TeamsServices/>} />
-          <Route exact path='/developer' element={<Developer/>} />
-          <Route exact path='/privacy' element={<Privacy/>} />
-          <Route exact path='/terms' element={<Terms/>} />
-          <Route exact path='/admin' element={<Admin/>} />
-          <Route exact path='/updateNotification/:id' element={<UpdateNotificationAdmin/> }/>
-          <Route exact path='/updateUserInfoAdmin/:id' element={<UpdateUserInfoAdmin/>}/>
-          <Route exact path='/updateUserGoodsAdmin/:id' element={<UpdateUserGoodsAdmin/>}/>
-          <Route exact path='/updateBtechAdmin/:id' element={<UpdateBtechAdmin/>}/>
-          <Route exact path='/updateMtechAdmin/:id' element={<UpdateMtechAdmin/>}/>
-          <Route exact path='/updatePhdAdmin/:id' element={<UpdatePhdAdmin/>}/>
+          <Route exact path="/teamsAndServices" element={<TeamsServices />} />
+          <Route exact path="/developer" element={<Developer />} />
+          <Route exact path="/privacy" element={<Privacy />} />
+          <Route exact path="/terms" element={<Terms />} />
+          <Route
+            exact
+            path="/admin"
+            element={
+              isAuth && user.user_role == 1 ? <Admin /> : <PageNotFound />
+            }
+          />
+          <Route
+            exact
+            path="/updateNotification/:id"
+            element={<UpdateNotificationAdmin />}
+          />
+          <Route
+            exact
+            path="/updateUserInfoAdmin/:id"
+            element={<UpdateUserInfoAdmin />}
+          />
+          <Route
+            exact
+            path="/updateUserGoodsAdmin/:id"
+            element={<UpdateUserGoodsAdmin />}
+          />
+          <Route
+            exact
+            path="/updateBtechAdmin/:id"
+            element={<UpdateBtechAdmin />}
+          />
+          <Route
+            exact
+            path="/updateMtechAdmin/:id"
+            element={<UpdateMtechAdmin />}
+          />
+          <Route
+            exact
+            path="/updatePhdAdmin/:id"
+            element={<UpdatePhdAdmin />}
+          />
           <Route
             exact
             path="/btechSectionUpload"
