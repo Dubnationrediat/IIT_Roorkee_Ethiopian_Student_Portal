@@ -1,4 +1,4 @@
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import connectionInfo from "../server.js";
 import jwt from "jsonwebtoken";
 let registerController = (req, res) => {

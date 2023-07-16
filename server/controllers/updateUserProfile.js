@@ -1,5 +1,5 @@
 import connectionInfo from "../server.js";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 let updateUserProfile = (req, res) => {
   const {
     user_first_name,
