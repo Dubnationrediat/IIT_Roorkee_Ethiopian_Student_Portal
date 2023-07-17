@@ -44,8 +44,10 @@ function Footer() {
         <p className='text-light'>registrar@iitr.ac.in</p>
         <p className='text-light'>+91-1332-285311</p>
        <h5 className='text-light'>
-       contact this page amin:
+       contact this page administrators:
        </h5>
+       <p className='text-light'>kudesu6178@gmail.com</p>
+       <p className='text-light'>samsonmeseretb@gmail.com</p>
        <p className='text-light'>rediat_ta@ch.iitr.ac.in</p>
       </div>
     </div>
