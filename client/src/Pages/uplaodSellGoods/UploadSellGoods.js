@@ -211,7 +211,7 @@ if(Response){
    
    
   </div>
-  <h2 className="yn container my-3">Posted Notifications By You</h2>
+  <h2 className="yn container my-3">Posted Goods By You</h2>
         {userGoods.map((data, i) => {
           let yourNotification = (
             <div

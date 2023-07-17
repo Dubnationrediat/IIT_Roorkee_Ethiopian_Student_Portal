@@ -46,8 +46,8 @@ let uploadGoods = (req,res)=>{
                   }else{
                       res.send({
                           successMessage: "File Successfully Uploaded",
-                          redirect: "/dashbord",
-                          message:"Click Here To Go To Home page"
+                          redirect: "/buyOrSell",
+                          message:"Click Here To Go To Market Page"
                           })
                   }
                 })

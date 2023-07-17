@@ -1,5 +1,5 @@
 import connectionInfo from "../server.js";
-import bcrypt from "bcryptjs";
+import bcrypt from "bcrypt";
 import JWT from "jsonwebtoken";
 
 let setNewPassWord = (req, res) => {

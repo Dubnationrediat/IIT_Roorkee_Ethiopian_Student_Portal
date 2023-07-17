@@ -14,12 +14,15 @@ import IITR from "../fromAcadamicTeam/IITR WIFI Registration.pdf";
 import SIM from "../fromAcadamicTeam/Sim card Subscription_2.pdf";
 import Network from "../fromAcadamicTeam/Network_Security_Setup.rar";
 import software from "../fromAcadamicTeam/anyconnect.zip";
-
+import BonofiedOnline from "../fromAcadamicTeam/NEW/bonofied online application steps.pdf"
+import BonofiiedExampleFirstTime from "../fromAcadamicTeam/NEW/first time bonofied example.pdf"
+import FRROOnlineApplication from "../fromAcadamicTeam/NEW/Effro-format-to-apply-online.pdf"
+import FORMCexample from "../fromAcadamicTeam/NEW/FORM -C.pdf"
 
 function PDFdisplay() {
   return (
     <>
-      <h1 className="h1">Useful Documents</h1>
+      <h1 className="h1 text-decoration-underline">Useful Documents</h1>
       <div className="d-md-flex main-box-wraper">
         <div>
           <div className="box">
@@ -82,9 +85,6 @@ function PDFdisplay() {
               Download pdf
             </a>
           </div>
-        </div>
-
-        <div>
           <div className="box">
             <h5>Useful locations with link</h5>
             <a
@@ -94,6 +94,10 @@ function PDFdisplay() {
               Download pdf
             </a>
           </div>
+        </div>
+
+        <div>
+         
           <div className="box">
             <h5>How to connect internet </h5>
             <a
@@ -133,6 +137,30 @@ function PDFdisplay() {
           <div className="box">
             <h5>SIM card subscription steps</h5>
             <a href={SIM} download>
+              Download pdf
+            </a>
+          </div>
+          <div className="box">
+            <h5>Steps for Bonofied application online</h5>
+            <a href={BonofiedOnline} download>
+              Download pdf
+            </a>
+          </div>
+          <div className="box">
+            <h5>Bonofied Examplel for first time</h5>
+            <a href={BonofiiedExampleFirstTime} download>
+              Download pdf
+            </a>
+          </div>
+          <div className="box">
+            <h5>online application for FRRO</h5>
+            <a href={FRROOnlineApplication} download>
+              Download pdf
+            </a>
+          </div>
+          <div className="box">
+            <h5>FORM-C example</h5>
+            <a href={FORMCexample} download>
               Download pdf
             </a>
           </div>
