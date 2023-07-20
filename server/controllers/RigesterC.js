@@ -1,10 +1,6 @@
-
-const connectionInfo = require('../server.js')
-const bcrypt =require("bcrypt")
-const jwt = require("jsonwebtoken")
-
-
-
+const { connectionInfo } = require("../config");
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
 let registerController = (req, res) => {
   const {
@@ -228,5 +224,4 @@ let registerController = (req, res) => {
   }
 };
 
-
-module.exports = registerController
+module.exports = registerController;

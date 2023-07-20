@@ -1,12 +1,9 @@
-const express = require('express')
-const BtechMulter = require ('../middleware/forBtech.js')
-const uploadBtechFile = require('../controllers/BtechFileUploadC.js')
+const express = require("express");
+const BtechMulter = require("../middleware/forBtech.js");
+const uploadBtechFile = require("../controllers/BtechFileUploadC.js");
 
+let BtechFileUploadR = express.Router();
 
-let BtechFileUploadR = express.Router()
+BtechFileUploadR.post("/btechUpload", BtechMulter, uploadBtechFile);
 
-BtechFileUploadR.post('/btechUpload',BtechMulter,uploadBtechFile)
-
-
-
-module.exports = BtechFileUploadR
+module.exports = BtechFileUploadR;

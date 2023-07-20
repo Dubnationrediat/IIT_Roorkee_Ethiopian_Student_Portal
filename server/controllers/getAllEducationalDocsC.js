@@ -1,4 +1,4 @@
-const connectionInfo = require('../server.js')
+const {connectionInfo} = require('../config')
 
 let getAllEducationalDocPhd= (req,res)=>{
     let phdQuery = `SELECT * FROM educationaldocument WHERE Section='Phd'`

@@ -1,6 +1,6 @@
-const connectionInfo = require('../server.js')
-const bcrypt = require("bcrypt")
-const JWT = require("jsonwebtoken")
+const { connectionInfo } = require("../config");
+const bcrypt = require("bcrypt");
+const JWT = require("jsonwebtoken");
 
 let setNewPassWord = (req, res) => {
   // res.send("hi there");
@@ -44,4 +44,4 @@ let setNewPassWord = (req, res) => {
 
 // export default setNewPassWord;
 
-module.exports = setNewPassWord
+module.exports = setNewPassWord;

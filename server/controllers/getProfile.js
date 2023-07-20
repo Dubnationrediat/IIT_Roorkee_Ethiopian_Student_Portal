@@ -1,5 +1,5 @@
-const connectionInfo = require('../server.js')
-const jwt = require("jsonwebtoken")
+const { connectionInfo } = require("../config");
+const jwt = require("jsonwebtoken");
 
 let getUserProfile = (req, res) => {
   if (req.cookies?.token) {
@@ -27,4 +27,4 @@ let getUserProfile = (req, res) => {
 };
 
 // export default getUserProfile;
-module.exports = getUserProfile
+module.exports = getUserProfile;

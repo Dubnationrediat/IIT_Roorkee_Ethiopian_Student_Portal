@@ -1,6 +1,6 @@
-const connectionInfo = require('../server.js')
-const bcrypt = require("bcrypt")
-const jwt = require("jsonwebtoken")
+const { connectionInfo } = require("../config");
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
 let loginC = (req, res) => {
   const { user_email, user_password } = req.body;
@@ -68,7 +68,7 @@ let loginC = (req, res) => {
 };
 
 // export default loginC;
-module.exports = loginC
+module.exports = loginC;
 
 // res.send({
 //     successMessage: `${user_email}`,

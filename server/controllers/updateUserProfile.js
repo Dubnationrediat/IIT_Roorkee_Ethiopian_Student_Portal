@@ -1,4 +1,4 @@
-const connectionInfo = require('../server.js');
+const { connectionInfo } = require("../config");
 const bcrypt = require("bcrypt");
 let updateUserProfile = (req, res) => {
   const {
@@ -178,4 +178,4 @@ let updateUserProfile = (req, res) => {
   }
 };
 
-module.exports = updateUserProfile
+module.exports = updateUserProfile;

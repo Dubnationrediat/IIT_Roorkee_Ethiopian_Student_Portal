@@ -1,4 +1,4 @@
-const connectionInfo = require('../server.js')
+const {connectionInfo} = require('../config')
 const nodemailer = require("nodemailer")
 const JWT = require("jsonwebtoken")
 

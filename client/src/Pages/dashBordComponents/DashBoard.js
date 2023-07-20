@@ -44,7 +44,7 @@ function DashBord() {
         setorganizer(collector);
       });
     }
-  }, [, notifications]);
+  }, []);
 
   useEffect(() => {
     window.scrollTo(0, 0);

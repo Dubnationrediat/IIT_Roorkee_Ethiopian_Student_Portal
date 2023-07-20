@@ -1,19 +1,18 @@
-const connectionInfo = require('../server.js')
-// * get user previously uploaded notification 
-let getYourSingleGoods= (req,res)=>{
-    const {userInfo_ID} =req.params
-    let userGoods= `SELECT * FROM market WHERE userInfo_ID=${userInfo_ID}`
-    connectionInfo.query(userGoods,(err,data,field)=>{
-       if(err){
-//   console.log(err)
-       }else{
-          return   res.send({
-                   singleData:data
-
-             })
-       }
-    })
-}
+const { connectionInfo } = require("../config");
+// * get user previously uploaded notification
+let getYourSingleGoods = (req, res) => {
+  const { userInfo_ID } = req.params;
+  let userGoods = `SELECT * FROM market WHERE userInfo_ID=${userInfo_ID}`;
+  connectionInfo.query(userGoods, (err, data, field) => {
+    if (err) {
+      //   console.log(err)
+    } else {
+      return res.send({
+        singleData: data,
+      });
+    }
+  });
+};
 
 // * Delete Notification
 // let deleteGoods = (req,res)=>{
@@ -26,7 +25,7 @@ let getYourSingleGoods= (req,res)=>{
 //                 console.log(err)
 //             }else{
 //                    let imageName = data[0].item_photo
-                
+
 //                    connectionInfo.query(deleteUserGoods,(err)=>{
 //                     if(err){
 //                         console.log(err)
@@ -38,7 +37,7 @@ let getYourSingleGoods= (req,res)=>{
 //                                 console.log(`${imageName} is deleted`)
 //                             }
 //                            })
-//                         return res.send({ 
+//                         return res.send({
 //                                           successMessage:'item deleted successfully',
 //                                           message:"Click Here To Go Back",
 //                                           redirect:"/sellGoods"})
@@ -46,12 +45,7 @@ let getYourSingleGoods= (req,res)=>{
 //                 })
 //             }
 //            })
-        
+
 // }
 
-
-
-module.exports = {getYourSingleGoods}
-
-
-
+module.exports = { getYourSingleGoods };
