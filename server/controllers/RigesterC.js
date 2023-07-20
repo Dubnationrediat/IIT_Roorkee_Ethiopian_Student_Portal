@@ -3,6 +3,9 @@ const connectionInfo = require('../server.js')
 const bcrypt =require("bcrypt")
 const jwt = require("jsonwebtoken")
 
+
+
+
 let registerController = (req, res) => {
   const {
     user_first_name,
