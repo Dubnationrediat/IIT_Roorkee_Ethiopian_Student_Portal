@@ -1,8 +1,12 @@
-import express from "express";
-import setNewPassWord from "../controllers/setNewPassword.js";
+const express = require("express")
+const setNewPassWord = require("../controllers/setNewPassword.js")
+
+
 
 let forNewPasswordUpdate = express.Router();
 
 forNewPasswordUpdate.post("/setNewPassword", setNewPassWord);
 
-export default forNewPasswordUpdate;
+
+
+module.exports=forNewPasswordUpdate

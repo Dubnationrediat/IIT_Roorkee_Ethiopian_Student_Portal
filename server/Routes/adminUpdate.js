@@ -1,7 +1,8 @@
-import updateNotificatioByAdmin from '../controllers/adminUpdateNotificationC.js';
-import updateEducationalByAdmin from '../controllers/adminUpdatesEducationalC.js'
-import updateGoodsByAdmin from '../controllers/adminUpdateGoodsC.js';
-import express from 'express';
+const express = require('express')
+const updateNotificatioByAdmin = require('../controllers/adminUpdateNotificationC.js')
+const updateEducationalByAdmin = require('../controllers/adminUpdatesEducationalC.js')
+const updateGoodsByAdmin= require('../controllers/adminUpdateGoodsC.js')
+
 
 let update = express.Router();
 
@@ -10,4 +11,5 @@ update.post('/adminUpdateEducational',updateEducationalByAdmin)
 update.post('/updateGoods',updateGoodsByAdmin)
 
 
-export default update;
+
+module.exports = update

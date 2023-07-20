@@ -12,6 +12,7 @@ import { eyeOff } from "react-icons-kit/feather/eyeOff";
 import { eye } from "react-icons-kit/feather/eye";
 
 import Ethiopia from "../../Images/countryFlags/Ethiopia_flag.png";
+import {axiosInstance} from '../../Utility/axios'
 // *for cookie
 const cookies = new Cookies();
 // *--------
@@ -46,7 +47,7 @@ const Login = () => {
   let userSet = async (e) => {
     e.preventDefault();
 
-    let url = `http://localhost:6500/user/tologin`;
+    let url = `${axiosInstance.defaults.baseURL}/user/tologin`;
     axios({
       method: "post",
       url: url,

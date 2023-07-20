@@ -1,5 +1,6 @@
-import connectionInfo from "../server.js";
-import JWT from "jsonwebtoken";
+const connectionInfo = require('../server.js')
+const JWT = require("jsonwebtoken")
+
 let OTP_confirming = (req, res) => {
   const { OTP, EncrypedEmail } = req.body;
   // console.log(req.body);
@@ -53,4 +54,5 @@ let OTP_confirming = (req, res) => {
   });
 };
 
-export default OTP_confirming;
+
+module.exports = OTP_confirming

@@ -8,6 +8,7 @@ import { Icon } from "react-icons-kit";
 import { eyeOff } from "react-icons-kit/feather/eyeOff";
 import { eye } from "react-icons-kit/feather/eye";
 import Ethiopia from '../../Images/countryFlags/Ethiopia_flag.png'
+import {axiosInstance} from '../../Utility/axios'
  import {useSelector} from 'react-redux'
 //* initializing dotenv
 
@@ -35,7 +36,7 @@ const UpdateUserProfile = () => {
 
 // * initializing redux store 
 let user_id = user.userInfo_ID
-let server = `http://localhost:6500`;
+let server = `${axiosInstance.defaults.baseURL}`;
 let url = `${server}/user/updateUserProfile/${user_id}`;
 // * let email validator for existences 
   //* to change the icon when clicked

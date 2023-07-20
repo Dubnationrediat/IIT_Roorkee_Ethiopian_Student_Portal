@@ -5,7 +5,10 @@
 // let url = `http://localhost:6500/user/deleteGoods/${id}`
 // let url = `http://localhost:3456/user/deleteNotification/${id}`
 
-import connectionInfo from '../server.js'
+
+const connectionInfo = require('../server.js')
+
+
 let deletePhdDocument = (req,res)=>{
     const user_id = req.params.id
     let deletePhdData = `DELETE FROM educationaldocument WHERE  Document_id=${user_id} `
@@ -128,4 +131,6 @@ let deleteUserEmail = (req,res)=>{
 }
 
 
-export  {deletePhdDocument,deleteMtchDocument,deleteBtchDocument,deleteUserNotification,deleteUserGoods,deleteUserData,deleteUserEmail}
+// export  {deletePhdDocument,deleteMtchDocument,deleteBtchDocument,deleteUserNotification,deleteUserGoods,deleteUserData,deleteUserEmail}
+
+module.exports = {deletePhdDocument,deleteMtchDocument,deleteBtchDocument,deleteUserNotification,deleteUserGoods,deleteUserData,deleteUserEmail}

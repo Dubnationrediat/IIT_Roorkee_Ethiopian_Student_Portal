@@ -196,11 +196,11 @@ function StudentInfo() {
   const [studentInfo, setStudentInfo] = useState([]);
   const [searchApiData, setsearchApiData] = useState([])
   const [filterVal, setfilterVal] = useState('')
-  let urlForStaff = "http://localhost:6500/user/getStudentInfo";
+  // let urlForStaff = "http://localhost:6500";
 
   const dataFromStaffes = async () => {
     try {
-      const responceForStudentInfo = await axios.get(urlForStaff);
+      const responceForStudentInfo = await axios.get("/user/getStudentInfo");
 
       let converted = JSON.parse(JSON.stringify(responceForStudentInfo.data));
 

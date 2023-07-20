@@ -15,6 +15,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { getUser } from "../../components/Redux/Reducers/authSlice";
 import { BounceLoader } from "react-spinners";
+import {axiosInstance} from '../../Utility/axios'
 //* import jwt from 'jsonwebtoken';
 
 function DashBord() {
@@ -25,7 +26,7 @@ function DashBord() {
   const { user, isLoading } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   // * for all notifications
-  let urlForAllNotification = `http://localhost:6500/user/getAllNotfication`;
+  let urlForAllNotification = `${axiosInstance.defaults.baseURL}/user/getAllNotfication`;
   let collector = "";
   useEffect(() => {
     axios({

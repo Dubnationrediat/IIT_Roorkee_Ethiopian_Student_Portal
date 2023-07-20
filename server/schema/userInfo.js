@@ -1,4 +1,5 @@
-import connectionInfo from "../server.js";
+const connectionInfo = require("../server.js")
+
 let userInfo = `CREATE TABLE if not exists userInfo(
     userInfo_ID int auto_increment,
     user_first_name varchar(255) not null,
@@ -97,4 +98,5 @@ let tableCreator = (req, res) => {
   res.send("all tables created");
 };
 
-export default tableCreator;
+
+module.exports = tableCreator

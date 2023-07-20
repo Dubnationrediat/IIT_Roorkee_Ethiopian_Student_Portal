@@ -1,4 +1,5 @@
-import connectionInfo from "../server.js";
+const connectionInfo = require('../server.js')
+
 let updateGoodsByAdmin = (req,res)=>{
     const {params_id,user_item_name,user_item_price,user_item_description} = req.body;
    let updateGoods= `UPDATE market SET item_name='${user_item_name}',item_price='${user_item_price}',item_description='${user_item_description}' WHERE item_id=${params_id}`;
@@ -16,4 +17,5 @@ let updateGoodsByAdmin = (req,res)=>{
 
 }
 
-export default updateGoodsByAdmin
+// export default updateGoodsByAdmin
+module.exports = updateGoodsByAdmin

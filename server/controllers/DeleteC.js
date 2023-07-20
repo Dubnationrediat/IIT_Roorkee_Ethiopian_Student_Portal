@@ -1,4 +1,4 @@
-import connectionInfo from '../server.js'
+const connectionInfo = require('../server.js')
 let deleteProfieC = (req,res)=>{
     const user_id = req.params.id
     let deleteEmail = `UPDATE userInfo SET user_email="Email Deleted",user_status="Deleted Account" WHERE userInfo_ID ="${user_id}"`
@@ -17,4 +17,5 @@ let deleteProfieC = (req,res)=>{
     })
 }
 
-export default deleteProfieC
+// export default deleteProfieC
+module.exports = deleteProfieC

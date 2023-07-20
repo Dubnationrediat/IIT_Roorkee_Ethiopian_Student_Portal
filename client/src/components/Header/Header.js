@@ -13,7 +13,7 @@ function Header() {
 
   const dispatch = useDispatch();
   let { isAuth, user } = useSelector((state) => state.auth);
-  console.log(user);
+
   const cookie = new Cookies();
   // *for navigation
   // let navigate = useNavigate();

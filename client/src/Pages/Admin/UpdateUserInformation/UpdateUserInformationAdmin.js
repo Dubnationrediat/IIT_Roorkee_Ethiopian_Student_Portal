@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import {useParams} from 'react-router-dom'
 import axios from 'axios'
+import {axiosInstance} from '../../../Utility/axios'
 function UpdateUserInformationAdmin() {
 
   const params = useParams();
@@ -61,7 +62,7 @@ function UpdateUserInformationAdmin() {
         params_id : updateInfo.params_id
     }
 
-    let linkToSend = `http://localhost:6500/admin/updateUserInfo`
+    let linkToSend = `${axiosInstance.defaults.baseURL}/admin/updateUserInfo`
     axios({
     method:"POST",
     url : linkToSend,

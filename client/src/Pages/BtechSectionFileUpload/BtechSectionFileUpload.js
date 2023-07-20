@@ -3,6 +3,8 @@ import './BtechSectionFileUpload.css'
 import axios from 'axios'
 import {Button} from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import {axiosInstance} from '../../Utility/axios'
+
 function MtechSecitonFileUpload() {
  const [Response, setResponse] = useState("")
  const [dataOfPhd, setUserData] = useState({
@@ -24,7 +26,7 @@ function MtechSecitonFileUpload() {
     formData.append("Document_type",dataOfPhd.Document_type)
     formData.append("user_department",dataOfPhd.user_department)
    
-    let linkToSend = `http://localhost:6500/user/btechUpload`
+    let linkToSend = `${axiosInstance.defaults.baseURL}/user/btechUpload`
       axios({
       method:"POST",
       url : linkToSend,

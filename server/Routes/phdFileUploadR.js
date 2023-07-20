@@ -1,9 +1,12 @@
-import express from 'express'
-import phdMulter from '../middleware/forPhd.js'
-import uploadPhdFile from '../controllers/phdFileUploadC.js'
+const express = require('express')
+const phdMulter = require('../middleware/forPhd.js')
+const  uploadPhdFile = require('../controllers/phdFileUploadC.js')
+
 
 let phdFileUploadR = express.Router()
 
 phdFileUploadR.post('/phdUpload',phdMulter,uploadPhdFile)
 
-export default phdFileUploadR;
+
+
+module.exports = phdFileUploadR

@@ -12,26 +12,28 @@ import Paper from '@mui/material/Paper';
 import {Button} from 'react-bootstrap'
 // import { Link } from '@mui/material';
 import {Link} from 'react-router-dom'
+import {axiosInstance} from "../../Utility/axios"
+console.log(axiosInstance)
 function Admin() {
   const [userForAdmin, setUserForAdmin] = useState([])
-  const [searchApiData, setSearchApiData] = useState()
+  // const [searchApiData, setSearchApiData] = useState()
   const [goods, setgoods] = useState([])
   const [notifications, setnotifications] = useState([])
   const [Phd, setPhd] = useState([])
   const [Btech, setBtech] = useState([])
   const [Mtech, setMtech] = useState([])
 
-  let urlUsers = `http://localhost:6500/admin/adminManagerUsers`
-  let urlNotification = `http://localhost:6500/admin/adminNotification`
-  let urlMarket = `http://localhost:6500/admin/adminGoods`
-  let urlMtech =`http://localhost:6500/admin/adminMtech`
-  let urlBtech =`http://localhost:6500/admin/adminBtech`
-  let urlPhd =`http://localhost:6500/admin/adminPhd`
+  // let urlUsers = `${axiosInstance.baseURL}/admin/adminManagerUsers`
+  // let urlNotification = `${axiosInstance.baseURL}/admin/adminNotification`
+  // let urlMarket = `${axiosInstance.baseURL}/admin/adminGoods`
+  // let urlMtech =`${axiosInstance.baseURL}/admin/adminMtech`
+  // let urlBtech =`${axiosInstance.baseURL}/admin/adminBtech`
+  // let urlPhd =`${axiosInstance.baseURL}/admin/adminPhd`
 
 
   const usersForAdmin = async () => {
     try {
-      const responceForUsers = await axios.get(urlUsers);
+      const responceForUsers = await axios.get("/admin/adminManagerUsers");
       setUserForAdmin(responceForUsers.data);
     } catch (err) {
       // console.log({ "its error": err });
@@ -40,7 +42,7 @@ function Admin() {
 
   const goodsForAdmin = async () => {
     try {
-      const responceForMarket = await axios.get(urlMarket);
+      const responceForMarket = await axios.get("/admin/adminGoods");
       setgoods(responceForMarket.data);
     } catch (err) {
       // console.log({ "its error": err });
@@ -49,7 +51,7 @@ function Admin() {
 
   const notificationForAdmin = async () => {
     try {
-      const responceForNotification = await axios.get(urlNotification);
+      const responceForNotification = await axios.get("/admin/adminNotification");
       setnotifications(responceForNotification.data);
 
     } catch (err) {
@@ -59,7 +61,7 @@ function Admin() {
 
   const phdForAdmin = async () => {
     try {
-      const responceForPhd = await axios.get(urlPhd);
+      const responceForPhd = await axios.get("/admin/adminPhd");
       setPhd(responceForPhd.data);
 
     } catch (err) {
@@ -68,7 +70,7 @@ function Admin() {
   };
   const mtechForAdmin = async () => {
     try {
-      const responceForMtech = await axios.get(urlMtech);
+      const responceForMtech = await axios.get("/admin/adminMtech");
       setMtech(responceForMtech.data);
 
     } catch (err) {
@@ -77,7 +79,7 @@ function Admin() {
   };
   const btechForAdmin = async () => {
     try {
-      const responceForBtech = await axios.get(urlBtech);
+      const responceForBtech = await axios.get("/admin/adminBtech");
       setBtech(responceForBtech.data);
 
     } catch (err) {
@@ -120,7 +122,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 //* For Delete 
 async function toDeleteGoods(id) {
-  let url = `http://localhost:6500/admin/deleteGoods/${id}`
+  let url = `${axiosInstance.defaults.baseURL}/admin/deleteGoods/${id}`
   await axios({
     method:'DELETE',
     url,
@@ -128,7 +130,7 @@ async function toDeleteGoods(id) {
   goodsForAdmin()
 }
 async function toDeleteUserInfo(id) {
-  let url = `http://localhost:6500/admin/deleteUserInfo/${id}`
+  let url = `${axiosInstance.defaults.baseURL}/admin/deleteUserInfo/${id}`
   await axios({
     method:'DELETE',
     url,
@@ -136,7 +138,7 @@ async function toDeleteUserInfo(id) {
   usersForAdmin()
 }
 async function toDeleteEmailOnly(id) {
-  let url = `http://localhost:6500/admin/deleteUserEmailOnly/${id}`
+  let url = `${axiosInstance.defaults.baseURL}/admin/deleteUserEmailOnly/${id}`
   await axios({
     method:'DELETE',
     url,
@@ -145,7 +147,7 @@ async function toDeleteEmailOnly(id) {
 }
 //* For Delete 
 async function toDeleteNotification(id) {
-  let url = `http://localhost:6500/admin/deleteNotification/${id}`
+  let url = `${axiosInstance.defaults.baseURL}/admin/deleteNotification/${id}`
   await axios({
     method:'DELETE',
     url,
@@ -155,7 +157,7 @@ async function toDeleteNotification(id) {
 
 //* For Delete 
 async function toDeleteBTech(id) {
-  let url = `http://localhost:6500/admin/deleteBtech/${id}`
+  let url = `${axiosInstance.defaults.baseURL}/admin/deleteBtech/${id}`
   await axios({
     method:'DELETE',
     url,
@@ -163,7 +165,7 @@ async function toDeleteBTech(id) {
   btechForAdmin()
 }
  async function toDeleteMTech(id) {
-  let url = `http://localhost:6500/admin/deleteMtech/${id}`
+  let url = `${axiosInstance.defaults.baseURL}/admin/deleteMtech/${id}`
   await axios({
     method:'DELETE',
     url,
@@ -172,7 +174,7 @@ async function toDeleteBTech(id) {
 }
 
  async function toDeletePhd(id) {
-  let url = `http://localhost:6500/admin/deletePhd/${id}`
+  let url = `${axiosInstance.defaults.baseURL}/admin/deletePhd/${id}`
    await axios({
       method:'DELETE',
       url,

@@ -1,4 +1,4 @@
-import multer from "multer";
+const multer = require("multer")
 
 const storage = multer.diskStorage({
     destination : function (req,file,cb){
@@ -23,5 +23,6 @@ const pdfUploader = multer({
     storage:storage,
     fileFilter:fileChecker
 })
-export default pdfUploader.single('Course_file')
+// export default pdfUploader.single('Course_file')
 
+module.exports = pdfUploader.single('Course_file')

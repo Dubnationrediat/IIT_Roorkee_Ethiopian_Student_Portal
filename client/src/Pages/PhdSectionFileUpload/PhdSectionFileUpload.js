@@ -3,6 +3,7 @@ import './PhdSectionFileUpload.css'
 import axios from 'axios'
 import {Button} from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import {axiosInstance} from '../../Utility/axios'
 function PhdSectionFileUpload() {
  const [Response, setResponse] = useState("")
  const [dataOfPhd, setUserData] = useState({
@@ -24,7 +25,7 @@ function PhdSectionFileUpload() {
     formData.append("Document_type",dataOfPhd.Document_type)
     formData.append("user_department",dataOfPhd.user_department)
    
-    let linkToSend = `http://localhost:6500/user/phdUpload`
+    let linkToSend = `${axiosInstance.defaults.baseURL}/user/phdUpload`
       axios({
       method:"POST",
       url : linkToSend,

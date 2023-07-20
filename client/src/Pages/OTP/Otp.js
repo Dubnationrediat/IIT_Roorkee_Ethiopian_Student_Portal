@@ -4,6 +4,7 @@ import NewPassword from "../NewPassword/NewPassword.js";
 import { userEmail } from "../ForgotPasword/ForgotPassword.js";
 import { Link, useParams } from "react-router-dom";
 import Cookie from "universal-cookie";
+import {axiosInstance} from '../../Utility/axios'
 export const emailForNewPass = React.createContext();
 function Otp() {
   const { email } = useParams();
@@ -20,7 +21,7 @@ function Otp() {
     EncrypedEmail,
   });
   const [response, setresponse] = useState();
-  let urlOfOTP = "http://localhost:6500/user/ForNewPasswordOTP";
+  let urlOfOTP = `${axiosInstance.defaults.baseURL}/user/ForNewPasswordOTP`;
   let OTPset = (e) => {
     e.preventDefault();
     axios({

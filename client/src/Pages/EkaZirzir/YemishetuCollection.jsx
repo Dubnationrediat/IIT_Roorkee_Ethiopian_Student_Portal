@@ -2,15 +2,17 @@ import React, { useEffect, useState } from "react";
 
 import axios from "axios";
 import "./YemishetuEkawoche.css";
+import {axiosInstance} from '../../Utility/axios.js'
+
 function YemishetuCollection() {
   const [goodsColleciton, setgoodsColleciton] = useState([]);
   const [searchApiData, setsearchApiData] = useState([]);
   const [filterVal, setfilterVal] = useState("");
 
-  let url = `http://localhost:6500/user/getGoods`;
+
   const dataForGoods = async () => {
     try {
-      const responceForGoods = await axios.get(url);
+      const responceForGoods = await axios.get("/user/getGoods");
 
       let convertedForGoods = JSON.parse(JSON.stringify(responceForGoods.data));
 
@@ -57,7 +59,7 @@ function YemishetuCollection() {
               <div key={i} className="col-md-3 m-4 ">
                 <div className="card cardAkafi ">
                   <img
-                    src={`http://localhost:6500/${singleGood.item_photo}`}
+                    src={`${axiosInstance.defaults.baseURL}/${singleGood.item_photo}`}
                     className="card-img-top passedImage"
                     alt="..."
                   />

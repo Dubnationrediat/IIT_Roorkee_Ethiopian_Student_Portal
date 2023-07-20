@@ -1,4 +1,4 @@
-import connectionInfo from "../server.js"
+const connectionInfo = require('../server.js')
 let uploadGoods = (req,res)=>{
     if(req.file){
         let picutreFileName = req.file.filename
@@ -61,4 +61,5 @@ let uploadGoods = (req,res)=>{
     }
 }
 
-export default uploadGoods
+// export default uploadGoods
+module.exports = uploadGoods

@@ -1,9 +1,13 @@
-import express from 'express';
-import ForConfirmOTP from '../controllers/ForConfirmOTP.js'
+
+const express = require('express')
+const ForConfirmOTP = require('../controllers/ForConfirmOTP.js')
+
 
 let confirmOTP = express.Router();
 
 confirmOTP.post('/ForNewPasswordOTP',ForConfirmOTP);
 
 
-export default confirmOTP
+
+
+module.exports = confirmOTP

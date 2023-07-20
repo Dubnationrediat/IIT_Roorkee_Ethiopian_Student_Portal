@@ -1,4 +1,4 @@
-import multer from 'multer';
+const multer = require("multer")
 
 const storage = multer.diskStorage({
   destination : function (req,file,cb){
@@ -25,4 +25,5 @@ const uploadFromStaff = multer({
 })
 
 
-export default uploadFromStaff.single('item_photo');
+// export default uploadFromStaff.single('item_photo');
+module.exports =  uploadFromStaff.single('item_photo');

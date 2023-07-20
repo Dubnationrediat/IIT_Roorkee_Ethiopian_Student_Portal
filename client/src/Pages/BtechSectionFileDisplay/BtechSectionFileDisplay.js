@@ -194,14 +194,15 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import {axiosInstance} from '../../Utility/axios'
 function BtechSectionFileDisplay() {
  const [Btech, setBtech] = useState([])
  const [searchApiData, setsearchApiData] = useState([])
  const [filterVal, setfilterVal] = useState('')
   const dataFromBtech = async () => {
-    let urlForBtech = "http://localhost:6500/user/getBtechDoc"
+  
     try {
-      const getBtechResource = await axios.get(urlForBtech);
+      const getBtechResource = await axiosInstance.get("/user/getBtechDoc");
 
       let converted = JSON.parse(JSON.stringify(getBtechResource.data.data));
 
@@ -278,7 +279,7 @@ const handleFilter =(e)=>{
                   <StyledTableCell className="border"  align="center">{data.Document_type}</StyledTableCell>
                   <StyledTableCell className="border"  align="center">{data.Date_of_file_upload}</StyledTableCell>
                   <StyledTableCell   align="center">
-                  <a href={`http://localhost:6500/${data.Document}`}  target='_self'>{data.Document}</a>
+                  <a href={`${axiosInstance}/${data.Document}`}  target='_self'>{data.Document}</a>
               </StyledTableCell>
                 </StyledTableRow>
             </TableBody>

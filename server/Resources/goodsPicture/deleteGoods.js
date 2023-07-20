@@ -1,10 +1,23 @@
-import connectionInfo from "../../server.js"
-import {fileURLToPath} from 'url'
-import path from 'path';
-import fs from 'fs';
 
-let fullDirectly = fileURLToPath(import.meta.url)
-let fileDirectory =path.parse(fullDirectly)
+const connectionInfo = require("../../server.js")
+// const  {fileURLToPath}=require ('url')
+// const path = require('path')
+// const fs = require('fs')
+
+
+
+// let fullDirectly = fileURLToPath(import.meta.url)
+
+// let fileDirectory =path.parse(fullDirectly)
+// const { fileURLToPath } = require('url');
+const path = require('path');
+const fs = require('fs');
+
+const filename = require.resolve(__filename); // Get the full path to the current module file
+const dirname = path.dirname(filename); // Get the directory path of the current module file
+
+let fileDirectory = path.parse(dirname);
+
 
 let deleteGoods = (req,res)=>{
     const  id = req.params.id
@@ -38,4 +51,6 @@ let deleteGoods = (req,res)=>{
         
 }
 
-export {deleteGoods}
+// export {deleteGoods}
+
+module.exports = {deleteGoods}

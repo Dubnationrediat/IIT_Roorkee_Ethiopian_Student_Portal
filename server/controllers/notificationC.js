@@ -1,4 +1,4 @@
-import connectionInfo from "../server.js"
+const connectionInfo = require('../server.js')
 //  * upload notification 
 let notificationC = (req,res)=>{
     const {user_notification_message,date_of_notification,userInfo_ID,user_Name} =req.body
@@ -80,6 +80,6 @@ let deleteNotification = (req,res)=>{
           })
 }
 
-export  {notificationC,getYourNotfication,deleteNotification,getAllNotfication}
+module.exports =   {notificationC,getYourNotfication,deleteNotification,getAllNotfication}
 
 

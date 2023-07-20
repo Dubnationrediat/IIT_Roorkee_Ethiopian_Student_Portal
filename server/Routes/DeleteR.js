@@ -1,7 +1,9 @@
-import express from 'express'
-import deleteProfieC from "../controllers/DeleteC.js";
+
+const express = require('express')
+const deleteProfieC = require("../controllers/DeleteC.js")
 
 let DeleteRoute = express.Router();
 DeleteRoute.delete('/deleteUser/:id',deleteProfieC)
 
-export default DeleteRoute;
+
+module.exports = DeleteRoute

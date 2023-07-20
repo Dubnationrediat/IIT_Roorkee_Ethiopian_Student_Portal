@@ -1,4 +1,4 @@
-import connectionInfo from "../server.js";
+const connectionInfo = require('../server.js')
 
 let updateInformation = (req,res)=>{
 const {user_first_name,user_last_name,user_email,user_email_forProfile,user_Department,user_whatsapp_number,user_Indian_number,user_study_section,date_of_registration,user_role,user_status,params_id} = req.body
@@ -17,4 +17,6 @@ connectionInfo.query(update_information,(err)=>{
    })
 }
 
-export default updateInformation
+// export default updateInformation
+
+module.exports =updateInformation

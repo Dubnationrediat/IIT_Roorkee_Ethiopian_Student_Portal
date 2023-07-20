@@ -1,4 +1,4 @@
-import connectionInfo from "../server.js"
+const connectionInfo = require('../server.js')
 let getAllGoods = (req,res)=>{
 
 //  console.log(req.user)
@@ -33,4 +33,5 @@ let getAllGoods = (req,res)=>{
 //          })
 // }
 
-export default getAllGoods;
+// export default getAllGoods;
+module.exports = getAllGoods

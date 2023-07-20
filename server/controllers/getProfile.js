@@ -1,5 +1,6 @@
-import connectionInfo from "../server.js";
-import jwt from "jsonwebtoken";
+const connectionInfo = require('../server.js')
+const jwt = require("jsonwebtoken")
+
 let getUserProfile = (req, res) => {
   if (req.cookies?.token) {
     let tokenFromFront = req.cookies.token;
@@ -25,4 +26,5 @@ let getUserProfile = (req, res) => {
   }
 };
 
-export default getUserProfile;
+// export default getUserProfile;
+module.exports = getUserProfile

@@ -1,5 +1,5 @@
-import express from 'express';
-import {deletePhdDocument,deleteMtchDocument,deleteBtchDocument,deleteUserNotification,deleteUserGoods,deleteUserData,deleteUserEmail} from '../controllers/adminDeleteC.js'
+const express = require('express')
+const {deletePhdDocument,deleteMtchDocument,deleteBtchDocument,deleteUserNotification,deleteUserGoods,deleteUserData,deleteUserEmail} = require ('../controllers/adminDeleteC.js')
 
 let adminDeleteRoute = express.Router();
 
@@ -11,4 +11,5 @@ adminDeleteRoute.delete('/deleteNotification/:id',deleteUserNotification)
 adminDeleteRoute.delete('/deleteUserInfo/:id',deleteUserData)
 adminDeleteRoute.delete('/deleteUserEmailOnly/:id',deleteUserEmail)
 
-export default adminDeleteRoute 
+
+module.exports = adminDeleteRoute

@@ -3,6 +3,8 @@ import axios from "axios";
 import "./UploadNotificaitons.css";
 import Button from "react-bootstrap/Button";
 import {useSelector,useDispatch} from 'react-redux'
+import {axiosInstance} from '../../Utility/axios'
+
 function UplaodNotifcations() {
   const [Response, setResponse] = useState();
   const [notificationData, setnotificationData] = useState({
@@ -15,7 +17,7 @@ function UplaodNotifcations() {
   let {user} = useSelector((state)=>state.auth)
   let singleUserId = user.userInfo_ID
   let submitHandler = (e) => {
-    let url = `http://localhost:6500/user/notification`;
+    let url = `${axiosInstance.defaults.baseURL}/user/notification`;
     e.preventDefault();
     axios({
       method: "POST",
@@ -62,7 +64,7 @@ function UplaodNotifcations() {
     // } catch (err) {
     //   console.log(err)
     // }
-    let url2 = `http://localhost:6500/user/getUserNotfication/${singleUserId}`;
+    let url2 = `${axiosInstance.defaults.baseURL}/user/getUserNotfication/${singleUserId}`;
      try {
       let response = await axios.get(url2)
       setuserNotification(response.data.singleData)
@@ -76,7 +78,7 @@ function UplaodNotifcations() {
   }, []);
     //* For Delete
     async function  toDelete(id) {
-      let deleteURL =  `http://localhost:6500/user/deleteUserNotfication/${id}`;
+      let deleteURL =  `${axiosInstance.defaults.baseURL}/user/deleteUserNotfication/${id}`;
      await axios({
         method: "DELETE",
         url: deleteURL,

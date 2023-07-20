@@ -5,6 +5,7 @@ import "./NewPssword.css";
 import { eyeOff } from "react-icons-kit/feather/eyeOff";
 import { eye } from "react-icons-kit/feather/eye";
 import { Icon } from "react-icons-kit";
+import {axiosInstance} from '../../Utility/axios'
 // import {emailForNewPass} from '../OTP/Otp.js'
 
 function NewPassword() {
@@ -26,7 +27,7 @@ function NewPassword() {
   let newPass = (e) => {
     e.preventDefault();
     if (newEmail.new_password_one === newEmail.new_password_two) {
-      let url = "http://localhost:6500/user/setNewPassword";
+      let url = `${axiosInstance.defaults.baseURL}/user/setNewPassword`;
       axios({
         method: "post",
         url,

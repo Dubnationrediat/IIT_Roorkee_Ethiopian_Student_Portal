@@ -1,4 +1,5 @@
-import connectionInfo from "../server.js"
+const connectionInfo = require('../server.js');
+
 let allUsers = `SELECT * FROM userinfo`
 let allNotification =`SELECT * FROM notifications`
 let allGoods = `SELECT * FROM market`
@@ -77,9 +78,9 @@ let forAdmin_education_Btech= (req,res)=>{
     })
 }
 
-export {forAdmin_allGoods,forAdmin_allNotification,forAdmin_allUsers,forAdmin_education_phd,forAdmin_education_Mtech,forAdmin_education_Btech}; 
+// export {forAdmin_allGoods,forAdmin_allNotification,forAdmin_allUsers,forAdmin_education_phd,forAdmin_education_Mtech,forAdmin_education_Btech}; 
 
-
+module.exports = {forAdmin_allGoods,forAdmin_allNotification,forAdmin_allUsers,forAdmin_education_phd,forAdmin_education_Mtech,forAdmin_education_Btech}
 
 
 

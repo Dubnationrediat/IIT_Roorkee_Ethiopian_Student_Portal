@@ -1,6 +1,8 @@
-import express from 'express'
-import getAllGoods from '../controllers/displayGoodsC.js'
+const express = require('express')
+const getAllGoods = require('../controllers/displayGoodsC.js')
 
 let goodsShowerR = express.Router()
 goodsShowerR.get('/getGoods',getAllGoods)
-export default goodsShowerR
+
+
+module.exports = goodsShowerR

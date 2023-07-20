@@ -1,9 +1,12 @@
-import jwt from "jsonwebtoken"
-import mysql from "mysql2"
-import connectionInfo from '../server.js'
+
+
+const connectionInfo = require('../server.js')
+const jwt = require("jsonwebtoken")
+
+
 
 // *protect middleware : this middleware will run before all routing except signup and login
-export const protect = (req, res, next)=>{
+const protect = (req, res, next)=>{
 
 let tokenRecieved = req.cookies.token
 let decodedEmail = jwt.verify(tokenRecieved,"IITadmin@524334")
@@ -31,7 +34,7 @@ connectionInfo.query(emailFinder,(err,result)=>{
 // routes("/admin",protect, restrictTo([1]),manageControler)
 
 // * restrictTo: will allow the access based on the user role
-export const restrictTo = (...roles)=>{
+const restrictTo = (...roles)=>{
     return (req, res, next)=>{
         let role = req.user.role
         if(roles.includes(role)){
@@ -47,3 +50,4 @@ export const restrictTo = (...roles)=>{
     }
 }
 
+module.exports = {restrictTo,protect}

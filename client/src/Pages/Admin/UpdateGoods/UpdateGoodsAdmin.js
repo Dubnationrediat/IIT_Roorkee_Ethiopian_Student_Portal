@@ -3,6 +3,8 @@ import './UpdateGoodsAdmin.css'
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import {useParams} from 'react-router-dom'
+import {axiosInstance} from '../../../Utility/axios'
+
 import axios from 'axios'
 
 function UpdateGoodsAdmin() {
@@ -32,7 +34,7 @@ function UpdateGoodsAdmin() {
 
 
 
-    let linkToSend = `http://localhost:6500/admin/updateGoods`
+    let linkToSend = `${axiosInstance.defaults.baseURL}/admin/updateGoods`
     axios({
     method:"POST",
     url : linkToSend,

@@ -1,4 +1,4 @@
-import connectionInfo from "../server.js"
+const connectionInfo = require('../server.js')
 
 let getStudentInfo = (req,res)=>{
     let getAllStudents = `SELECT * FROM userinfo`
@@ -13,4 +13,5 @@ let getStudentInfo = (req,res)=>{
     })
 }
 
-export default getStudentInfo
+// export default getStudentInfo
+module.exports = getStudentInfo

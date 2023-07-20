@@ -1,4 +1,4 @@
-import connectionInfo from "../server.js";
+const connectionInfo = require('../server.js')
 
 
 let updateEducationAll = (req,res)=>{
@@ -52,7 +52,9 @@ let updateEducationAll = (req,res)=>{
 
 
 
-export default updateEducationAll
+// export default updateEducationAll
+
+module.exports = updateEducationAll
 
 
 

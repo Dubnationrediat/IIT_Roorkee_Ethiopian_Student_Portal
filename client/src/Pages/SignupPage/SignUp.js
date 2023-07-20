@@ -10,9 +10,12 @@ import { Icon } from "react-icons-kit";
 import { eyeOff } from "react-icons-kit/feather/eyeOff";
 import { eye } from "react-icons-kit/feather/eye";
 import Ethiopia from "../../Images/countryFlags/Ethiopia_flag.png";
+import {axiosInstance} from '../../Utility/axios'
+
+
 
 //* initializing dotenv
-let server = `http://localhost:6500`;
+let server = `${axiosInstance.defaults.baseURL}`;
 let url = `${server}/user/register`;
 // *for cookie
 const cookies = new Cookies();

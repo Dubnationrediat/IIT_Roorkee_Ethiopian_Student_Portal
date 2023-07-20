@@ -1,5 +1,5 @@
-import connectionInfo from "../server.js";
-import bcrypt from "bcrypt";
+const connectionInfo = require('../server.js');
+const bcrypt = require("bcrypt");
 let updateUserProfile = (req, res) => {
   const {
     user_first_name,
@@ -178,4 +178,4 @@ let updateUserProfile = (req, res) => {
   }
 };
 
-export default updateUserProfile;
+module.exports = updateUserProfile

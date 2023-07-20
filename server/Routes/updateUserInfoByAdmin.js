@@ -1,9 +1,9 @@
-
-import express from 'express';
-import adminUdateUserProfile from '../controllers/adminUpdateUserProfile.js'
+const express = require('express')
+const adminUdateUserProfile = require('../controllers/adminUpdateUserProfile.js')
 
 let updatedInformation = express.Router();
 
 updatedInformation.post('/updateUserInfo',adminUdateUserProfile)
 
-export default updatedInformation;
+
+module.exports =updatedInformation

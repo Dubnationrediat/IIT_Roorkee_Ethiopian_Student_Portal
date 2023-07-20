@@ -1,6 +1,7 @@
-import connectionInfo from "../server.js";
-import nodemailer from "nodemailer";
-import JWT from "jsonwebtoken";
+const connectionInfo = require('../server.js')
+const nodemailer = require("nodemailer")
+const JWT = require("jsonwebtoken")
+
 
 let correctPassword = (req, res) => {
   const { user_email_for_Password } = req.body;
@@ -86,4 +87,5 @@ let correctPassword = (req, res) => {
   });
 };
 
-export default correctPassword;
+// export default correctPassword;
+module.exports = correctPassword

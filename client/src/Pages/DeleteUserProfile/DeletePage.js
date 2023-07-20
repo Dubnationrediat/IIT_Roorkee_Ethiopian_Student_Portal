@@ -6,13 +6,14 @@ import axios from 'axios';
 import { Link } from 'react-router-dom'
 import {useSelector,useDispatch} from 'react-redux'
 import { logout } from "../../components/Redux/Reducers/authSlice";
+import { axiosInstance } from '../../Utility/axios';
 function DeletePage() {
   const [response, setresponse] = useState()
   let {user} = useSelector((state)=>state.auth)
   let user_id=user.userInfo_ID
   const dispatch = useDispatch();
   const cookie = new Cookies();
-  let url = `http://localhost:6500/user/deleteUser/${user_id}`
+  let url = `${axiosInstance.defaults.baseURL}/user/deleteUser/${user_id}`
   let deleteProfileHandler = (e)=>{
         e.preventDefault()
         axios({

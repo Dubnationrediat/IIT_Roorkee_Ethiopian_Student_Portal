@@ -1,9 +1,12 @@
-import express from 'express'
-import MtechMulter from '../middleware/forMtech.js'
-import uploadMtechFile from '../controllers/MtechFileUploadC.js'
+const express = require('express')
+const MtechMulter = require('../middleware/forMtech.js')
+const uploadMtechFile = require('../controllers/MtechFileUploadC.js')
+
+
 
 let MtechFileUploadR = express.Router()
 
 MtechFileUploadR.post('/mtechUpload',MtechMulter,uploadMtechFile)
 
-export default MtechFileUploadR;
+
+module.exports=MtechFileUploadR

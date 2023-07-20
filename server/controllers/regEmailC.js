@@ -1,4 +1,4 @@
-import connectionInfo from '../server.js'
+const connectionInfo = require('../server.js')
 let emialCheker = (req,res)=>{
     let getEmail = `SELECT user_email FROM userinfo`
    connectionInfo.query(getEmail,[],(err,data)=>{
@@ -10,4 +10,5 @@ let emialCheker = (req,res)=>{
    })
 }
 
-export default emialCheker;
+// export default emialCheker;
+module.exports = emialCheker

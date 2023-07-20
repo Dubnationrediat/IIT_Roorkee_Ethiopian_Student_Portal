@@ -1,4 +1,4 @@
-import connectionInfo   from '../server.js'
+const connectionInfo = require('../server.js')
 
 let getAllEducationalDocPhd= (req,res)=>{
     let phdQuery = `SELECT * FROM educationaldocument WHERE Section='Phd'`
@@ -38,4 +38,6 @@ let getAllEducationalDocMetch= (req,res)=>{
 }
 
 
-export {getAllEducationalDocMetch,getAllEducationalDocBtech,getAllEducationalDocPhd}
+// export {getAllEducationalDocMetch,getAllEducationalDocBtech,getAllEducationalDocPhd}
+
+module.exports = {getAllEducationalDocMetch,getAllEducationalDocBtech,getAllEducationalDocPhd}

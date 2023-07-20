@@ -1,44 +1,48 @@
 // imported dependency
-import express from "express";
-import mysql2 from "mysql2";
-import dotenv from "dotenv";
-import cors from "cors";
-import cookieParser from "cookie-parser";
+
+const express = require("express")
+const mysql2 = require("mysql2")
+const dotenv = require("dotenv")
+const cors  = require("cors")
+const cookieParser= require("cookie-parser")
+
 //* imported routs
-import tableRoute from "./Routes/createTableR.js";
-import Register from "./Routes/RigesterR.js";
-import emailCheck from "./Routes/getEmailR.js";
-import loginRoute from "./Routes/LoginR.js";
-import forPasswordChange from "./Routes/ForNewPassword.js";
-import ForConfirmOTPR from "./Routes/ForConfirmOTPR.js";
-import setNewPassWord from "./Routes/SetNewPassWord.js";
-import userProfileUpdate from "./Routes/updateUserProfileR.js";
-import DeleteRoute from "./Routes/DeleteR.js";
-import notification from "./Routes/notificationR.js";
-import forSingleNotfification from "./Routes/notificationR.js";
-import getStudentInformation from "./Routes/getStudentInfoR.js";
-import deleteNotification from "./Routes/notificationR.js";
-import phdFileUploadR from "./Routes/phdFileUploadR.js";
-import MtechFileUplaodR from "./Routes/MtechFileUploadR.js";
-import BtechFileUplaodR from "./Routes/BtechFileUpladR.js";
-import getAllEduDocR from "./Routes/getAllEducationalR.js";
-import goodsFileUploadR from "./Routes/uploadGoodsR.js";
-import goodsShowerR from "./Routes/getAllGoodsR.js";
-import phdPdfDawnloader from "./Routes/phdPdfDawnloaderR.js";
-import userProfile from "./Routes/getProfileR.js";
-import getYourSingleGoods from "./Routes/uploadGoodsR.js";
-import deleteGoods from "./Routes/uploadGoodsR.js";
-import adminRouter from "./Routes/Admin.js";
-import adminPhdDelete from "./Routes/adminDeleteR.js";
-import updateNotificationA from "./Routes/adminUpdate.js";
-import updateUserProfileAdmin from "./Routes/updateUserInfoByAdmin.js";
+
+const tableRoute = require("./Routes/createTableR.js")
+const Register = require("./Routes/RigesterR.js")
+const emailCheck = require("./Routes/getEmailR.js")
+const loginRoute = require("./Routes/LoginR.js")
+const forPasswordChange = require("./Routes/ForNewPassword.js")
+const ForConfirmOTPR = require("./Routes/ForConfirmOTPR.js")
+const setNewPassWord = require("./Routes/SetNewPassWord.js")
+const userProfileUpdate = require("./Routes/updateUserProfileR.js")
+const DeleteRoute = require("./Routes/DeleteR.js")
+const notification = require("./Routes/notificationR.js")
+const forSingleNotfification = require("./Routes/notificationR.js")
+const getStudentInformation= require("./Routes/getStudentInfoR.js")
+const deleteNotification= require("./Routes/notificationR.js")
+const phdFileUploadR = require("./Routes/phdFileUploadR.js")
+const MtechFileUplaodR = require("./Routes/MtechFileUploadR.js")
+const BtechFileUplaodR = require("./Routes/BtechFileUpladR.js")
+const getAllEduDocR = require("./Routes/getAllEducationalR.js")
+const goodsFileUploadR= require("./Routes/uploadGoodsR.js")
+const goodsShowerR = require("./Routes/getAllGoodsR.js")
+const phdPdfDawnloader = require("./Routes/phdPdfDawnloaderR.js")
+const userProfile = require("./Routes/getProfileR.js")
+const getYourSingleGoods = require("./Routes/uploadGoodsR.js")
+const deleteGoods = require("./Routes/uploadGoodsR.js")
+const adminRouter = require("./Routes/Admin.js")
+const adminPhdDelete = require("./Routes/adminDeleteR.js")
+const updateNotificationA = require("./Routes/adminUpdate.js")
+const updateUserProfileAdmin = require("./Routes/updateUserInfoByAdmin.js")
+
 //* initializing express
 let app = express();
 // initializing dotenv
 dotenv.config();
 app.use(
   cors({
-    origin: "http://localhost:3001",
+    origin: "http://localhost:3000",
     credentials: true,
   })
 );
@@ -87,7 +91,7 @@ let connectionInfo = mysql2.createConnection({
   database: process.env.DATABASE,
 });
 
-let port = process.env.PORT || process.env.PORT2;
+let port = process.env.PORT;
 async function connectionHierarchy() {
   try {
     //* connection with database
@@ -110,4 +114,6 @@ async function connectionHierarchy() {
 //* initializing function
 connectionHierarchy();
 
-export default connectionInfo;
+
+
+module.exports = connectionInfo

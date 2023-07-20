@@ -4,6 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import OTP from "../OTP/Otp.js";
 import Cookie from "universal-cookie";
+import {axiosInstance} from '../../Utility/axios'
+
 
 export const userEmail = React.createContext();
 function ForgotPassword() {
@@ -15,7 +17,7 @@ function ForgotPassword() {
   let cookie = new Cookie();
   let navigate = useNavigate();
 
-  let url = "http://localhost:6500/user/ForNewPassword";
+  let url = `${axiosInstance.defaults.baseURL}/user/ForNewPassword`;
   let userSet = (e) => {
     e.preventDefault();
     axios({

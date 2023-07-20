@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import {useParams} from 'react-router-dom'
+import {axiosInstance} from '../../../Utility/axios'
 import axios from 'axios'
 import './UpdateMtechAdmin.css'
 function UpdatePhdAdmin() {
@@ -41,7 +42,7 @@ function UpdatePhdAdmin() {
       
   }
     // let linkToSend = `http://localhost:6500/admin/updatePhDhUserEducation`
-    let linkToSend = `http://localhost:6500/admin/adminUpdateEducational`
+    let linkToSend = `${axiosInstance.defaults.baseURL}/admin/adminUpdateEducational`
     axios({
     method:"POST",
     url : linkToSend,

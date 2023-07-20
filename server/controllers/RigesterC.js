@@ -1,6 +1,8 @@
-import bcrypt from "bcrypt";
-import connectionInfo from "../server.js";
-import jwt from "jsonwebtoken";
+
+const connectionInfo = require('../server.js')
+const bcrypt =require("bcrypt")
+const jwt = require("jsonwebtoken")
+
 let registerController = (req, res) => {
   const {
     user_first_name,
@@ -223,4 +225,5 @@ let registerController = (req, res) => {
   }
 };
 
-export default registerController;
+
+module.exports = registerController

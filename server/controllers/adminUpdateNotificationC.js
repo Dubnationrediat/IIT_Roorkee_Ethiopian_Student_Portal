@@ -1,4 +1,4 @@
-import connectionInfo from "../server.js";
+const connectionInfo = require('../server.js')
 let updateNotificatioByAdmin = (req,res)=>{
     const {params_id,user_notification} = req.body;
    let updatedNotification = `UPDATE notifications SET user_notification_message='${user_notification}'WHERE notification_id='${params_id}'`;
@@ -16,4 +16,6 @@ let updateNotificatioByAdmin = (req,res)=>{
 
 }
 
-export default updateNotificatioByAdmin
+// export default updateNotificatioByAdmin
+
+module.exports = updateNotificatioByAdmin

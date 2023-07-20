@@ -1,7 +1,8 @@
-import express from 'express';
-import userProfile from '../controllers/getProfile.js'
+const express = require('express')
+const userProfile = require('../controllers/getProfile.js')
 
 let userPrileR= express.Router()
 userPrileR.get('/me',userProfile)
 
-export default userPrileR
+
+module.exports = userPrileR

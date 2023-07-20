@@ -1,4 +1,4 @@
-import connectionInfo from "../server.js"
+const connectionInfo = require('../server.js')
 // * get user previously uploaded notification 
 let getYourSingleGoods= (req,res)=>{
     const {userInfo_ID} =req.params
@@ -49,6 +49,9 @@ let getYourSingleGoods= (req,res)=>{
         
 // }
 
-export {getYourSingleGoods}
+
+
+module.exports = {getYourSingleGoods}
+
 
 

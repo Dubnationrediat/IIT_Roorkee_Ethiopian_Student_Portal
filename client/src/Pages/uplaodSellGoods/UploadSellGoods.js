@@ -4,6 +4,7 @@ import './sellGoods.css'
 import {Button} from 'react-bootstrap'
 import {useSelector,useDispatch} from 'react-redux'
 import { Link } from 'react-router-dom'
+import {axiosInstance} from '../../Utility/axios'
 function UploadSellGoods() {
  const [Response, setResponse] = useState("")
  const [dataGoods, setGoods] = useState({
@@ -20,7 +21,7 @@ function UploadSellGoods() {
  const [userGoods, setuserGoods]= useState([])
 
  let {user} = useSelector((state)=>state.auth)
- let url = `http://localhost:6500/user/uploadGoods`;
+ let url = `${axiosInstance.defaults.baseURL}/user/uploadGoods`;
  let user_id=user.userInfo_ID;
  let  user_firstName = user.user_first_name
  let  user_firstLast = user.user_last_name
@@ -88,7 +89,7 @@ function UploadSellGoods() {
   };
   let singleUserId=user.userInfo_ID
   async function usersGoodsD() {
-    let url2 = `http://localhost:6500/user/getUserGoods/${singleUserId}`;
+    let url2 = `${axiosInstance.defaults.baseURL}/user/getUserGoods/${singleUserId}`;
      try {
       let response = await axios.get(url2)
       setuserGoods(response.data.singleData)
@@ -105,7 +106,7 @@ function UploadSellGoods() {
 
      //* For Delete
      async function  toDelete(id) {
-      let deleteURL =  `http://localhost:6500/user/deleteUserGoods/${id}`;
+      let deleteURL =  `${axiosInstance.defaults.baseURL}/user/deleteUserGoods/${id}`;
      await axios({
         method: "DELETE",
         url: deleteURL,

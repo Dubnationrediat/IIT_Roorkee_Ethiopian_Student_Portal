@@ -3,4 +3,5 @@ let phdPdfDawnloader = (req,res)=>{
      res.send(reqParams)
 }
 
-export default phdPdfDawnloader
+// export default phdPdfDawnloader
+module.exports = phdPdfDawnloader

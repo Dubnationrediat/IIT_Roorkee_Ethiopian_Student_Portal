@@ -177,15 +177,17 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import {axiosInstance} from '../../Utility/axios'
+
 
 function PhdSecitonFileDisplay() {
  const [phd, setPhd] = useState([])
  const [searchApiData, setsearchApiData] = useState([])
  const [filterVal, setfilterVal] = useState('')
   const dataFromBtech = async () => {
-    let urlForPhd = "http://localhost:6500/user/getPhdDoc"
+  
     try {
-      const getPhdResource = await axios.get(urlForPhd);
+      const getPhdResource = await axios.get("/user/getPhdDoc");
 
       let converted = JSON.parse(JSON.stringify(getPhdResource.data.data));
 
@@ -266,7 +268,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
                   <StyledTableCell className="border"  align="center">{data.Date_of_file_upload}</StyledTableCell>
                   <StyledTableCell   align="center">
                    {/* <a href={`/download?filename=${data.Document_path}`} download={data.Document} target='_self'>{data.Document}</a> */}
-                   <a href={`http://localhost:6500/${data.Document}`}  target='_self'>{data.Document}</a>
+                   <a href={`${axiosInstance.defaults.baseURL}/${data.Document}`}  target='_self'>{data.Document}</a>
                    {/* <a href={`download/${data.Document_path}`}  target='_self'>{data.Document}</a> */}
                    {/* <embed src={`http://localhost:6500/${data.Document_path}`} type="application/pdf" width="100%" height="600px" /> */}
               </StyledTableCell>

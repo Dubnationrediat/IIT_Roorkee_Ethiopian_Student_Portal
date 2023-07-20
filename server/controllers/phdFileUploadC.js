@@ -1,4 +1,4 @@
-import connectionInfo from "../server.js"
+const connectionInfo = require('../server.js')
 let uploadPhdFile = (req,res)=>{
 
     if(req.file){
@@ -38,4 +38,5 @@ let uploadPhdFile = (req,res)=>{
     }
 }
 
-export default uploadPhdFile
+// export default uploadPhdFile
+module.exports = uploadPhdFile

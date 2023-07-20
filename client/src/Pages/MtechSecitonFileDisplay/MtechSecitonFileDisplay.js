@@ -139,14 +139,16 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import {axiosInstance} from '../../Utility/axios'
+
 function MtechSecitonFileDisplay() {
  const [Mtech, setMtech] = useState([])
  const [searchApiData, setsearchApiData] = useState([])
  const [filterVal, setfilterVal] = useState('')
   const dataFromBtech = async () => {
-    let urlForMtech = "http://localhost:6500/user/getMtechDoc"
+   
     try {
-      const getMtechResource = await axios.get(urlForMtech);
+      const getMtechResource = await axios.get("/user/getMtechDoc");
 
       let converted = JSON.parse(JSON.stringify(getMtechResource.data.data));
 
@@ -224,7 +226,7 @@ const handleFilter =(e)=>{
                   <StyledTableCell className="border"  align="center">{data.Document_type}</StyledTableCell>
                   <StyledTableCell className="border"  align="center">{data.Date_of_file_upload}</StyledTableCell>
                   <StyledTableCell   align="center">
-                  <a href={`http://localhost:6500/${data.Document}`}  target='_self'>{data.Document}</a>
+                  <a href={`${axiosInstance.defaults.baseURL}/${data.Document}`}  target='_self'>{data.Document}</a>
               </StyledTableCell>
                 </StyledTableRow>
             </TableBody>

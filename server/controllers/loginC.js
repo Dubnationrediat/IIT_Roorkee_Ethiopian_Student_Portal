@@ -1,6 +1,7 @@
-import connectionInfo from "../server.js";
-import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
+const connectionInfo = require('../server.js')
+const bcrypt = require("bcrypt")
+const jwt = require("jsonwebtoken")
+
 let loginC = (req, res) => {
   const { user_email, user_password } = req.body;
   //    let userChecker = `SELECT user_email FROM userinfo WHERE user_email = ${user_email} `
@@ -66,7 +67,8 @@ let loginC = (req, res) => {
   });
 };
 
-export default loginC;
+// export default loginC;
+module.exports = loginC
 
 // res.send({
 //     successMessage: `${user_email}`,

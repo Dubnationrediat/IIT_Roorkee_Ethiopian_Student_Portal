@@ -1,9 +1,10 @@
-import loginC from "../controllers/loginC.js";
-import express from 'express';
+const loginC= require("../controllers/loginC.js")
+const express = require('express')
 
 let loginRoute = express.Router();
 
 loginRoute.post('/tologin',loginC)
 
-export default loginRoute;
 
+
+module.exports=loginRoute

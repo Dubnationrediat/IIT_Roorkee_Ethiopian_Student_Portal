@@ -1,8 +1,11 @@
-import registerC from '../controllers/RigesterC.js'
-import express from 'express';
+const express = require('express')
+const registerC = require('../controllers/RigesterC.js')
+
+
 
 let registerRout = express.Router();
 
 registerRout.post('/register',registerC)
 
-export default registerRout;
+
+module.exports =registerRout

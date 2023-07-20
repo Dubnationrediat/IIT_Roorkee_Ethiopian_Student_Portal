@@ -1,4 +1,4 @@
-import connectionInfo from "../server.js"
+const connectionInfo = require('../server.js')
 let uploadBtechFile = (req,res)=>{
     if(req.file){
         let BtechFile = req.file.filename
@@ -39,4 +39,5 @@ let uploadBtechFile = (req,res)=>{
     }
 }
 
-export default uploadBtechFile
+// export default uploadBtechFile
+module.exports = uploadBtechFile
