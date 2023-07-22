@@ -10,12 +10,12 @@ import { Icon } from "react-icons-kit";
 import { eyeOff } from "react-icons-kit/feather/eyeOff";
 import { eye } from "react-icons-kit/feather/eye";
 import Ethiopia from "../../Images/countryFlags/Ethiopia_flag.png";
-import {axiosInstance} from '../../Utility/axios'
-
-
+import { axiosInstance } from "../../Utility/axios";
 
 //* initializing dotenv
-let server = `${axiosInstance.defaults.baseURL}`;
+let server = `https://backend.ethiopiansatiitroorkee.com`;
+// let server = "http://localhost:6500";
+
 let url = `${server}/user/register`;
 // *for cookie
 const cookies = new Cookies();
@@ -31,6 +31,7 @@ const SignUp = () => {
 
   const [type1, setType1] = useState("password");
   const [icon1, setIcon1] = useState(eyeOff);
+  const [isLoading, setIsLoading] = useState(false);
 
   const [userData, setUserData] = useState({
     user_first_name: "",
@@ -92,6 +93,7 @@ const SignUp = () => {
         user_whatsapp_number: userData.user_whatsapp_number,
         user_department: userData.user_department,
       };
+      setIsLoading(true);
       axios({
         method: "post",
         url,
@@ -107,10 +109,15 @@ const SignUp = () => {
             });
             dispatch(getUser());
             navigate("/dashbord");
+            setIsLoading(false);
+            window.location.reload();
           }
+
+          setIsLoading(false);
         })
         .catch((err) => {
           // console.log(err);
+          setIsLoading(false);
         });
     } else {
       return setresponse({
@@ -382,7 +389,9 @@ const SignUp = () => {
                 />
               </span>
 
-              <button className="btnSign">Agree and Join</button>
+              <button className="btnSign">
+                {isLoading ? "Joining ..." : "Agree and Join"}
+              </button>
             </form>
             <p className="mt-md-5 mt-sm-5 text-center texttag">
               I agree to the
@@ -393,7 +402,6 @@ const SignUp = () => {
               <Link to="/terms" className="a22">
                 terms of serivice.
               </Link>
-
             </p>
 
             <p className="mt-md-2 mt-sm-2 text-center texttag">
@@ -407,7 +415,10 @@ const SignUp = () => {
               Please..
             </h1>
             <ul className="forUl">
-              <li>please see the "how it works" video first <a href="/howitworks">click here to view</a> </li>
+              <li>
+                please see the "how it works" video first{" "}
+                <a href="/howitworks">click here to view</a>{" "}
+              </li>
               <li>Fill all Input Fields correctly</li>
               <li>name should only contain characters</li>
               <li>pass a proper Email</li>

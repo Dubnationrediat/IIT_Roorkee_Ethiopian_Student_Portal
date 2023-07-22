@@ -157,7 +157,7 @@ let registerController = (req, res) => {
                         message: "click here to go to signup page",
                       });
                     } else {
-                      let salt = bcrypt.genSaltSync();
+                      let salt = bcrypt.genSaltSync(10);
                       let hash_password = bcrypt.hashSync(
                         trimed_user_password,
                         salt
@@ -188,6 +188,9 @@ let registerController = (req, res) => {
                         (err, data, field) => {
                           if (err) {
                             // console.log(err);
+                            res.json({
+                              message:"an Error occured"
+                            })
                           } else {
                             let tokenFromJwt = jwt.sign(
                               {
@@ -220,7 +223,9 @@ let registerController = (req, res) => {
       }
     }
   } catch (error) {
-    // console.log(error);
+    res.json({
+      message:"error occured "
+    })
   }
 };
 

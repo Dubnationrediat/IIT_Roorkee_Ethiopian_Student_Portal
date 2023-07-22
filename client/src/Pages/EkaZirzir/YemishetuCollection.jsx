@@ -2,17 +2,16 @@ import React, { useEffect, useState } from "react";
 
 import axios from "axios";
 import "./YemishetuEkawoche.css";
-import {axiosInstance} from '../../Utility/axios.js'
+import { axiosInstance } from "../../Utility/axios.js";
 
 function YemishetuCollection() {
   const [goodsColleciton, setgoodsColleciton] = useState([]);
   const [searchApiData, setsearchApiData] = useState([]);
   const [filterVal, setfilterVal] = useState("");
 
-
   const dataForGoods = async () => {
     try {
-      const responceForGoods = await axios.get("/user/getGoods");
+      const responceForGoods = await axiosInstance.get("/user/getGoods");
 
       let convertedForGoods = JSON.parse(JSON.stringify(responceForGoods.data));
 
@@ -42,7 +41,7 @@ function YemishetuCollection() {
 
   return (
     <>
-      <h1 className="text-decoration-underline ml-5 " >Buy Goods</h1>
+      <h1 className="text-decoration-underline ml-5 ">Buy Goods</h1>
       <div className="inputs">
         <input
           id="searchPhd"

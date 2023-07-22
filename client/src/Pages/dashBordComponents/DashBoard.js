@@ -13,38 +13,36 @@ import Avatar from "react-avatar";
 import "./DashBoard.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { getUser } from "../../components/Redux/Reducers/authSlice";
+// import { getUser } from "../../components/Redux/Reducers/authSlice";
 import { BounceLoader } from "react-spinners";
-import {axiosInstance} from '../../Utility/axios'
+import { axiosInstance } from "../../Utility/axios";
+// import { getUser } from "../../components/Redux/Reducers/authSlice";
 //* import jwt from 'jsonwebtoken';
 
 function DashBord() {
   const [notifications, setNotifications] = useState([]);
   const [organizer, setorganizer] = useState("");
+  // const [isLoading, setIsLoading] = useState(false)
   // const [decodedToken, setDecodedToken] = useState(null);
 
   const { user, isLoading } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
+
   // * for all notifications
   let urlForAllNotification = `${axiosInstance.defaults.baseURL}/user/getAllNotfication`;
   let collector = "";
   useEffect(() => {
-    axios({
-      url: urlForAllNotification,
+    axiosInstance({
+      url: `/user/getAllNotfication`,
       method: "GET",
     }).then((response) => {
       setNotifications(response.data.data);
     });
+    
+  }, [isLoading]);
 
-    {
-      notifications.map((singleNotification, i) => {
-        collector =
-          collector +
-          ` Notification By: ${singleNotification.user_first_name}, Notification : ${singleNotification.user_notification_message}, Date Of Notification : ${singleNotification.date_of_notification} |`;
-        setorganizer(collector);
-      });
-    }
-  }, []);
+ 
+
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -71,10 +69,22 @@ function DashBord() {
             loop="infinite"
             direction="left"
           >
-            {organizer}
+            {/* {organizer} */}
+            <small>
+{
+ notifications && notifications?.map((singleNotification, i) => {
+        collector =
+          collector +
+          ` Notification By: ${singleNotification.user_first_name}, Notification : ${singleNotification.user_notification_message}, Date Of Notification : ${singleNotification.date_of_notification} |`;
+      
+return collector
+      
+      })
+    }
+            </small>
           </marquee>
         </div>
-        <div className=" d-md-flex  text-center  container  justify-content-center main-dashborad   main-dash"> 
+        <div className=" d-md-flex  text-center  container  justify-content-center main-dashborad   main-dash">
           <section className="profileSection ml-5 " style={{ width: 280 }}>
             <h3 className="text-center headerTitle my-3 ">
               Your Personal Profile
@@ -96,22 +106,20 @@ function DashBord() {
           </section>
 
           <section className="backgray d-md-flex  my-1   ">
-           
-              <div className="my-sm-3  ">
-                <StudentInformation />
-                <Upload />
-          
+            <div className="my-sm-3  ">
+              <StudentInformation />
+              <Upload />
             </div>
-         
-              <div className="my-sm-3 ">
-                <ShopComponent />
-                <Notification />
-              </div>
-    
-              <div className="my-sm-3 ">
-                <Resources />
-                <Departments />
-              </div>
+
+            <div className="my-sm-3 ">
+              <ShopComponent />
+              <Notification />
+            </div>
+
+            <div className="my-sm-3 ">
+              <Resources />
+              <Departments />
+            </div>
           </section>
         </div>
       </div>

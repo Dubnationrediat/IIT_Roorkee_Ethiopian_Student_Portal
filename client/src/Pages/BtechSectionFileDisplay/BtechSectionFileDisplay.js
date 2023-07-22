@@ -271,19 +271,36 @@ const handleFilter =(e)=>{
             {Btech.map((data,j) => {
           let staffDataDisplay = (
             <TableBody className="" key={j}>
-                <StyledTableRow >
-                  <StyledTableCell className="border" align="center">{data.Department}</StyledTableCell>
-                  <StyledTableCell align="center">{data.Course_name}</StyledTableCell>
-                  <StyledTableCell className="border" align="center">{data.Course_given_by}</StyledTableCell>
-                  <StyledTableCell  align="center">{data.Course_Code}</StyledTableCell>
-                  <StyledTableCell className="border"  align="center">{data.Document_type}</StyledTableCell>
-                  <StyledTableCell className="border"  align="center">{data.Date_of_file_upload}</StyledTableCell>
-                  <StyledTableCell   align="center">
-                  <a href={`${axiosInstance}/${data.Document}`}  target='_self'>{data.Document}</a>
-              </StyledTableCell>
-                </StyledTableRow>
+              <StyledTableRow>
+                <StyledTableCell className="border" align="center">
+                  {data.Department}
+                </StyledTableCell>
+                <StyledTableCell align="center">
+                  {data.Course_name}
+                </StyledTableCell>
+                <StyledTableCell className="border" align="center">
+                  {data.Course_given_by}
+                </StyledTableCell>
+                <StyledTableCell align="center">
+                  {data.Course_Code}
+                </StyledTableCell>
+                <StyledTableCell className="border" align="center">
+                  {data.Document_type}
+                </StyledTableCell>
+                <StyledTableCell className="border" align="center">
+                  {data.Date_of_file_upload}
+                </StyledTableCell>
+                <StyledTableCell align="center">
+                  <a
+                    href={`${axiosInstance.defaults.baseURL}/${data.Document}`}
+                    target="_self"
+                  >
+                    {data.Document}
+                  </a>
+                </StyledTableCell>
+              </StyledTableRow>
             </TableBody>
-          )
+          );
           return staffDataDisplay;
         })}
           </Table>

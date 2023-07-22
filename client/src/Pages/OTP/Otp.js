@@ -4,7 +4,7 @@ import NewPassword from "../NewPassword/NewPassword.js";
 import { userEmail } from "../ForgotPasword/ForgotPassword.js";
 import { Link, useParams } from "react-router-dom";
 import Cookie from "universal-cookie";
-import {axiosInstance} from '../../Utility/axios'
+import { axiosInstance } from "../../Utility/axios";
 export const emailForNewPass = React.createContext();
 function Otp() {
   const { email } = useParams();
@@ -24,9 +24,9 @@ function Otp() {
   let urlOfOTP = `${axiosInstance.defaults.baseURL}/user/ForNewPasswordOTP`;
   let OTPset = (e) => {
     e.preventDefault();
-    axios({
+    axiosInstance({
       method: "post",
-      url: urlOfOTP,
+      url: `/user/ForNewPasswordOTP`,
       data: forOtp,
     }).then((res) => {
       setresponse(res.data);
@@ -97,4 +97,3 @@ function Otp() {
 }
 
 export default Otp;
-

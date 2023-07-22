@@ -41,16 +41,30 @@ const updateUserProfileAdmin = require("./Routes/updateUserInfoByAdmin.js");
 let app = express();
 // initializing dotenv
 dotenv.config();
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
+
+// app.use((req, res, next) => {
+//   res.setHeader(
+//     "Access-Control-Allow-Origin",
+//     "https://ethiopiansatiitroorkee.com"
+//   );
+//   res.setHeader(
+//     "Access-Control-Allow-Methods",
+//     "POST, GET, PUT, DELETE, PATCH"
+//   );
+//   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+//   next();
+// });
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: ["http://localhost:3000", "https://ethiopiansatiitroorkee.com"],
     // origin: "https://ethiopiansatiitroorkee.com",
     credentials: true,
   })
 );
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-app.use(cookieParser());
 // * static for image
 app.use(express.static("Resources/fileFromBtech/"));
 app.use(express.static("Resources/fileFromMtech/"));
@@ -91,6 +105,11 @@ app.use("/user", deleteGoods);
 app.use("/user", getYourSingleGoods);
 app.use("/admin", updateNotificationA);
 app.use("/admin", updateUserProfileAdmin);
+
+app.use((err, req, res, next) => {
+  console.log("Something went wrong");
+  res.send("Something Went wrong");
+});
 
 //* connection info for database
 

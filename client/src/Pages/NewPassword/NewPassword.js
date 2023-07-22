@@ -5,7 +5,7 @@ import "./NewPssword.css";
 import { eyeOff } from "react-icons-kit/feather/eyeOff";
 import { eye } from "react-icons-kit/feather/eye";
 import { Icon } from "react-icons-kit";
-import {axiosInstance} from '../../Utility/axios'
+import { axiosInstance } from "../../Utility/axios";
 // import {emailForNewPass} from '../OTP/Otp.js'
 
 function NewPassword() {
@@ -28,9 +28,9 @@ function NewPassword() {
     e.preventDefault();
     if (newEmail.new_password_one === newEmail.new_password_two) {
       let url = `${axiosInstance.defaults.baseURL}/user/setNewPassword`;
-      axios({
+      axiosInstance({
         method: "post",
-        url,
+        url: `/user/setNewPassword`,
         data: newEmail,
       })
         .then((data) => {
@@ -91,7 +91,6 @@ function NewPassword() {
           {emailResponse.message}
         </a>
       </div>
-
     );
   } else {
     return (
@@ -118,7 +117,12 @@ function NewPassword() {
                 onChange={handle_change}
               />
               <span className="showHide ">
-                <Icon icon={icon} size={22} onClick={HandleIconChange} className="iconss"/>
+                <Icon
+                  icon={icon}
+                  size={22}
+                  onClick={HandleIconChange}
+                  className="iconss"
+                />
               </span>
               <input
                 className="in111"
@@ -130,9 +134,7 @@ function NewPassword() {
                 autoComplete="new-password"
                 onChange={handle_change}
               />
-              <span className="showHide ">
-                
-              </span>
+              <span className="showHide "></span>
               <button className="btn1">Update Password</button>
             </form>
           </div>

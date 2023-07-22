@@ -13,11 +13,12 @@ import requisition from "../fromAcadamicTeam/ICC Faculty Manual.pdf";
 import IITR from "../fromAcadamicTeam/IITR WIFI Registration.pdf";
 import SIM from "../fromAcadamicTeam/Sim card Subscription_2.pdf";
 import Network from "../fromAcadamicTeam/Network_Security_Setup.rar";
-import software from "../fromAcadamicTeam/anyconnect.zip";
-import BonofiedOnline from "../fromAcadamicTeam/NEW/bonofied online application steps.pdf"
-import BonofiiedExampleFirstTime from "../fromAcadamicTeam/NEW/first time bonofied example.pdf"
-import FRROOnlineApplication from "../fromAcadamicTeam/NEW/Effro-format-to-apply-online.pdf"
-import FORMCexample from "../fromAcadamicTeam/NEW/FORM -C.pdf"
+import software from "../fromAcadamicTeam/anyconnect.rar";
+import BonofiedOnline from "../fromAcadamicTeam/NEW/bonofied online application steps.pdf";
+import BonofiiedExampleFirstTime from "../fromAcadamicTeam/NEW/first time bonofied example.pdf";
+import FRROOnlineApplication from "../fromAcadamicTeam/NEW/Effro-format-to-apply-online.pdf";
+import FORMCexample from "../fromAcadamicTeam/NEW/FORM -C.pdf";
+import winrar from "../fromAcadamicTeam/winrar-x64-602.exe";
 
 function PDFdisplay() {
   return (
@@ -36,37 +37,25 @@ function PDFdisplay() {
               ADMISSION REGISTRATIONS INTERNATIONAL CANDIDATES FOR ADMISSION TO
               Ph.D. & POSTGRADUATE PROGRAMS (2023-24)
             </h5>
-            <a
-              href={CANDIDATES}
-              download
-            >
+            <a href={CANDIDATES} download>
               Download pdf
             </a>
           </div>
           <div className="box">
             <h5>Registration for new P.h.D students</h5>
-            <a
-              href={Registration}
-              download
-            >
+            <a href={Registration} download>
               Download pdf
             </a>
           </div>
           <div className="box">
             <h5>The steps and doc required for academic registration</h5>
-            <a
-              href={academic}
-              download
-            >
+            <a href={academic} download>
               Download pdf
             </a>
           </div>
           <div className="box">
             <h5>Advisor selection process</h5>
-            <a
-              href={process}
-              download
-            >
+            <a href={process} download>
               Download pdf
             </a>
           </div>
@@ -78,32 +67,22 @@ function PDFdisplay() {
           </div>
           <div className="box">
             <h5>General Information Brochure </h5>
-            <a
-              href={General}
-              download
-            >
+            <a href={General} download>
               Download pdf
             </a>
           </div>
           <div className="box">
             <h5>Useful locations with link</h5>
-            <a
-              href={Useful}
-              download
-            >
+            <a href={Useful} download>
               Download pdf
             </a>
           </div>
         </div>
 
         <div>
-         
           <div className="box">
             <h5>How to connect internet </h5>
-            <a
-              href={internet}
-              download
-            >
+            <a href={internet} download>
               Download pdf
             </a>
             <br />
@@ -115,6 +94,12 @@ function PDFdisplay() {
             <a href={software} download>
               Any connect software download
             </a>
+            <small className="text-warning">
+              use Winrar to extract the softwares{" "}
+              <a href={winrar} download>
+                Click to download
+              </a>
+            </small>
           </div>
           <div className="box">
             <h5>Software requisition portal Info</h5>

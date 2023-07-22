@@ -1,4 +1,4 @@
-const connectionInfo = require("../server.js")
+const { connectionInfo } = require("../config");
 
 let userInfo = `CREATE TABLE if not exists userInfo(
     userInfo_ID int auto_increment,
@@ -98,5 +98,4 @@ let tableCreator = (req, res) => {
   res.send("all tables created");
 };
 
-
-module.exports = tableCreator
+module.exports = tableCreator;

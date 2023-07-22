@@ -1,5 +1,5 @@
 
-const connectionInfo = require("../../server.js")
+const { connectionInfo } = require("../../config");
 // const  {fileURLToPath}=require ('url')
 // const path = require('path')
 // const fs = require('fs')

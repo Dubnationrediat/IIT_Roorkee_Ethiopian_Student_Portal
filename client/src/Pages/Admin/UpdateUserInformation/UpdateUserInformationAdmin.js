@@ -63,14 +63,14 @@ function UpdateUserInformationAdmin() {
     }
 
     let linkToSend = `${axiosInstance.defaults.baseURL}/admin/updateUserInfo`
-    axios({
-    method:"POST",
-    url : linkToSend,
-    data:updatedUserInformationData,
-    // headers: {"Content-Type": "multipart/form-data" }
-  }).then((res)=>{
-    setResponse(res.data)
-  })
+    axiosInstance({
+      method: "POST",
+      url: `/admin/updateUserInfo`,
+      data: updatedUserInformationData,
+      // headers: {"Content-Type": "multipart/form-data" }
+    }).then((res) => {
+      setResponse(res.data);
+    });
   }
 
 

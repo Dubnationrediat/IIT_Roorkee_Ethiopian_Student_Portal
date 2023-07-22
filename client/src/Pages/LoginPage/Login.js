@@ -12,7 +12,7 @@ import { eyeOff } from "react-icons-kit/feather/eyeOff";
 import { eye } from "react-icons-kit/feather/eye";
 
 import Ethiopia from "../../Images/countryFlags/Ethiopia_flag.png";
-import {axiosInstance} from '../../Utility/axios'
+import { axiosInstance } from "../../Utility/axios";
 // *for cookie
 const cookies = new Cookies();
 // *--------
@@ -21,6 +21,7 @@ const Login = () => {
   //* to change type attribute from 'password' to 'text' and vice versa
   const [icon, setIcon] = useState(eyeOff);
   const [response, setresponse] = useState();
+  const [isLoading, setIsLoading] = useState(false);
   // user data
   const [userData, setUserData] = useState({
     user_email: "",
@@ -46,6 +47,7 @@ const Login = () => {
 
   let userSet = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
 
     let url = `${axiosInstance.defaults.baseURL}/user/tologin`;
     axios({
@@ -54,21 +56,26 @@ const Login = () => {
       data: userData,
     })
       .then((data) => {
-        setresponse(data.data);
+        setresponse(data?.data);
         // console.log(data.data);
-        let token = data.data.token;
+        let token = data?.data?.token;
 
-        if (data.data.confirmation === "true") {
+        if (data?.data?.confirmation === "true") {
+          cookies.remove("token");
           cookies.set("token", token, {
             path: "/",
+            // httpOnly: true,
             expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
           });
+          setIsLoading(false);
           dispatch(getUser());
           navigate("/dashbord");
+          window.location.reload();
         }
       })
       .catch((err) => {
         // console.log(err)
+        setIsLoading(false);
       });
     //  dispatch(getUser())
   };
@@ -98,7 +105,7 @@ const Login = () => {
       return (
         <div className="forSuccessPa">
           <h1 className="thankYou">{response.message}</h1>
-        
+
           <a className="thankYouAnch" href={response.redirect}>
             {response.redirectMessage}
           </a>
@@ -107,7 +114,7 @@ const Login = () => {
     }
   } else {
     return (
-      <div className="container me-5 vh-100">
+      <div className="container me-5">
         <div className="container py-5 d-md-flex justify-content-between login_container">
           <div className="main col-12 col-md-6 me-md-2 p-5 d-flex flex-column justify-content-center">
             <p className="p1">IITR Ethiopian Students Union</p>
@@ -138,30 +145,38 @@ const Login = () => {
                 onChange={handleChange}
               />
               <span className="showHide1">
-                <Icon icon={icon} size={20} onClick={HandleIconChange} className="iconss"/>
+                <Icon
+                  icon={icon}
+                  size={20}
+                  onClick={HandleIconChange}
+                  className="iconss"
+                />
               </span>
-              <button className="btn1">submit</button>
+              <button className="btn1">
+                {isLoading ? "Signing ..." : "Submit"}
+              </button>
             </form>
-
             <Link to="/forgotPass" className="a3 a1">
               Forgot password ?
-            </Link> 
+            </Link>
             <Link to="/signup" className="a3 a1 my-3">
-            Click Here To Create an Account?
+              Click Here To Create an Account?
             </Link>
             <Link to="/developer" className="a22">
-                Word From The Developers
-              </Link>
+              Word From The Developers
+            </Link>
             {/* <Link to="/howitworks" className="a22"> */}
-            please see the "how it works" video first <a href="/howitworks">click here to view</a>
-              {/* </Link> */}
+            please see the "how it works" video first{" "}
+            <a href="/howitworks">click here to view</a>
+            {/* </Link> */}
           </div>
           <div className="sideNote1 container col-12 col-md-5 ms-md-2 mt-sm-4 mt-md-0 ">
-              <p className="forTitle">David Rocastle Once Said...</p>
-              <h1 className="title">Remember Who You Are, What you Are and Who you Represent!</h1>
-               <img  src={Ethiopia} alt="" />
-            </div>
-
+            <p className="forTitle">David Rocastle Once Said...</p>
+            <h1 className="title">
+              Remember Who You Are, What you Are and Who you Represent!
+            </h1>
+            <img src={Ethiopia} alt="" />
+          </div>
         </div>
       </div>
     );
