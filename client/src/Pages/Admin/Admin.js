@@ -13,7 +13,7 @@ import { Button } from "react-bootstrap";
 // import { Link } from '@mui/material';
 import { Link } from "react-router-dom";
 import { axiosInstance } from "../../Utility/axios";
-console.log(axiosInstance);
+// console.log(axiosInstance);
 function Admin() {
   const [userForAdmin, setUserForAdmin] = useState([]);
   // const [searchApiData, setSearchApiData] = useState()
@@ -23,6 +23,7 @@ function Admin() {
   const [Btech, setBtech] = useState([]);
   const [Mtech, setMtech] = useState([]);
 
+  console.log("Admin Component")
   // let urlUsers = `${axiosInstance.baseURL}/admin/adminManagerUsers`
   // let urlNotification = `${axiosInstance.baseURL}/admin/adminNotification`
   // let urlMarket = `${axiosInstance.baseURL}/admin/adminGoods`
